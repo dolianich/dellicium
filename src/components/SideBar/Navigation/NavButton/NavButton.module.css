@@ -1,0 +1,10 @@
+.linkRoot{
+    display: flex;
+    flex-direction: row;
+    padding: 16px;
+    text-decoration: none;
+    gap: 8px;
+    border-radius: 18px;
+    width: calc(100% - 32px);
+    background-color: var(--dark);
+}

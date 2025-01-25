@@ -1,6 +1,6 @@
 .sideBar{
-    width: 216px;
-    height: calc(100% - 48px);
+    width: 168px;
+    height: calc(100% - 96px);
     background-color: var(--grey);
     display: flex;
     margin-left: 24px;
@@ -13,4 +13,5 @@
     left: 0;
     overflow-x: hidden;
     border-radius: 42px;
+    padding: 24px;
 }
