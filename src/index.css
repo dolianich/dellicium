@@ -9,10 +9,22 @@
   --white: #F4F6FE;
 }
 
+#root{
+  width: 100%;
+  display: flex;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  margin-right: 24px;
+  margin-left: 264px;
+}
+
 body{
   background-color: var(--dark);
   display: flex;
+  flex-direction: row;
   height: 100dvh;
+  width: 100%;
   margin: 0;
+  overflow: hidden;
 }
 

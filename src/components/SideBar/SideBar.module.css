@@ -1,0 +1,16 @@
+.sideBar{
+    width: 216px;
+    height: calc(100% - 48px);
+    background-color: var(--grey);
+    display: flex;
+    margin-left: 24px;
+    margin-top: 24px;
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    border-radius: 42px;
+}
