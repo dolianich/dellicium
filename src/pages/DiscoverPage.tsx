@@ -1,7 +1,7 @@
 import styles from './Discover.module.css';
 
-const Discover = () => {
+const DiscoverPage = () => {
   return <div className={styles.main}>Discover</div>;
 };
 
-export default Discover;
+export default DiscoverPage;
