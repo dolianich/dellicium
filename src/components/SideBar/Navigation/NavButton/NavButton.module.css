@@ -1,4 +1,16 @@
-.linkRoot{
+.default{
+    display: flex;
+    flex-direction: row;
+    padding: 16px;
+    text-decoration: none;
+    gap: 8px;
+    border-radius: 18px;
+    width: calc(100% - 32px);
+    background-color: none;
+    color: var(--light-grey);
+}
+
+.selected{
     display: flex;
     flex-direction: row;
     padding: 16px;
@@ -7,4 +19,5 @@
     border-radius: 18px;
     width: calc(100% - 32px);
     background-color: var(--dark);
+    color: var(--primary);
 }

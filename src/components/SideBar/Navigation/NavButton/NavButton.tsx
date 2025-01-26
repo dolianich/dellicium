@@ -8,20 +8,16 @@ interface Props {
   link: string;
   size?: number;
   weight?: 'regular' | 'fill';
-  state: 'selected' | 'default';
 }
 
-const NavButton = ({
-  text,
-  icon: Icon,
-  link,
-  size,
-  weight,
-  state,
-}: Props) => {
-  const buttonClass = state ? styles[state] : styles.default;
+const NavButton = ({ text, icon: Icon, link, size, weight }: Props) => {
   return (
-    <NavLink to={link} className={styles.linkRoot}>
+    <NavLink
+      to={link}
+      className={({ isActive }) => {
+        return isActive ? styles.selected : styles.default;
+      }}
+    >
       <Icon size={size} weight={weight} />
       {text}
     </NavLink>

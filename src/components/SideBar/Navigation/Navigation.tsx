@@ -7,9 +7,10 @@ import {
   Toolbox,
 } from '@phosphor-icons/react';
 import NavButton from './NavButton/NavButton';
+import { useLocation } from 'react-router-dom';
 
 const navButtons = [
-  { id: 1, text: 'Discover', icon: SquaresFour, link: '/', size: 20 },
+  { id: 1, text: 'Discover', icon: SquaresFour, link: '/discover', size: 20 },
   {
     id: 2,
     text: 'Notifications',
@@ -23,6 +24,9 @@ const navButtons = [
 ];
 
 const Navigation = () => {
+  const location = useLocation();
+  console.log(location.pathname);
+
   return (
     <ul className={styles.navUl}>
       {navButtons.map((button) => (
@@ -32,6 +36,7 @@ const Navigation = () => {
           text={button.text}
           icon={button.icon}
           size={button.size}
+          weight={location.pathname.includes(button.link) ? 'fill' : 'regular'}
         />
       ))}
     </ul>
