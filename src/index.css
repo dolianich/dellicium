@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "Nighty";
+  src: local("Nighty"),
+    url("./fonts/Nightydemo.otf") format("opentype");
+  font-weight: normal;
+}
+
+
 :root {
   --primary: #BBFCDC;
   --red: #FF6F61;
