@@ -1,0 +1,27 @@
+.wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    gap: 12px
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary);
+    border-radius: 18px;
+    width: 52px;
+    height: 52px;
+}
+
+.wrapper p{
+    text-align: left;
+    font-size: 24px;
+    font-family: "Nighty";
+    line-height: 20px;
+    letter-spacing: 1px;
+    color: var(--white);
+    margin: 0;
+}
