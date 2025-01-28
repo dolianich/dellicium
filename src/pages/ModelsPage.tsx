@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import models from '../data/models';
 import ModelCard from '../components/ModelCard/ModelCard';
 
