@@ -1,13 +1,12 @@
 import { Link } from 'react-router-dom';
+import models from '../data/models';
 
 const ModelsPage = () => {
-  const models = [1, 2, 3, 4, 5];
-
   return (
     <div>
       {models.map((model) => (
-        <Link key={model} to={`/models/${model}`}>
-          Model {model}
+        <Link key={model.id} to={`/models/${model.username}`}>
+          {model.name}
         </Link>
       ))}
     </div>
