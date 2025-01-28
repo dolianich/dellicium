@@ -11,6 +11,7 @@ import MarketPage from './pages/MarketPage';
 import ModelsPage from './pages/ModelsPage';
 import NotificationsPage from './pages/NotificationsPage';
 import NotFoundPage from './pages/NotFoundPage';
+import ModelPage from './pages/ModelPage';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/market" Component={MarketPage} />
         <Route path="/models" Component={ModelsPage} />
         <Route path="/notifications" Component={NotificationsPage} />
+        <Route path="/models/:modelId" Component={ModelPage} />
       </Routes>
     </Router>
   );
