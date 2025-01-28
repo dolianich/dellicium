@@ -1,13 +1,16 @@
 import { Link } from 'react-router-dom';
 import models from '../data/models';
+import ModelCard from '../components/ModelCard/ModelCard';
 
 const ModelsPage = () => {
   return (
     <div>
       {models.map((model) => (
-        <Link key={model.id} to={`/models/${model.username}`}>
-          {model.name}
-        </Link>
+        <ModelCard
+          key={model.id}
+          name={model.name}
+          link={`/models/${model.username}`}
+        />
       ))}
     </div>
   );
