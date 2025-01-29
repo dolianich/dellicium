@@ -6,6 +6,7 @@
     text-decoration: none;
     background-color: var(--grey);
     border-radius: 42px;
+    width: 400px;
 }
 
 .container{
@@ -14,6 +15,7 @@
     justify-content: center;
     flex-direction: column;
     gap: 8px;
+    width: calc(100% - 56px);
     background-image: url(../../assets/modelCradBgStaic.svg);
     background-size: cover;
     background-position: center center;
@@ -21,6 +23,9 @@
     margin: 4px;
     padding-top: 48px;
     padding-bottom: 48px;
+    padding-left: 24px;
+    padding-right: 24px;
+    transition: all ease-in-out 0.2s;
 }
 
 .container h2{
@@ -42,4 +47,24 @@
     line-height: 20px;
     margin: 0;
     color: var(--light-grey);
+}
+
+.badges{
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    margin-bottom: 4px;
+}
+
+.container img{
+    border-radius: 100%;
+    width: 140px;
+    height: 140px;
+}
+
+.container:hover{
+    background-image: url(../../assets/modelCardBgHover.svg);
+    background-size: cover;
+    background-position: center center;
+    transition: all ease-in-out 0.2s;
 }
