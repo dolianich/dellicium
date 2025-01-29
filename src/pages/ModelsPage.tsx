@@ -9,6 +9,7 @@ const ModelsPage = () => {
           key={model.id}
           name={model.name}
           link={`/models/${model.username}`}
+          description={model.bio}
         />
       ))}
     </div>

@@ -1,0 +1,45 @@
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    background-color: var(--grey);
+    border-radius: 42px;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 8px;
+    background-image: url(../../assets/modelCradBgStaic.svg);
+    background-size: cover;
+    background-position: center center;
+    border-radius: 38px;
+    margin: 4px;
+    padding-top: 48px;
+    padding-bottom: 48px;
+}
+
+.container h2{
+    text-align: center;
+    font-size: 48px;
+    font-family: "Nighty";
+    line-height: 40px;
+    letter-spacing: 2px;
+    color: var(--white);
+    font-weight: 400;
+    margin: 0;
+}
+
+.wrapper p{
+    text-align: center;
+    font-size: 16px;
+    font-family: "Inter";
+    font-weight: 400;
+    line-height: 20px;
+    margin: 0;
+    color: var(--light-grey);
+}

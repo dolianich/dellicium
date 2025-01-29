@@ -23,5 +23,7 @@
     line-height: 20px;
     letter-spacing: 1px;
     color: var(--white);
+    font-weight: 400;
     margin: 0;
 }
+
