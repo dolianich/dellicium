@@ -7,16 +7,17 @@ interface Props {
   link: string;
   name: string;
   description: string;
+  tags?: string[];
 }
 
-const ModelCard = ({ link, name, description }: Props) => {
+const ModelCard = ({ link, name, description, tags }: Props) => {
   return (
     <Link to={link} className={styles.wrapper}>
       <div className={styles.container}>
         <img src={modelAvatar} alt="avatar" />
         <h2>{name.toLowerCase()}</h2>
         <div className={styles.badges}>
-          <Badge type='verified'/> <Badge type='new'/> <Badge type='top'/>
+          {tags?.map((tag) => <Badge type={tag} />)}
         </div>
         <p>{description.toLowerCase()}</p>
       </div>

@@ -1,10 +1,8 @@
 import { SealCheck, Fire, Medal } from '@phosphor-icons/react';
 import styles from './Badge.module.css';
 
-type BadgeType = 'verified' | 'new' | 'top';
-
 interface Props {
-  type?: BadgeType;
+  type?: string;
 }
 
 const Badge = ({ type }: Props) => {

@@ -10,6 +10,7 @@ const ModelsPage = () => {
           name={model.name}
           link={`/models/${model.username}`}
           description={model.bio}
+          tags={model.tags}
         />
       ))}
     </div>

@@ -4,6 +4,7 @@ const models = [
       username: '@camilaharper',
       name: 'Camila Harper',
       bio: 'Description text',
+      tags: ['verified', 'new', 'top']
     },
     
   ];
