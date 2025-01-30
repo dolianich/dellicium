@@ -6,7 +6,8 @@
     text-decoration: none;
     background-color: var(--grey);
     border-radius: 42px;
-    width: 1275px;
+    min-width: 350px;
+    flex: 1;
 }
 
 .container{
@@ -16,6 +17,7 @@
     flex-direction: column;
     gap: 8px;
     width: calc(100% - 56px);
+    height: 100%;
     background-image: url(../../assets/modelCradBgStaic.svg);
     background-size: cover;
     background-position: center center;
