@@ -1,4 +1,4 @@
-.badge{
+.verified{
     display: flex;
     flex-direction: row;
     gap: 4px;
@@ -13,7 +13,57 @@
     color: var(--dark);
 }
 
-.badge p{
+.new{
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    align-items: center;
+    justify-content: center;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 8px;
+    padding-right: 8px;
+    background-color: var(--yellow);
+    border-radius: 10px;
+    color: var(--dark);
+}
+
+.top{
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    align-items: center;
+    justify-content: center;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 8px;
+    padding-right: 8px;
+    background-color: var(--purple);
+    border-radius: 10px;
+    color: var(--dark);
+}
+
+.verified p{
+    text-align: center;
+    font-size: 12px;
+    font-family: "Inter";
+    line-height: 16px;
+    color: var(--dark);
+    font-weight: 400;
+    margin: 0;
+}
+
+.new p{
+    text-align: center;
+    font-size: 12px;
+    font-family: "Inter";
+    line-height: 16px;
+    color: var(--dark);
+    font-weight: 400;
+    margin: 0;
+}
+
+.top p{
     text-align: center;
     font-size: 12px;
     font-family: "Inter";

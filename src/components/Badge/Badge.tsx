@@ -1,11 +1,24 @@
-import { SealCheck } from '@phosphor-icons/react';
+import { SealCheck, Fire, Medal } from '@phosphor-icons/react';
 import styles from './Badge.module.css';
 
-const Badge = () => {
+type BadgeType = 'verified' | 'new' | 'top';
+
+interface Props {
+  type?: BadgeType;
+}
+
+const Badge = ({ type }: Props) => {
+  const badgeType = type ? styles[type] : styles.verified;
   return (
-    <div className={styles.badge}>
-      <SealCheck size={16} weight="regular" />
-      <p>verified</p>
+    <div className={badgeType}>
+      {type === 'verified' ? (
+        <SealCheck size={16} weight="regular" />
+      ) : type === 'new' ? (
+        <Fire size={16} weight="regular" />
+      ) : (
+        <Medal size={16} weight="regular" />
+      )}
+      <p>{type}</p>
     </div>
   );
 };

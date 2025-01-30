@@ -16,7 +16,7 @@ const ModelCard = ({ link, name, description }: Props) => {
         <img src={modelAvatar} alt="avatar" />
         <h2>{name.toLowerCase()}</h2>
         <div className={styles.badges}>
-          <Badge /> <Badge /> <Badge />
+          <Badge type='verified'/> <Badge type='new'/> <Badge type='top'/>
         </div>
         <p>{description.toLowerCase()}</p>
       </div>
