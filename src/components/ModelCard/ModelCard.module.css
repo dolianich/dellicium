@@ -16,13 +16,12 @@
     justify-content: center;
     flex-direction: column;
     gap: 8px;
-    width: calc(100% - 56px);
+    width: calc(100% - 48px);
     height: 100%;
-    background-image: url(../../assets/modelCradBgStaic.svg);
+    background-image: url(../../assets/modelCardBg_static.svg);
     background-size: cover;
     background-position: center center;
-    border-radius: 38px;
-    margin: 4px;
+    border-radius: 42px;
     padding-top: 48px;
     padding-bottom: 48px;
     padding-left: 24px;
@@ -65,7 +64,7 @@
 }
 
 .container:hover{
-    background-image: url(../../assets/modelCardBgHover.svg);
+    background-image: url(../../assets/modelCardBg_hover.svg);
     background-size: cover;
     background-position: center center;
     transition: all ease-in-out 0.2s;
