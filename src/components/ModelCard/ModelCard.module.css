@@ -15,7 +15,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 8px;
+    gap: 12px;
     width: calc(100% - 48px);
     height: 100%;
     background-image: url(../../assets/modelCardBg_static.svg);
@@ -31,9 +31,9 @@
 
 .container h2{
     text-align: center;
-    font-size: 48px;
+    font-size: 36px;
     font-family: "Nighty";
-    line-height: 40px;
+    line-height: 28px;
     letter-spacing: 2px;
     color: var(--white);
     font-weight: 400;

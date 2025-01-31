@@ -1,13 +1,11 @@
 .title{
     text-align: left;
-    font-size: 60px;
+    font-size: 48px;
     font-family: "Nighty";
-    line-height: 52px;
-    letter-spacing: 2.4px;
+    line-height: 40px;
+    letter-spacing: 2px;
     color: var(--white);
     font-weight: 400;
-    margin-top: 24px;
-    margin-left: 0;
-    margin-right: 0;
-    margin-bottom: 24px;
+    margin-bottom: 12px;
+    margin-top: 30px;
 }
