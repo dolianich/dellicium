@@ -1,23 +1,18 @@
 import models from '../data/models';
 import ModelCard from '../components/ModelCard/ModelCard';
 import styles from './styles/ModelsPage.module.css';
-import Title from '../components/Title/Title';
-
 const ModelsPage = () => {
   return (
-    <div className={styles.screen}>
-      <Title title="models" />
-      <div className={styles.main}>
-        {models.map((model) => (
-          <ModelCard
-            key={model.id}
-            name={model.name}
-            link={`/models/${model.username}`}
-            description={model.bio}
-            tags={model.tags}
-          />
-        ))}
-      </div>
+    <div className={styles.main}>
+      {models.map((model) => (
+        <ModelCard
+          key={model.id}
+          name={model.name}
+          link={`/models/${model.username}`}
+          description={model.bio}
+          tags={model.tags}
+        />
+      ))}
     </div>
   );
 };
