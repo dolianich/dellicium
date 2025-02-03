@@ -11,6 +11,7 @@ const ModelsPage = () => {
           link={`/models/${model.username}`}
           description={model.bio}
           tags={model.tags}
+          img={model.avatar}
         />
       ))}
     </div>

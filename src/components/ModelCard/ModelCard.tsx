@@ -8,13 +8,14 @@ interface Props {
   name: string;
   description: string;
   tags?: string[];
+  img: string;
 }
 
-const ModelCard = ({ link, name, description, tags }: Props) => {
+const ModelCard = ({ link, name, description, tags, img }: Props) => {
   return (
     <Link to={link} className={styles.wrapper}>
       <div className={styles.container}>
-        <Avatar size="small" />
+        <Avatar size="small" img={img}/>
         <h2>{name.toLowerCase()}</h2>
         <div className={styles.badges}>
           {tags?.map((tag) => (
