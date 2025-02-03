@@ -57,11 +57,6 @@
     margin-bottom: 4px;
 }
 
-.container img{
-    border-radius: 100%;
-    width: 140px;
-    height: 140px;
-}
 
 .container:hover{
     background-image: url(../../assets/modelCardBg_hover.svg);
