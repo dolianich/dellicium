@@ -1,10 +1,16 @@
 import styles from './Stats.module.css';
 
-const Stats = () => {
+interface Props {
+  value: number;
+  subtitle: string;
+  type?: 'center' | 'left';
+}
+
+const Stats = ({ value, subtitle, type }: Props) => {
   return (
-    <div className={styles.stats}>
-      <h3 className={styles.value}>12th</h3>
-      <p className={styles.subtitle}>word</p>
+    <div className={type === 'left' ? styles.statsLeft : styles.statsCenter}>
+      <h3 className={styles.value}>{value}</h3>
+      <p className={styles.subtitle}>{subtitle}</p>
     </div>
   );
 };

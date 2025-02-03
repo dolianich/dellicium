@@ -12,6 +12,8 @@ const ModelsPage = () => {
           description={model.bio}
           tags={model.tags}
           img={model.avatar}
+          level={model.level}
+          xp={model.xp}
         />
       ))}
     </div>

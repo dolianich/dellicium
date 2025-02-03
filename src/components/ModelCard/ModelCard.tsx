@@ -10,16 +10,27 @@ interface Props {
   description: string;
   tags?: string[];
   img: string;
+  level: number;
+  xp: number;
 }
 
-const ModelCard = ({ link, name, description, tags, img }: Props) => {
+const ModelCard = ({
+  link,
+  name,
+  description,
+  tags,
+  img,
+  level,
+  xp,
+}: Props) => {
   return (
     <Link to={link} className={styles.wrapper}>
       <div className={styles.container}>
-        <div className={styles.top}>
-          <Stats />
-          <Avatar size="small" img={img} />
-          <Stats />
+        <Avatar size="small" img={img} />
+        <div className={styles.stats}>
+          <Stats value={level} subtitle="level" />
+          <div className={styles.divider} />
+          <Stats value={xp} subtitle="xp" />
         </div>
         <h2>{name.toLowerCase()}</h2>
         <div className={styles.badges}>
@@ -27,6 +38,7 @@ const ModelCard = ({ link, name, description, tags, img }: Props) => {
             <Badge type={tag} />
           ))}
         </div>
+
         <p className={styles.description}>{description.toLowerCase()}</p>
       </div>
     </Link>

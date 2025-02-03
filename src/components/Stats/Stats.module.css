@@ -1,9 +1,19 @@
-.stats{
+.statsCenter{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 0px;
+    text-align: center;
+    width: 48px;
+}
+
+.statsLeft{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-end;
+    gap: 4px;
     text-align: center;
 }
 
