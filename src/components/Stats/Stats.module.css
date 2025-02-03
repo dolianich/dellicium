@@ -1,0 +1,27 @@
+.stats{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0px;
+    text-align: center;
+}
+
+.value{
+    
+    font-size: 16px;
+    font-family: "Inter";
+    font-weight: bold;
+    line-height: 20px;
+    margin: 0;
+    color: var(--white);
+}
+
+.subtitle{
+    font-size: 12px;
+    font-family: "Inter";
+    font-weight: 400;
+    line-height: 16px;
+    margin: 0;
+    color: var(--light-grey);
+}

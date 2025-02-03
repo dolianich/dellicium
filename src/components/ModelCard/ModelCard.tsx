@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import styles from './ModelCard.module.css';
 import Badge from '../Badge/Badge';
 import Avatar from '../Avatar/Avatar';
+import Stats from '../Stats/Stats';
 
 interface Props {
   link: string;
@@ -15,14 +16,18 @@ const ModelCard = ({ link, name, description, tags, img }: Props) => {
   return (
     <Link to={link} className={styles.wrapper}>
       <div className={styles.container}>
-        <Avatar size="small" img={img}/>
+        <div className={styles.top}>
+          <Stats />
+          <Avatar size="small" img={img} />
+          <Stats />
+        </div>
         <h2>{name.toLowerCase()}</h2>
         <div className={styles.badges}>
           {tags?.map((tag) => (
             <Badge type={tag} />
           ))}
         </div>
-        <p>{description.toLowerCase()}</p>
+        <p className={styles.description}>{description.toLowerCase()}</p>
       </div>
     </Link>
   );
