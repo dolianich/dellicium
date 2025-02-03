@@ -3,6 +3,7 @@ import styles from './ModelCard.module.css';
 import Badge from '../Badge/Badge';
 import Avatar from '../Avatar/Avatar';
 import Stats from '../Stats/Stats';
+import { getOrdinalSuffix } from '../../utils/ordinalSuffix';
 
 interface Props {
   link: string;
@@ -28,7 +29,7 @@ const ModelCard = ({
       <div className={styles.container}>
         <Avatar size="small" img={img} />
         <div className={styles.stats}>
-          <Stats value={level} subtitle="level" />
+          <Stats value={getOrdinalSuffix(level)} subtitle="level" />
           <div className={styles.divider} />
           <Stats value={xp} subtitle="xp" />
         </div>

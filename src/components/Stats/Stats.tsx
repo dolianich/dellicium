@@ -1,7 +1,7 @@
 import styles from './Stats.module.css';
 
 interface Props {
-  value: number;
+  value: number | string;
   subtitle: string;
   type?: 'center' | 'left';
 }

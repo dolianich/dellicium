@@ -63,7 +63,7 @@ const models = [
       bio: 'Description text',
       tags: ['verified', 'new', 'top'],
       avatar: camilaHarperAvatar,
-      level: 1,
+      level: 10,
       xp: 10
     },
 
@@ -74,7 +74,7 @@ const models = [
       bio: 'Description text',
       tags: ['verified', 'new', 'top'],
       avatar: camilaHarperAvatar,
-      level: 1,
+      level: 21,
       xp: 10
     },
 
