@@ -64,7 +64,7 @@ const models = [
       tags: ['verified', 'new', 'top'],
       avatar: camilaHarperAvatar,
       level: 10,
-      xp: 10
+      xp: 150000
     },
 
     {

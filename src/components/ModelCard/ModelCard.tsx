@@ -4,6 +4,7 @@ import Badge from '../Badge/Badge';
 import Avatar from '../Avatar/Avatar';
 import Stats from '../Stats/Stats';
 import { getOrdinalSuffix } from '../../utils/ordinalSuffix';
+import { formatPoints } from '../../utils/formatPoints';
 
 interface Props {
   link: string;
@@ -31,7 +32,7 @@ const ModelCard = ({
         <div className={styles.stats}>
           <Stats value={getOrdinalSuffix(level)} subtitle="level" />
           <div className={styles.divider} />
-          <Stats value={xp} subtitle="xp" />
+          <Stats value={formatPoints(xp)} subtitle="xp" />
         </div>
         <h2>{name.toLowerCase()}</h2>
         <div className={styles.badges}>
