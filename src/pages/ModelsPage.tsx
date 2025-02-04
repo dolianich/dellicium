@@ -14,6 +14,7 @@ const ModelsPage = () => {
           img={model.avatar}
           level={model.level}
           xp={model.xp}
+          username={model.username}
         />
       ))}
     </div>

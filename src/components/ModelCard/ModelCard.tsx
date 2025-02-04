@@ -14,6 +14,7 @@ interface Props {
   img: string;
   level: number;
   xp: number;
+  username: string;
 }
 
 const ModelCard = ({
@@ -24,17 +25,19 @@ const ModelCard = ({
   img,
   level,
   xp,
+  username,
 }: Props) => {
   return (
     <Link to={link} className={styles.wrapper}>
       <div className={styles.container}>
         <Avatar size="small" img={img} />
+        <p className={styles.username}>{username}</p>
+        <h2>{name.toLowerCase()}</h2>
         <div className={styles.stats}>
           <Stats value={getOrdinalSuffix(level)} subtitle="level" />
           <div className={styles.divider} />
           <Stats value={formatPoints(xp)} subtitle="xp" />
         </div>
-        <h2>{name.toLowerCase()}</h2>
         <div className={styles.badges}>
           {tags?.map((tag) => (
             <Badge type={tag} />
