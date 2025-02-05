@@ -1,9 +1,9 @@
 import models from '../data/models';
 import ModelCard from '../components/ModelCard/ModelCard';
-import styles from './styles/ModelsPage.module.css';
+import styles from './styles/Page.module.css';
 const ModelsPage = () => {
   return (
-    <div className={styles.main}>
+    <div className={styles.cardsGrid}>
       {models.map((model) => (
         <ModelCard
           key={model.id}
