@@ -40,7 +40,7 @@ const ModelCard = ({
         </div>
         <div className={styles.badges}>
           {tags?.map((tag) => (
-            <Badge type={tag} />
+            <Badge  key={tag} type={tag} />
           ))}
         </div>
 

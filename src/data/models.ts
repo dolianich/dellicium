@@ -9,15 +9,15 @@ const models = [
       tags: ['verified', 'new', 'top'],
       avatar: camilaHarperAvatar,
       level: 1,
-      xp: 10
+      xp: 10,
     },
 
     {
       id: 2,
-      username: '@camilaharper',
+      username: '@camilaharpers',
       name: 'Camila Harper',
       bio: 'Description text',
-      tags: ['verified', 'new', 'top'],
+      tags: ['verified', 'new'],
       avatar: camilaHarperAvatar,
       level: 1,
       xp: 10
@@ -25,7 +25,7 @@ const models = [
 
     {
       id: 3,
-      username: '@camilaharper',
+      username: '@camilaharpera',
       name: 'Camila Harper',
       bio: 'Description text',
       tags: ['verified', 'new', 'top'],
@@ -36,7 +36,7 @@ const models = [
 
     {
       id: 4,
-      username: '@camilaharper',
+      username: '@camilaharperd',
       name: 'Camila Harper',
       bio: 'Description text',
       tags: ['verified', 'new', 'top'],
@@ -47,7 +47,7 @@ const models = [
 
     {
       id: 5,
-      username: '@camilaharper',
+      username: '@camilaharperf',
       name: 'Camila Harper',
       bio: 'Description text',
       tags: ['verified', 'new', 'top'],
@@ -58,7 +58,7 @@ const models = [
     
     {
       id: 6,
-      username: '@camilaharper',
+      username: '@camilaharperg',
       name: 'Camila Harper',
       bio: 'Description text',
       tags: ['verified', 'new', 'top'],
@@ -69,7 +69,7 @@ const models = [
 
     {
       id: 7,
-      username: '@camilaharper',
+      username: '@camilaharperh',
       name: 'Camila Harper',
       bio: 'Description text',
       tags: ['verified', 'new', 'top'],
@@ -80,7 +80,7 @@ const models = [
 
     {
       id: 8,
-      username: '@camilaharper',
+      username: '@camilaharperr',
       name: 'Camila Harper',
       bio: 'Description text',
       tags: ['verified', 'new', 'top'],

@@ -9,7 +9,15 @@ const ModelPage = () => {
 
   return (
     <div className={styles.main}>
-      <ProfileCard />
+      <ProfileCard
+        avatar={model?.avatar}
+        username={model?.username as string}
+        name={model?.name as string}
+        tags={model?.tags}
+        description={model?.bio as string}
+        level={model?.level as number}
+        xp={model?.xp as number}
+      />
     </div>
   );
 };
