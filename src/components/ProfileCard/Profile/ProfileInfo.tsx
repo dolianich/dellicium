@@ -7,6 +7,11 @@ import Button from '../../Button/Button';
 import { formatPoints } from '../../../utils/formatPoints';
 import { getOrdinalSuffix } from '../../../utils/ordinalSuffix';
 
+type Socials = {
+  website?: string;
+  ig?: string;
+  x?: string;
+};
 interface Props {
   avatar?: string;
   username: string;
@@ -15,6 +20,10 @@ interface Props {
   description: string;
   level: number;
   xp: number;
+  socials: Socials;
+  website?: string;
+  ig?: string;
+  x?: string;
 }
 
 const ProfileInfo = ({
@@ -25,20 +34,26 @@ const ProfileInfo = ({
   description,
   level,
   xp,
+  socials,
+  website,
+  ig,
+  x,
 }: Props) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.top}>
         <Avatar size="big" img={avatar} />
         <div className={styles.socials}>
-          <SocialButton /> <SocialButton type="x" /> <SocialButton type="ig" />
+          {socials.website && <SocialButton to={website!} />}
+          {socials.x && <SocialButton to={x!} type="x" />}
+          {socials.ig && <SocialButton to={ig!} type="ig" />}
         </div>
       </div>
       <p className={styles.username}>{username}</p>
       <h2 className={styles.name}>{name.toLowerCase()}</h2>
       <div className={styles.badges}>
         {tags?.map((tag) => (
-          <Badge key={tags.toString()} type={tag} />
+          <Badge key={tag} type={tag} />
         ))}
       </div>
       <p className={styles.description}>{description.toLowerCase()}</p>

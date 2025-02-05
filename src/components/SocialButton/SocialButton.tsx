@@ -4,11 +4,12 @@ import { LinkSimple, XLogo, InstagramLogo } from '@phosphor-icons/react';
 
 interface Props {
   type?: string;
+  to: string;
 }
 
 const SocialButton = ({ type }: Props) => {
   return (
-    <Link to="/" target="_blank" className={styles.btn}>
+    <Link to="/" target="_blank" rel="noopener noreferrer" className={styles.btn}>
       {type === 'ig' ? (
         <InstagramLogo size={20} weight="regular" />
       ) : type === 'x' ? (

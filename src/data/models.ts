@@ -10,6 +10,11 @@ const models = [
       avatar: camilaHarperAvatar,
       level: 1,
       xp: 10,
+      socials: {
+        website: 'https://www.google.com/',
+        ig: 'https://www.instagram.com/',
+        x: 'https://x.com/'
+      }
     },
 
     {
@@ -20,7 +25,12 @@ const models = [
       tags: ['verified', 'new'],
       avatar: camilaHarperAvatar,
       level: 1,
-      xp: 10
+      xp: 10,
+      socials: {
+        website: 'https://www.google.com/',
+        ig: 'https://www.instagram.com/',
+        x: 'https://x.com/'
+      }
     },
 
     {
@@ -31,7 +41,12 @@ const models = [
       tags: ['verified', 'new', 'top'],
       avatar: camilaHarperAvatar,
       level: 1,
-      xp: 10
+      xp: 10,
+      socials: {
+        website: 'https://www.google.com/',
+        ig: 'https://www.instagram.com/',
+        x: 'https://x.com/'
+      }
     },
 
     {
@@ -42,7 +57,12 @@ const models = [
       tags: ['verified', 'new', 'top'],
       avatar: camilaHarperAvatar,
       level: 1,
-      xp: 10
+      xp: 10,
+      socials: {
+        website: 'https://www.google.com/',
+        ig: 'https://www.instagram.com/',
+        x: 'https://x.com/'
+      }
     },
 
     {
@@ -53,7 +73,12 @@ const models = [
       tags: ['verified', 'new', 'top'],
       avatar: camilaHarperAvatar,
       level: 1,
-      xp: 10
+      xp: 10,
+      socials: {
+        website: 'https://www.google.com/',
+        ig: 'https://www.instagram.com/',
+        x: 'https://x.com/'
+      }
     },
     
     {
@@ -64,7 +89,12 @@ const models = [
       tags: ['verified', 'new', 'top'],
       avatar: camilaHarperAvatar,
       level: 10,
-      xp: 150000
+      xp: 150000,
+      socials: {
+        website: 'https://www.google.com/',
+        ig: 'https://www.instagram.com/',
+        x: 'https://x.com/'
+      }
     },
 
     {
@@ -75,7 +105,12 @@ const models = [
       tags: ['verified', 'new', 'top'],
       avatar: camilaHarperAvatar,
       level: 21,
-      xp: 10
+      xp: 10,
+      socials: {
+        website: 'https://www.google.com/',
+        ig: 'https://www.instagram.com/',
+        x: 'https://x.com/'
+      }
     },
 
     {
@@ -86,7 +121,12 @@ const models = [
       tags: ['verified', 'new', 'top'],
       avatar: camilaHarperAvatar,
       level: 1,
-      xp: 10
+      xp: 10,
+      socials: {
+        website: 'https://www.google.com/',
+        ig: 'https://www.instagram.com/',
+        x: 'https://x.com/'
+      }
     },
 
     

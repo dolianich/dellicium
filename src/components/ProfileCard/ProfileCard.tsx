@@ -1,6 +1,12 @@
 import styles from './ProfileCard.module.css';
 import ProfileInfo from './Profile/ProfileInfo';
 
+type Socials = {
+  website?: string;
+  ig?: string;
+  x?: string;
+};
+
 interface Props {
   avatar?: string;
   username: string;
@@ -9,9 +15,19 @@ interface Props {
   description: string;
   level: number;
   xp: number;
+  socials: Socials;
 }
 
-const ProfileCard = ({ avatar, username, name, tags, description, level, xp }: Props) => {
+const ProfileCard = ({
+  avatar,
+  username,
+  name,
+  tags,
+  description,
+  level,
+  xp,
+  socials
+}: Props) => {
   return (
     <div className={styles.profile}>
       <ProfileInfo
@@ -22,6 +38,7 @@ const ProfileCard = ({ avatar, username, name, tags, description, level, xp }: P
         description={description}
         level={level}
         xp={xp}
+        socials={socials}
       />
       <div className={styles.actions}></div>
     </div>
