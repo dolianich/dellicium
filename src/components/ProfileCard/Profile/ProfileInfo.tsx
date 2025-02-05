@@ -4,14 +4,15 @@ import user from '../../../storage/@camilaharper.png';
 import Stats from '../../Stats/Stats';
 import Badge from '../../Badge/Badge';
 import SocialButton from '../../SocialButton/SocialButton';
+import Button from '../../Button/Button';
 
 const ProfileInfo = () => {
   return (
     <div className={styles.wrapper}>
-      <div>
+      <div className={styles.top}>
         <Avatar size="big" img={user} />
-        <div>
-          <SocialButton />
+        <div className={styles.socials}>
+          <SocialButton /> <SocialButton type="x" /> <SocialButton type="ig" />
         </div>
       </div>
       <p className={styles.username}>@username</p>
@@ -24,6 +25,7 @@ const ProfileInfo = () => {
         <Stats value={3} subtitle="level" type="left" />
         <Stats value={12} subtitle="xp" type="left" />
       </div>
+      <Button text='Adopt'/>
     </div>
   );
 };
