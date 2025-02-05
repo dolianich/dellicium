@@ -1,11 +1,31 @@
-import styles from './ProfileInfo.module.css'
+import styles from './ProfileInfo.module.css';
+import Avatar from '../../Avatar/Avatar';
+import user from '../../../storage/@camilaharper.png';
+import Stats from '../../Stats/Stats';
+import Badge from '../../Badge/Badge';
+import SocialButton from '../../SocialButton/SocialButton';
 
 const ProfileInfo = () => {
   return (
     <div className={styles.wrapper}>
-      
+      <div>
+        <Avatar size="big" img={user} />
+        <div>
+          <SocialButton />
+        </div>
+      </div>
+      <p className={styles.username}>@username</p>
+      <h2 className={styles.name}>name</h2>
+      <div className={styles.badges}>
+        <Badge type="verified" /> <Badge type="new" /> <Badge type="top" />
+      </div>
+      <p className={styles.description}>description text</p>
+      <div className={styles.stats}>
+        <Stats value={3} subtitle="level" type="left" />
+        <Stats value={12} subtitle="xp" type="left" />
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default ProfileInfo
+export default ProfileInfo;

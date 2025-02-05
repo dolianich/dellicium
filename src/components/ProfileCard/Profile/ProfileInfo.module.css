@@ -6,4 +6,54 @@
     border-radius: 38px;
     background-color: var(--dark);
     width: 50%;
+    margin-top: 4px;
+    margin-left: 4px;
+    margin-bottom: 4px;
+    gap: 8px;
+}
+
+.username{
+    font-size: 12px;
+    font-family: "Inter";
+    font-weight: 400;
+    line-height: 16px;
+    margin: 0;
+    color: var(--light-grey);
+}
+
+.name{
+    font-size: 36px;
+    font-family: "Nighty";
+    line-height: 28px;
+    letter-spacing: 2px;
+    color: var(--white);
+    font-weight: 400;
+    margin: 0;
+    margin-bottom: 4px;
+}
+
+.badges{
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    margin-bottom: 4px;
+}
+
+.description{
+    text-align: left;
+    font-size: 16px;
+    font-family: "Inter";
+    font-weight: 400;
+    line-height: 20px;
+    margin: 0;
+    color: var(--light-grey);
+    margin-bottom: 4px;
+}
+
+.stats{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 4px;
 }
