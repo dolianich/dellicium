@@ -21,3 +21,11 @@
     margin: 0;
     margin-bottom: 4px; 
 }
+
+.donations{
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    margin-top: 12px;
+    flex: 1;
+}
