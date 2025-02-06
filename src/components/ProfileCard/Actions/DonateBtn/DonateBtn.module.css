@@ -1,0 +1,57 @@
+.tips{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex: 1;
+    background-image: url(../../../../assets/tipsBg.svg);
+    background-size: cover;
+    background-position: center center;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    padding: 4px;
+    transition: all ease-in-out 0.2s;
+}
+
+.iconContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--dark);
+    border-radius: 10px;
+    width: 36px;
+    height: 36px;
+    color: var(--white);
+}
+
+.text{
+    font-size: 30px;
+    font-family: "Nighty";
+    line-height: 24px;
+    letter-spacing: 1.2px;
+    color: var(--dark);
+    font-weight: 400;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 8px;
+    margin-bottom: 4px; 
+}
+
+.arrow{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: row;
+    width: calc(100% - 4px);
+    color: var(--light-grey);
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-right: 4px;
+}
+
+.tips:hover{
+    background-image: url(../../../../assets/tipsBg_hover.svg);
+    transition: all ease-in-out 0.2s;
+}
