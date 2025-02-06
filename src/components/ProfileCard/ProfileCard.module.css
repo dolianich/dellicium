@@ -8,13 +8,3 @@
     gap: 4px;
 }
 
-.actions{
-    width: 50%;
-    background-color: var(--dark);
-    display: flex;
-    border-radius: 38px;
-    padding: 24px;
-    margin-top: 4px;
-    margin-right: 4px;
-    margin-bottom: 4px;
-}

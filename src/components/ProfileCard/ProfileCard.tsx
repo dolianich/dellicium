@@ -1,5 +1,6 @@
 import styles from './ProfileCard.module.css';
 import ProfileInfo from './Profile/ProfileInfo';
+import Actions from './Actions/Actions';
 
 type Socials = {
   website?: string;
@@ -16,6 +17,9 @@ interface Props {
   level: number;
   xp: number;
   socials: Socials;
+  website?: string;
+  ig?: string;
+  x?: string;
 }
 
 const ProfileCard = ({
@@ -26,7 +30,10 @@ const ProfileCard = ({
   description,
   level,
   xp,
-  socials
+  socials,
+  website,
+  ig,
+  x,
 }: Props) => {
   return (
     <div className={styles.profile}>
@@ -39,8 +46,11 @@ const ProfileCard = ({
         level={level}
         xp={xp}
         socials={socials}
+        ig={ig}
+        website={website}
+        x={x}
       />
-      <div className={styles.actions}></div>
+      <Actions />
     </div>
   );
 };

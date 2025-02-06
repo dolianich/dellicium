@@ -7,9 +7,14 @@ interface Props {
   to: string;
 }
 
-const SocialButton = ({ type }: Props) => {
+const SocialButton = ({ type, to }: Props) => {
   return (
-    <Link to="/" target="_blank" rel="noopener noreferrer" className={styles.btn}>
+    <Link
+      to={to}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={styles.btn}
+    >
       {type === 'ig' ? (
         <InstagramLogo size={20} weight="regular" />
       ) : type === 'x' ? (
