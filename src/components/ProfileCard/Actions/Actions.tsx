@@ -1,6 +1,7 @@
 import styles from './Actions.module.css';
 import DonateBtn from './DonateBtn/DonateBtn';
 import ActionBtn from './ActionBtn/ActionBtn';
+import ActionBtnSm from './ActionBtnSm/ActionBtnSm';
 
 const Actions = () => {
   return (
@@ -9,7 +10,14 @@ const Actions = () => {
       <div className={styles.donations}>
         <DonateBtn type="tips" /> <DonateBtn type="gift" />
       </div>
-      <ActionBtn />
+      <div className={styles.actionsBtns}>
+        <ActionBtn title="custom" subtitle="custom content request" />{' '}
+        <ActionBtn title="mini-game" subtitle="earn more xp" />
+      </div>
+      <div className={styles.actionsSm}>
+        <ActionBtnSm type="Challenges" /> <ActionBtnSm type="Rewards" />{' '}
+        <ActionBtnSm type="About" />
+      </div>
     </div>
   );
 };

@@ -8,6 +8,7 @@
     background-color: var(--grey);
     cursor: pointer;
     border-radius: 14px;
+    flex: 1;
 }
 
 .textContainer{
