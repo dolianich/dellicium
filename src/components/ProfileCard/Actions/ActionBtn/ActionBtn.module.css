@@ -9,6 +9,7 @@
     cursor: pointer;
     border-radius: 14px;
     flex: 1;
+    transition: all ease-in-out 0.2s;
 }
 
 .textContainer{
@@ -49,4 +50,9 @@
     border-radius: 10px;
     width: 67px;
     height: 67px;
+}
+
+.wrapper:hover{
+    background-color: var(--middle-grey);
+    transition: all ease-in-out 0.2s;
 }
