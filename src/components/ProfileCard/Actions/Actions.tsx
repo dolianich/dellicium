@@ -1,5 +1,6 @@
 import styles from './Actions.module.css';
 import DonateBtn from './DonateBtn/DonateBtn';
+import ActionBtn from './ActionBtn/ActionBtn';
 
 const Actions = () => {
   return (
@@ -8,6 +9,7 @@ const Actions = () => {
       <div className={styles.donations}>
         <DonateBtn type="tips" /> <DonateBtn type="gift" />
       </div>
+      <ActionBtn />
     </div>
   );
 };

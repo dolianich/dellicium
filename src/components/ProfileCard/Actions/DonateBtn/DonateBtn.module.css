@@ -4,7 +4,7 @@
     align-items: flex-start;
     justify-content: space-between;
     flex: 1;
-    background-image: url(../../../../assets/tipsBg.svg);
+    background-image: url(../../../../assets/modelCardBg_static.svg);
     background-size: cover;
     background-position: center center;
     border: none;
@@ -20,7 +20,7 @@
     align-items: flex-start;
     justify-content: space-between;
     flex: 1;
-    background-image: url(../../../../assets/giftBg.svg);
+    background-image: url(../../../../assets/modelCardBg_static.svg);
     background-size: cover;
     background-position: center center;
     border: none;
@@ -46,7 +46,7 @@
     font-family: "Nighty";
     line-height: 24px;
     letter-spacing: 1.2px;
-    color: var(--dark);
+    color: var(--white);
     font-weight: 400;
     margin-top: 0;
     margin-right: 0;
@@ -68,11 +68,11 @@
 }
 
 .tips:hover{
-    background-image: url(../../../../assets/tipsBg_hover.svg);
+    background-image: url(../../../../assets/modelCardBg_hover.svg);
     transition: all ease-in-out 0.2s;
 }
 
 .gift:hover{
-    background-image: url(../../../../assets/giftBg_hover.svg);
+    background-image: url(../../../../assets/modelCardBg_hover.svg);
     transition: all ease-in-out 0.2s;
 }
