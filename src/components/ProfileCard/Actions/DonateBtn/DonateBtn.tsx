@@ -16,7 +16,7 @@ const DonateBtn = ({ type }: Props) => {
         )}
       </div>
       <h3 className={styles.text}>
-        {type === 'tips' ? 'send tips' : 'nft gift'}
+        {type === 'tips' ? 'Send Tips' : 'NFT Gift'}
       </h3>
       <div className={styles.arrow}>
         <CaretRight size={20} />

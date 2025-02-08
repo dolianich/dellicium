@@ -23,21 +23,36 @@
     margin-bottom: 4px; 
 }
 
-.donations{
+.section{
     display: flex;
     flex-direction: row;
+    gap: 8px;
+    height: 100%;
+}
+
+.secondary{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+}
+
+.donations{
+    display: flex;
+    flex-direction: column;
     gap: 8px;
     flex: 1;
 }
 
 .actionsBtns{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 8px;
+    flex: 1;
 }
 
 .actionsSm{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 8px;
 }
