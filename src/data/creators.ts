@@ -1,13 +1,20 @@
-import camilaHarperAvatar from '../storage/@camilaharper.png'
+import bellavibes from '../storage/bellavibes.jpg';
+import elenathestar from '../storage/elenathestar.jpg';
+import ethanedge from '../storage/ethanedge.jpg';
+import liamthebold from '../storage/liamthebold.jpg';
+import lucaslights from '../storage/lucaslights.jpg';
+import miainmotion from '../storage/miainmotion.jpg';
+import noahontheego from '../storage/noahonthego.jpg';
+import sophiaspark from '../storage/sophiaspark.jpg'
 
 const creators = [
     {
       id: 1,
-      username: '@camilaharper',
-      name: 'Camila Harper',
-      bio: 'Description text',
+      username: '@elenathestar',
+      name: 'Elena Martinez',
+      bio: 'Description text Description text Description text Description text',
       tags: ['verified', 'new', 'top'],
-      avatar: camilaHarperAvatar,
+      avatar: elenathestar,
       level: 1,
       xp: 10,
       socials: {
@@ -19,11 +26,11 @@ const creators = [
 
     {
       id: 2,
-      username: '@camilaharpers',
-      name: 'Camila Harper',
+      username: '@liamthebold',
+      name: 'Liam Connor',
       bio: 'Description text',
       tags: ['verified', 'new'],
-      avatar: camilaHarperAvatar,
+      avatar: liamthebold,
       level: 1,
       xp: 10,
       socials: {
@@ -35,11 +42,11 @@ const creators = [
 
     {
       id: 3,
-      username: '@camilaharpera',
-      name: 'Camila Harper',
+      username: '@sophiaspark',
+      name: 'Sophia Patel',
       bio: 'Description text',
       tags: ['verified', 'new', 'top'],
-      avatar: camilaHarperAvatar,
+      avatar: sophiaspark,
       level: 1,
       xp: 10,
       socials: {
@@ -51,11 +58,11 @@ const creators = [
 
     {
       id: 4,
-      username: '@camilaharperd',
-      name: 'Camila Harper',
+      username: '@noahonthego',
+      name: 'Noah Thompson',
       bio: 'Description text',
       tags: ['verified', 'new', 'top'],
-      avatar: camilaHarperAvatar,
+      avatar: noahontheego,
       level: 1,
       xp: 10,
       socials: {
@@ -67,11 +74,11 @@ const creators = [
 
     {
       id: 5,
-      username: '@camilaharperf',
-      name: 'Camila Harper',
+      username: '@bellavibes',
+      name: 'Isabella Kim',
       bio: 'Description text',
       tags: ['verified', 'new', 'top'],
-      avatar: camilaHarperAvatar,
+      avatar: bellavibes,
       level: 1,
       xp: 10,
       socials: {
@@ -83,11 +90,11 @@ const creators = [
     
     {
       id: 6,
-      username: '@camilaharperg',
-      name: 'Camila Harper',
+      username: '@ethanedge',
+      name: 'Ethan Nguyen',
       bio: 'Description text',
       tags: ['verified', 'new', 'top'],
-      avatar: camilaHarperAvatar,
+      avatar: ethanedge,
       level: 10,
       xp: 150000,
       socials: {
@@ -99,11 +106,11 @@ const creators = [
 
     {
       id: 7,
-      username: '@camilaharperh',
-      name: 'Camila Harper',
+      username: '@miainmotion',
+      name: 'Mia Johnson',
       bio: 'Description text',
       tags: ['verified', 'new', 'top'],
-      avatar: camilaHarperAvatar,
+      avatar: miainmotion,
       level: 21,
       xp: 10,
       socials: {
@@ -115,11 +122,11 @@ const creators = [
 
     {
       id: 8,
-      username: '@camilaharperr',
-      name: 'Camila Harper',
+      username: '@lucaslights',
+      name: 'Lucas Garcia',
       bio: 'Description text',
       tags: ['verified', 'new', 'top'],
-      avatar: camilaHarperAvatar,
+      avatar: lucaslights,
       level: 1,
       xp: 10,
       socials: {

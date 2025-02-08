@@ -1,14 +1,16 @@
 import styles from './Avatar.module.css';
 
-interface Props{
-    size?: 'small' | 'big',
-    img?: string
+interface Props {
+  size?: 'small' | 'big';
+  img?: string;
 }
 
-const Avatar = ({size, img}: Props) => {
+const Avatar = ({ size, img }: Props) => {
   return (
-    <img src={img} alt="avatar" className={size === 'small' ? styles.small : styles.big}/>
-  )
-}
+    <div className={size === 'small' ? styles.avatarSmall : styles.avatarBig}>
+      <img src={img} alt="avatar" className={styles.img} />
+    </div>
+  );
+};
 
-export default Avatar
+export default Avatar;
