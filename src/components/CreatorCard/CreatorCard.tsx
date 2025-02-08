@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import styles from './ModelCard.module.css';
+import styles from './CreatorCard.module.css';
 import Badge from '../Badge/Badge';
 import Avatar from '../Avatar/Avatar';
 import Stats from '../Stats/Stats';
@@ -17,7 +17,7 @@ interface Props {
   username: string;
 }
 
-const ModelCard = ({
+const CreatorCard = ({
   link,
   name,
   description,
@@ -50,4 +50,4 @@ const ModelCard = ({
   );
 };
 
-export default ModelCard;
+export default CreatorCard;

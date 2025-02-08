@@ -18,7 +18,7 @@ const navButtons = [
     link: '/notifications',
     size: 20,
   },
-  { id: 3, text: 'Models', icon: UsersThree, link: '/models', size: 20 },
+  { id: 3, text: 'Creators', icon: UsersThree, link: '/creators', size: 20 },
   { id: 4, text: 'Market', icon: Storefront, link: '/market', size: 20 },
   { id: 5, text: 'Assets', icon: Toolbox, link: '/assets', size: 20 },
 ];

@@ -8,10 +8,10 @@ import {
 import DiscoverPage from './pages/DiscoverPage';
 import AssetsPage from './pages/AssetsPage';
 import MarketPage from './pages/MarketPage';
-import ModelsPage from './pages/ModelsPage';
+import CreatorsPage from './pages/CreatorsPage';
 import NotificationsPage from './pages/NotificationsPage';
 import NotFoundPage from './pages/NotFoundPage';
-import ModelPage from './pages/ModelPage';
+import CreatorPage from './pages/CreatorPage';
 
 function App() {
   return (
@@ -23,9 +23,9 @@ function App() {
         <Route path="*" Component={NotFoundPage} />
         <Route path="/assets" Component={AssetsPage} />
         <Route path="/market" Component={MarketPage} />
-        <Route path="/models" Component={ModelsPage} />
+        <Route path="/creators" Component={CreatorsPage} />
         <Route path="/notifications" Component={NotificationsPage} />
-        <Route path="/models/:modelId" Component={ModelPage} />
+        <Route path="/creators/:creatorId" Component={CreatorPage} />
       </Routes>
     </Router>
   );

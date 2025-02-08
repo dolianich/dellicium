@@ -1,6 +1,6 @@
 import camilaHarperAvatar from '../storage/@camilaharper.png'
 
-const models = [
+const creators = [
     {
       id: 1,
       username: '@camilaharper',
@@ -132,4 +132,4 @@ const models = [
     
   ];
 
-  export default models
+  export default creators
