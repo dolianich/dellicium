@@ -7,13 +7,14 @@
     background-color: var(--grey);
     border-radius: 42px;
     min-width: 350px;
+    min-height: 392px;
     flex: 1;
 }
 
 .container{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     flex-direction: column;
     gap: 6px;
     width: calc(100% - 48px);
