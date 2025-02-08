@@ -5,6 +5,7 @@
     padding: 4px;
     align-items: flex-start;
     justify-content: space-between;
+    gap: 8px;
     background-color: var(--grey);
     cursor: pointer;
     border-radius: 14px;
