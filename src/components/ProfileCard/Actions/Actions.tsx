@@ -13,8 +13,16 @@ const Actions = () => {
         </div>
         <div className={styles.secondary}>
           <div className={styles.actionsBtns}>
-            <ActionBtn title="Custom" subtitle="custom content request" />{' '}
-            <ActionBtn title="Mini-Game" subtitle="level up your creator" />
+            <ActionBtn
+              title="Custom"
+              subtitle="custom content request"
+              type="custom"
+            />{' '}
+            <ActionBtn
+              title="Mini-Game"
+              subtitle="level up your creator"
+              type="game"
+            />
           </div>
           <div className={styles.actionsSm}>
             <ActionBtnSm type="Challenges" /> <ActionBtnSm type="Rewards" />
