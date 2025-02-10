@@ -6,8 +6,10 @@
     border-radius: 14px;
     padding: 12px;
     color: var(--light-grey);
+    transition: all ease-in-out 0.2s;
 }
 
 .btn:hover{
     color: var(--white);
+    transition: all ease-in-out 0.2s;
 }

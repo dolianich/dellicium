@@ -15,10 +15,11 @@ const DonateBtn = ({ type }: Props) => {
           <Gift size={20} weight="regular" />
         )}
       </div>
-      <h3 className={styles.text}>
-        {type === 'tips' ? 'Send Tips' : 'NFT Gift'}
-      </h3>
+
       <div className={styles.arrow}>
+        <h3 className={styles.text}>
+          {type === 'tips' ? 'Send Tips' : 'NFT Gift'}
+        </h3>
         <CaretRight size={20} />
       </div>
     </button>
