@@ -6,6 +6,7 @@ import SocialButton from '../../SocialButton/SocialButton';
 import Button from '../../Button/Button';
 import { formatPoints } from '../../../utils/formatPoints';
 import { getOrdinalSuffix } from '../../../utils/ordinalSuffix';
+import { Info,  UserCirclePlus } from '@phosphor-icons/react';
 
 type Socials = {
   website?: string;
@@ -61,7 +62,10 @@ const ProfileInfo = ({
         <Stats value={getOrdinalSuffix(level)} subtitle="level" type="left" />
         <Stats value={formatPoints(xp)} subtitle="xp" type="left" />
       </div>
-      <Button text="Adopt" />
+      <div className={styles.bottomSection}>
+        <Button title="Adopt Creator"><UserCirclePlus size={20} weight='fill'/> Adopt Creator</Button>
+        <Button title="More" variant='secondary'><Info size={20} weight='regular'/>More</Button>
+      </div>
     </div>
   );
 };
