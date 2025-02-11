@@ -7,6 +7,7 @@ import Button from '../../Button/Button';
 import { formatPoints } from '../../../utils/formatPoints';
 import { getOrdinalSuffix } from '../../../utils/ordinalSuffix';
 import { Info,  UserCirclePlus } from '@phosphor-icons/react';
+import { useState } from 'react';
 
 type Socials = {
   website?: string;
@@ -40,6 +41,7 @@ const ProfileInfo = ({
   ig,
   x,
 }: Props) => {
+  const [adopted, setAdopted] = useState('false')
   return (
     <div className={styles.wrapper}>
       <div className={styles.top}>
@@ -63,7 +65,7 @@ const ProfileInfo = ({
         <Stats value={formatPoints(xp)} subtitle="xp" type="left" />
       </div>
       <div className={styles.bottomSection}>
-        <Button title="Adopt Creator"><UserCirclePlus size={20} weight='fill'/> Adopt Creator</Button>
+        <Button onClick={() => console.log("adopted")} title="Adopt Creator"><UserCirclePlus size={20} weight='fill'/> Adopt Creator</Button>
         <Button title="More" variant='secondary'><Info size={20} weight='regular'/>More</Button>
       </div>
     </div>
