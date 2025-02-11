@@ -1,6 +1,7 @@
 import styles from './ProfileCard.module.css';
 import ProfileInfo from './Profile/ProfileInfo';
 import Actions from './Actions/Actions';
+import { useState } from 'react';
 
 type Socials = {
   website?: string;
@@ -35,6 +36,12 @@ const ProfileCard = ({
   ig,
   x,
 }: Props) => {
+  const [progress, setProgress] = useState(0);
+
+  const increaseProgress = () => {
+    setProgress((prevProgress) => Math.min(prevProgress + 10, 100));
+  };
+
   return (
     <div className={styles.profile}>
       <ProfileInfo
@@ -49,8 +56,9 @@ const ProfileCard = ({
         ig={ig}
         website={website}
         x={x}
+        progress={progress}
       />
-      <Actions />
+      <Actions tips={increaseProgress} gift={increaseProgress} />
     </div>
   );
 };

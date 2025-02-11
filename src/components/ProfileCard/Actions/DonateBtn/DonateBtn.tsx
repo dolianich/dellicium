@@ -3,11 +3,15 @@ import { Coins, CaretRight, Gift } from '@phosphor-icons/react';
 
 interface Props {
   type: string;
+  onClick: () => void;
 }
 
-const DonateBtn = ({ type }: Props) => {
+const DonateBtn = ({ type, onClick }: Props) => {
   return (
-    <button className={type === 'tips' ? styles.tips : styles.gift}>
+    <button
+      onClick={onClick}
+      className={type === 'tips' ? styles.tips : styles.gift}
+    >
       <div className={styles.iconContainer}>
         {type === 'tips' ? (
           <Coins size={20} weight="regular" />
