@@ -1,12 +1,23 @@
 import styles from './Indicator.module.css';
-import { Heart } from '@phosphor-icons/react';
+import { Diamond, Pentagon, Hexagon } from '@phosphor-icons/react';
 
-const Indicator = () => {
-  return (
-    <div className={styles.container}>
-      <Heart size={20} weight='fill' color='#BBFCDC'/>
-    </div>
-  )
+interface Props {
+  type?: string;
+  color?: string;
 }
 
-export default Indicator
+const Indicator = ({ type, color }: Props) => {
+  return (
+    <div className={styles.container}>
+      {type === 'diamond' ? (
+        <Diamond size={20} weight="fill" color={color}/>
+      ) : type === 'pentagon' ? (
+        <Pentagon size={20} weight="fill" color={color}/>
+      ) : (
+        <Hexagon size={20} weight="fill" color={color}/>
+      )}
+    </div>
+  );
+};
+
+export default Indicator;

@@ -9,7 +9,7 @@
     margin-top: 4px;
     margin-left: 4px;
     margin-bottom: 4px;
-    gap: 8px;
+    gap: 12px;
 }
 
 .main{
@@ -24,7 +24,10 @@
     font-family: "Inter";
     font-weight: 400;
     line-height: 16px;
-    margin: 0;
+    margin-top: 6px;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
     color: var(--light-grey);
 }
 
@@ -59,7 +62,10 @@
     font-family: "Inter";
     font-weight: 400;
     line-height: 20px;
-    margin: 0;
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 6px;
     color: var(--light-grey);
 }
 
@@ -98,7 +104,14 @@
 .mainSection{
     display: flex;
     flex-direction: row;
-    gap: 8px;
+    gap: 24px;
     align-items: flex-start;
     justify-content: space-between;
+    width: 100%;;
+}
+
+.achievements{
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
 }

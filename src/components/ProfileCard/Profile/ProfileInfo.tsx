@@ -8,6 +8,8 @@ import { formatPoints } from '../../../utils/formatPoints';
 import { getOrdinalSuffix } from '../../../utils/ordinalSuffix';
 import { UserCirclePlus } from '@phosphor-icons/react';
 import ProgressBar from '../ProgressBar/ProgressBar';
+import MoreBtn from '../MoreBtn/MoreBtn';
+import Indicator from '../ProgressBar/Indicator/Indicator';
 
 type Socials = {
   website?: string;
@@ -50,34 +52,40 @@ const ProfileInfo = ({
   return (
     <div className={styles.wrapper}>
       <div className={styles.mainSection}>
-      <div className={styles.main}>
-        <div className={styles.top}>
-          <Avatar size="big" img={avatar} />
-          <div className={styles.badgesAndStats}>
-            <div className={styles.badges}>
-              {tags?.map((tag) => (
-                <Badge key={tag} type={tag} />
-              ))}
-            </div>
-            <div className={styles.stats}>
-              <Stats
-                value={getOrdinalSuffix(level)}
-                subtitle="level"
-                type="left"
-              />
-              <Stats value={formatPoints(xp)} subtitle="xp" type="left" />
+        <div className={styles.main}>
+          <div className={styles.top}>
+            <Avatar size="big" img={avatar} />
+            <div className={styles.badgesAndStats}>
+              <div className={styles.badges}>
+                {tags?.map((tag) => (
+                  <Badge key={tag} type={tag} />
+                ))}
+              </div>
+              <div className={styles.stats}>
+                <Stats
+                  value={getOrdinalSuffix(level)}
+                  subtitle="level"
+                  type="left"
+                />
+                <Stats value={formatPoints(xp)} subtitle="xp" type="left" />
+              </div>
             </div>
           </div>
+          <p className={styles.username}>{username}</p>
+          <h2 className={styles.name}>{name.toLowerCase()}</h2>
+          <p className={styles.description}>{description.toLowerCase()}</p>
+          <div className={styles.achievements}>
+            <Indicator type="diamond" color={adopted ? '#BBFCDC' : '#6E6E6E'} />{' '}
+            <Indicator type="pentagon" color="#6E6E6E" />{' '}
+            <Indicator color="#6E6E6E" />
+          </div>
         </div>
-        <p className={styles.username}>{username}</p>
-        <h2 className={styles.name}>{name.toLowerCase()}</h2>
-        <p className={styles.description}>{description.toLowerCase()}</p>
-      </div>
-      <div className={styles.socials}>
-        {socials.website && <SocialButton to={website!} />}
-        {socials.x && <SocialButton to={x!} type="x" />}
-        {socials.ig && <SocialButton to={ig!} type="ig" />}
-      </div>
+        <div className={styles.socials}>
+          {socials.website && <SocialButton to={website!} />}
+          {socials.x && <SocialButton to={x!} type="x" />}
+          {socials.ig && <SocialButton to={ig!} type="ig" />}
+          <MoreBtn />
+        </div>
       </div>
       <div className={styles.bottomSection}>
         {adopted ? (

@@ -1,0 +1,17 @@
+.btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--grey);
+    border-radius: 14px;
+    padding: 12px;
+    color: var(--light-grey);
+    border: none;
+    transition: all ease-in-out 0.2s;
+    cursor: pointer;
+}
+
+.btn:hover{
+    color: var(--white);
+    transition: all ease-in-out 0.2s;
+}

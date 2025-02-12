@@ -25,10 +25,11 @@
 .wrapper{
     display: flex;
     background-color: var(--grey);
-    height: 14px;
+    height: 8px;
     padding: 4px;
     border-radius: 100px;
-    width: calc(100% - 8px);;
+    width: calc(100% - 8px);
+    margin-top: 6px;
 }
 
 .progressBar{
