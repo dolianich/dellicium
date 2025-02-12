@@ -2,6 +2,7 @@ import styles from './ProfileCard.module.css';
 import ProfileInfo from './Profile/ProfileInfo';
 import Actions from './Actions/Actions';
 import { useState } from 'react';
+import Hide from './Actions/Hide/Hide';
 
 type Socials = {
   website?: string;
@@ -38,6 +39,8 @@ const ProfileCard = ({
 }: Props) => {
   const [progress, setProgress] = useState(0);
 
+  const [adopted, setAdopted] = useState(false);
+
   const increaseProgress = () => {
     setProgress((prevProgress) => Math.min(prevProgress + 10, 100));
   };
@@ -57,8 +60,17 @@ const ProfileCard = ({
         website={website}
         x={x}
         progress={progress}
+        adopt={() => {
+          setAdopted(!adopted);
+          console.log(adopted);
+        }}
+        adopted={adopted}
       />
-      <Actions tips={increaseProgress} gift={increaseProgress} />
+      {adopted ? (
+        <Actions tips={increaseProgress} gift={increaseProgress} />
+      ) : (
+        <Hide />
+      )}
     </div>
   );
 };

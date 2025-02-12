@@ -12,7 +12,7 @@ const ProgressBar = ({ progress }: Props) => {
     <div className={styles.container}>
       <Indicator />
       <div className={styles.progress}>
-        <p className={styles.xp}>10xp</p>
+        <p className={styles.xp}>{progress}xp</p>
         <div className={styles.wrapper}>
           <div
             className={styles.progressBar}

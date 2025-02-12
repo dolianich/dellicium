@@ -3,12 +3,13 @@ import DonateBtn from './DonateBtn/DonateBtn';
 import ActionBtn from './ActionBtn/ActionBtn';
 import ActionBtnSm from './ActionBtnSm/ActionBtnSm';
 
+
 interface Props {
   tips: () => void;
   gift: () => void;
 }
 
-const Actions = ({ tips, gift }: Props) => {
+const Actions = ({ tips, gift,}: Props) => {
   return (
     <div className={styles.wrapper}>
       <h2 className={styles.actions}>actions</h2>

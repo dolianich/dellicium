@@ -7,7 +7,6 @@ import Button from '../../Button/Button';
 import { formatPoints } from '../../../utils/formatPoints';
 import { getOrdinalSuffix } from '../../../utils/ordinalSuffix';
 import { Info, UserCirclePlus } from '@phosphor-icons/react';
-import { useState } from 'react';
 import ProgressBar from '../ProgressBar/ProgressBar';
 
 type Socials = {
@@ -28,6 +27,8 @@ interface Props {
   ig?: string;
   x?: string;
   progress: number;
+  adopted: boolean;
+  adopt: () => void;
 }
 
 const ProfileInfo = ({
@@ -43,8 +44,9 @@ const ProfileInfo = ({
   ig,
   x,
   progress,
+  adopted,
+  adopt
 }: Props) => {
-  const [adopted, setAdopted] = useState('false');
   return (
     <div className={styles.wrapper}>
       <div className={styles.top}>
@@ -68,22 +70,22 @@ const ProfileInfo = ({
         <Stats value={formatPoints(xp)} subtitle="xp" type="left" />
       </div>
       <div className={styles.bottomSection}>
-        {adopted === 'true' ? (
+        {adopted ? (
           <>
             <ProgressBar progress={progress} />
           </>
         ) : (
-          <Button onClick={() => setAdopted('true')} title="Adopt Creator">
+          <Button onClick={adopt} title="Adopt Creator">
             <UserCirclePlus size={20} weight="fill" /> Adopt Creator
           </Button>
         )}
         <Button
           title="More"
-          variant={adopted === 'true' ? 'onlyIcon' : 'secondary'}
-          onClick={() => setAdopted('false')}
+          variant={adopted ? 'onlyIcon' : 'secondary'}
+          onClick={adopt}
         >
           <Info size={20} weight="regular" />
-          {adopted === 'true' ? '' : 'More'}
+          {adopted ? '' : 'More'}
         </Button>
       </div>
     </div>
