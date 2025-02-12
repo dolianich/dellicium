@@ -6,7 +6,7 @@ import SocialButton from '../../SocialButton/SocialButton';
 import Button from '../../Button/Button';
 import { formatPoints } from '../../../utils/formatPoints';
 import { getOrdinalSuffix } from '../../../utils/ordinalSuffix';
-import { Info, UserCirclePlus } from '@phosphor-icons/react';
+import { UserCirclePlus } from '@phosphor-icons/react';
 import ProgressBar from '../ProgressBar/ProgressBar';
 
 type Socials = {
@@ -45,29 +45,39 @@ const ProfileInfo = ({
   x,
   progress,
   adopted,
-  adopt
+  adopt,
 }: Props) => {
   return (
     <div className={styles.wrapper}>
-      <div className={styles.top}>
-        <Avatar size="big" img={avatar} />
-        <div className={styles.socials}>
-          {socials.website && <SocialButton to={website!} />}
-          {socials.x && <SocialButton to={x!} type="x" />}
-          {socials.ig && <SocialButton to={ig!} type="ig" />}
+      <div className={styles.mainSection}>
+      <div className={styles.main}>
+        <div className={styles.top}>
+          <Avatar size="big" img={avatar} />
+          <div className={styles.badgesAndStats}>
+            <div className={styles.badges}>
+              {tags?.map((tag) => (
+                <Badge key={tag} type={tag} />
+              ))}
+            </div>
+            <div className={styles.stats}>
+              <Stats
+                value={getOrdinalSuffix(level)}
+                subtitle="level"
+                type="left"
+              />
+              <Stats value={formatPoints(xp)} subtitle="xp" type="left" />
+            </div>
+          </div>
         </div>
+        <p className={styles.username}>{username}</p>
+        <h2 className={styles.name}>{name.toLowerCase()}</h2>
+        <p className={styles.description}>{description.toLowerCase()}</p>
       </div>
-      <p className={styles.username}>{username}</p>
-      <h2 className={styles.name}>{name.toLowerCase()}</h2>
-      <div className={styles.badges}>
-        {tags?.map((tag) => (
-          <Badge key={tag} type={tag} />
-        ))}
+      <div className={styles.socials}>
+        {socials.website && <SocialButton to={website!} />}
+        {socials.x && <SocialButton to={x!} type="x" />}
+        {socials.ig && <SocialButton to={ig!} type="ig" />}
       </div>
-      <p className={styles.description}>{description.toLowerCase()}</p>
-      <div className={styles.stats}>
-        <Stats value={getOrdinalSuffix(level)} subtitle="level" type="left" />
-        <Stats value={formatPoints(xp)} subtitle="xp" type="left" />
       </div>
       <div className={styles.bottomSection}>
         {adopted ? (
@@ -79,14 +89,6 @@ const ProfileInfo = ({
             <UserCirclePlus size={20} weight="fill" /> Adopt Creator
           </Button>
         )}
-        <Button
-          title="More"
-          variant={adopted ? 'onlyIcon' : 'secondary'}
-          onClick={adopt}
-        >
-          <Info size={20} weight="regular" />
-          {adopted ? '' : 'More'}
-        </Button>
       </div>
     </div>
   );
