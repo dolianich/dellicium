@@ -38,7 +38,7 @@ const ProfileCard = ({
   x,
 }: Props) => {
   const [points, setPoints] = useState(0);
-  const [userLevel, setUserLevel] = useState(1);
+  const [userLevel, setUserLevel] = useState(0);
 
   const pointsRequiredForNextLevel = userLevel === 1 ? 50 : userLevel * 100;
 
@@ -75,9 +75,11 @@ const ProfileCard = ({
         progress={progress}
         adopt={() => {
           setAdopted(!adopted);
+          setUserLevel(1);
         }}
         adopted={adopted}
         userXp={points}
+        userLevel={userLevel}
       />
       {adopted ? (
         <Actions tips={() => addPoints(10)} gift={() => addPoints(20)} />

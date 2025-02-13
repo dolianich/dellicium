@@ -32,6 +32,7 @@ interface Props {
   adopted: boolean;
   adopt: () => void;
   userXp?: number;
+  userLevel: number;
 }
 
 const ProfileInfo = ({
@@ -49,7 +50,8 @@ const ProfileInfo = ({
   progress,
   adopted,
   adopt,
-  userXp
+  userXp,
+  userLevel,
 }: Props) => {
   return (
     <div className={styles.wrapper}>
@@ -77,9 +79,15 @@ const ProfileInfo = ({
           <h2 className={styles.name}>{name.toLowerCase()}</h2>
           <p className={styles.description}>{description.toLowerCase()}</p>
           <div className={styles.achievements}>
-            <Indicator type="diamond" color={adopted ? '#BBFCDC' : '#6E6E6E'} />{' '}
-            <Indicator type="pentagon" color="#6E6E6E" />{' '}
-            <Indicator color="#6E6E6E" />
+            <Indicator
+              type="diamond"
+              color={userLevel >= 1 ? '#BBFCDC' : '#6E6E6E'}
+            />{' '}
+            <Indicator
+              type="pentagon"
+              color={userLevel >= 2 ? '#FCF9BB' : '#6E6E6E'}
+            />{' '}
+            <Indicator color={userLevel >= 3 ? '#E6BBFC' : '#6E6E6E'} />
           </div>
         </div>
         <div className={styles.socials}>
@@ -92,7 +100,7 @@ const ProfileInfo = ({
       <div className={styles.bottomSection}>
         {adopted ? (
           <>
-            <ProgressBar progress={progress} userXp={userXp}/>
+            <ProgressBar progress={progress} userXp={userXp} userLevel={userLevel}/>
           </>
         ) : (
           <Button onClick={adopt} title="Adopt Creator">
