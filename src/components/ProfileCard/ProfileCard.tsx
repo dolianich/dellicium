@@ -48,8 +48,9 @@ const ProfileCard = ({
     const newPoints = points + xpAmount;
 
     if (newPoints >= pointsRequiredForNextLevel) {
+      const excessPoints = newPoints - pointsRequiredForNextLevel;
       setUserLevel((prevLevel) => prevLevel + 1);
-      setPoints(0);
+      setPoints(excessPoints);
     } else {
       setPoints(newPoints);
     }
@@ -78,7 +79,11 @@ const ProfileCard = ({
         adopted={adopted}
         userXp={points}
       />
-      {adopted ? <Actions tips={() => addPoints(10)} gift={() => addPoints(20)} /> : <Hide />}
+      {adopted ? (
+        <Actions tips={() => addPoints(10)} gift={() => addPoints(20)} />
+      ) : (
+        <Hide />
+      )}
     </div>
   );
 };
