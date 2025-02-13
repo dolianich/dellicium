@@ -37,13 +37,27 @@ const ProfileCard = ({
   ig,
   x,
 }: Props) => {
-  const [progress, setProgress] = useState(0);
+  const [points, setPoints] = useState(0);
+  const [userLevel, setUserLevel] = useState(1);
+
+  const pointsRequiredForNextLevel = userLevel === 1 ? 50 : userLevel * 100;
+
+  const progress = (points/pointsRequiredForNextLevel) * 100;
+
+  const addPoints = () => {
+    const newPoints = points + 5;
+
+    if(newPoints >= pointsRequiredForNextLevel){
+        setUserLevel((prevLevel) => prevLevel + 1);
+        setPoints(0);
+    } else {
+        setPoints(newPoints);
+    }
+  }
 
   const [adopted, setAdopted] = useState(false);
 
-  const increaseProgress = () => {
-    setProgress((prevProgress) => Math.min(prevProgress + 10, 100));
-  };
+ 
 
   return (
     <div className={styles.profile}>
@@ -67,7 +81,7 @@ const ProfileCard = ({
         adopted={adopted}
       />
       {adopted ? (
-        <Actions tips={increaseProgress} gift={increaseProgress} />
+        <Actions tips={addPoints} gift={addPoints} />
       ) : (
         <Hide />
       )}
