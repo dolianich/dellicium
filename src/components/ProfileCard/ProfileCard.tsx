@@ -42,22 +42,20 @@ const ProfileCard = ({
 
   const pointsRequiredForNextLevel = userLevel === 1 ? 50 : userLevel * 100;
 
-  const progress = (points/pointsRequiredForNextLevel) * 100;
+  const progress = (points / pointsRequiredForNextLevel) * 100;
 
   const addPoints = () => {
     const newPoints = points + 5;
 
-    if(newPoints >= pointsRequiredForNextLevel){
-        setUserLevel((prevLevel) => prevLevel + 1);
-        setPoints(0);
+    if (newPoints >= pointsRequiredForNextLevel) {
+      setUserLevel((prevLevel) => prevLevel + 1);
+      setPoints(0);
     } else {
-        setPoints(newPoints);
+      setPoints(newPoints);
     }
-  }
+  };
 
   const [adopted, setAdopted] = useState(false);
-
- 
 
   return (
     <div className={styles.profile}>
@@ -76,15 +74,11 @@ const ProfileCard = ({
         progress={progress}
         adopt={() => {
           setAdopted(!adopted);
-          console.log(adopted);
         }}
         adopted={adopted}
+        userXp={points}
       />
-      {adopted ? (
-        <Actions tips={addPoints} gift={addPoints} />
-      ) : (
-        <Hide />
-      )}
+      {adopted ? <Actions tips={addPoints} gift={addPoints} /> : <Hide />}
     </div>
   );
 };

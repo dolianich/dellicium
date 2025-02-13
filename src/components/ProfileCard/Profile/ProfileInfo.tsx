@@ -31,6 +31,7 @@ interface Props {
   progress: number;
   adopted: boolean;
   adopt: () => void;
+  userXp?: number;
 }
 
 const ProfileInfo = ({
@@ -48,6 +49,7 @@ const ProfileInfo = ({
   progress,
   adopted,
   adopt,
+  userXp
 }: Props) => {
   return (
     <div className={styles.wrapper}>
@@ -90,7 +92,7 @@ const ProfileInfo = ({
       <div className={styles.bottomSection}>
         {adopted ? (
           <>
-            <ProgressBar progress={progress} />
+            <ProgressBar progress={progress} userXp={userXp}/>
           </>
         ) : (
           <Button onClick={adopt} title="Adopt Creator">
