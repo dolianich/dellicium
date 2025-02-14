@@ -80,14 +80,17 @@ const ProfileInfo = ({
           <p className={styles.description}>{description.toLowerCase()}</p>
           <div className={styles.achievements}>
             <Indicator
-              type="diamond"
-              color={userLevel >= 1 ? '#BBFCDC' : '#6E6E6E'}
+              state={userLevel >= 1 ? 'active' : 'static'}
+              type="first"
             />{' '}
             <Indicator
-              type="pentagon"
-              color={userLevel >= 2 ? '#FCF9BB' : '#6E6E6E'}
+              state={userLevel >= 2 ? 'active' : 'static'}
+              type="second"
             />{' '}
-            <Indicator color={userLevel >= 3 ? '#E6BBFC' : '#6E6E6E'} />
+            <Indicator
+              state={userLevel >= 3 ? 'active' : 'static'}
+              type="third"
+            />
           </div>
         </div>
         <div className={styles.socials}>
@@ -100,7 +103,11 @@ const ProfileInfo = ({
       <div className={styles.bottomSection}>
         {adopted ? (
           <>
-            <ProgressBar progress={progress} userXp={userXp} userLevel={userLevel}/>
+            <ProgressBar
+              progress={progress}
+              userXp={userXp}
+              userLevel={userLevel}
+            />
           </>
         ) : (
           <Button onClick={adopt} title="Adopt Creator">

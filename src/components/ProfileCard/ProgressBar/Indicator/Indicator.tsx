@@ -1,21 +1,15 @@
 import styles from './Indicator.module.css';
-import { Diamond, Pentagon, Hexagon } from '@phosphor-icons/react';
+import IndicatorContent from './IndicatorContent/IndicatorContent';
 
 interface Props {
-  type?: string;
-  color?: string;
+  state: string;
+  type: string;
 }
 
-const Indicator = ({ type, color }: Props) => {
+const Indicator = ({ state, type }: Props) => {
   return (
     <div className={styles.container}>
-      {type === 'diamond' ? (
-        <Diamond size={20} weight="fill" color={color}/>
-      ) : type === 'pentagon' ? (
-        <Pentagon size={20} weight="fill" color={color}/>
-      ) : (
-        <Hexagon size={20} weight="fill" color={color}/>
-      )}
+      <IndicatorContent state={state} type={type} />
     </div>
   );
 };
