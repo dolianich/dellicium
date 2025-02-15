@@ -156,6 +156,7 @@
     }
     .main{
         align-items: center;
+        width: 100%;
     }
     .top{
         flex-direction: column;

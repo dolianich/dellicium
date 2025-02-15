@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom';
 import styles from './styles/Page.module.css';
 import creators from '../data/creators';
 import ProfileCard from '../components/ProfileCard/ProfileCard';
+import useScrollToTop from '../utils/useScrollToTop';
 
 type Socials = {
   website?: string;
@@ -14,6 +15,8 @@ const CreatorPage = () => {
   const creator = creators.find(
     (creator) => creator.username === params.creatorId
   );
+
+  useScrollToTop();
 
   return (
     <div className={styles.main}>
