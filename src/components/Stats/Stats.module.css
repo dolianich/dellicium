@@ -35,3 +35,15 @@
     margin: 0;
     color: var(--light-grey);
 }
+
+@media (max-width: 500px){
+    .statsLeft{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 0px;
+        text-align: center;
+        width: 48px;
+    }
+}

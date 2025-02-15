@@ -12,6 +12,14 @@
     gap: 12px;
 }
 
+.username2{
+    display: none;
+}
+
+.divider{
+    display: none;
+}
+
 .main{
     display: flex;
     flex-direction: column;
@@ -52,6 +60,7 @@
 .badges{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     gap: 8px;
     margin-bottom: 4px;
 }
@@ -114,4 +123,83 @@
     display: flex;
     flex-direction: row;
     gap: 8px;
+}
+
+.topSection{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+@media (max-width: 1260px){
+    .wrapper{
+        width: calc(100% - 56px);
+        margin-right: 4px;
+        margin-bottom: 0px;
+        gap: 16px;
+    }
+}
+
+@media (max-width: 500px){
+    .wrapper{
+        justify-content: center;
+    }
+    .mainSection{
+        flex-direction: column-reverse;
+        gap: 16px;
+    }
+    .socials{
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+    }
+    .main{
+        align-items: center;
+    }
+    .top{
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+    .badgesAndStats{
+        align-items: center;
+        gap: 12px;
+    }
+    .divider{
+        display: flex;
+        width: 1px;
+        height: 20px;
+        background-color: var(--light-grey);
+        border-radius: 100px;
+    }
+    .stats{
+        align-items: center;
+    }
+    .description{
+        text-align: center;
+        margin-bottom: 4px;
+    }
+    .name{
+        text-align: center;
+    }
+    .badges{
+        justify-content: center;
+        margin-bottom: 4;
+    }
+    .username{
+        display: none;
+    }
+    .username2{
+        display: flex;
+        font-size: 12px;
+        font-family: "Inter";
+        font-weight: 400;
+        line-height: 16px;
+        margin: 0;
+        color: var(--light-grey);
+    }
+    .topSection{
+        align-items: center;
+    }
 }

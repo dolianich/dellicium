@@ -6,7 +6,7 @@
     text-decoration: none;
     background-color: var(--grey);
     border-radius: 42px;
-    min-width: 350px;
+    min-width: 360px;
     min-height: 392px;
     flex: 1;
 }
@@ -90,4 +90,10 @@
     line-height: 16px;
     margin: 0;
     color: var(--light-grey);
+}
+
+@media (max-width: 800px){
+    .wrapper{
+        min-width: 300px;
+    }
 }

@@ -56,3 +56,11 @@
     flex-direction: column;
     gap: 8px;
 }
+
+@media (max-width: 1260px){
+    .wrapper{
+        width: calc(100% - 56px);
+        margin-left: 4px;
+        margin-top: 0px;
+    }
+}

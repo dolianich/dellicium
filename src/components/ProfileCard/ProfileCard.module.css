@@ -8,3 +8,8 @@
     gap: 4px;
 }
 
+@media (max-width: 1260px){
+    .profile{
+        flex-direction: column;
+    }
+}

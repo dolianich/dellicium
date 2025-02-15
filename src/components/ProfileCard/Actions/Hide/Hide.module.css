@@ -24,6 +24,9 @@
 }
 
 .text{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     font-size: 16px;
     font-family: "Inter";
@@ -31,4 +34,16 @@
     line-height: 20px;
     margin: 0;
     color: var(--light-grey);
+}
+
+@media (max-width: 1260px){
+    .wrapper{
+        width: calc(100% - 56px);
+        margin-left: 4px;
+        margin-bottom: 4px;
+        margin-top: 0;
+    }
+    .text{
+        height: 150px;
+    }
 }

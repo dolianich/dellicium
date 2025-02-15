@@ -57,25 +57,30 @@ const ProfileInfo = ({
     <div className={styles.wrapper}>
       <div className={styles.mainSection}>
         <div className={styles.main}>
-          <div className={styles.top}>
-            <Avatar size="big" img={avatar} />
-            <div className={styles.badgesAndStats}>
-              <div className={styles.badges}>
-                {tags?.map((tag) => (
-                  <Badge key={tag} type={tag} />
-                ))}
-              </div>
-              <div className={styles.stats}>
-                <Stats
-                  value={getOrdinalSuffix(level)}
-                  subtitle="level"
-                  type="left"
-                />
-                <Stats value={formatPoints(xp)} subtitle="xp" type="left" />
+          <div className={styles.topSection}>
+            <div className={styles.top}>
+              <Avatar size="big" img={avatar} />
+              <p className={styles.username2}>{username}</p>
+              <div className={styles.badgesAndStats}>
+                <div className={styles.badges}>
+                  {tags?.map((tag) => (
+                    <Badge key={tag} type={tag} />
+                  ))}
+                </div>
+                <div className={styles.stats}>
+                  <Stats
+                    value={getOrdinalSuffix(level)}
+                    subtitle="level"
+                    type="left"
+                  />
+                  <div className={styles.divider} />
+                  <Stats value={formatPoints(xp)} subtitle="xp" type="left" />
+                </div>
               </div>
             </div>
+            <p className={styles.username}>{username}</p>
           </div>
-          <p className={styles.username}>{username}</p>
+
           <h2 className={styles.name}>{name.toLowerCase()}</h2>
           <p className={styles.description}>{description.toLowerCase()}</p>
           <div className={styles.achievements}>
