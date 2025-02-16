@@ -24,7 +24,7 @@
     gap: 24px;
 }
 
-@media (max-width: 700px) { 
+@media (max-width: 760px) { 
     .sideBar{
         display: none;
     }

@@ -17,7 +17,10 @@ const ActionBtn = ({ title, subtitle, type }: Props) => {
         <p className={styles.subtitle}>{subtitle}</p>
       </div>
       <div className={styles.animContainer}>
-      <Lottie animationData={type === 'game' ? game : custom} className={styles.animation}/>
+        <Lottie
+          animationData={type === 'game' ? game : custom}
+          className={styles.animation}
+        />
       </div>
     </button>
   );
