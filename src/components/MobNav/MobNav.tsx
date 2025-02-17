@@ -13,11 +13,11 @@ const MobNav = () => {
     <>
       <div className={styles.wrapper}>
         <Logo onClick={openMenu} />
-        {isOpen ? <CloseBtn onClick={openMenu} /> : <></>}
+        <CloseBtn onClick={openMenu} state={isOpen} />
       </div>
       <div className={isOpen ? styles.menuContainer : styles.menuClosed}>
         <div className={styles.nav}>
-          <Navigation onClick={openMenu}/>
+          <Navigation onClick={openMenu} />
         </div>
       </div>
     </>

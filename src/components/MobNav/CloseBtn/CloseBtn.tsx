@@ -1,14 +1,15 @@
 import styles from './CloseBtn.module.css';
-import { X } from '@phosphor-icons/react';
+import { X, List } from '@phosphor-icons/react';
 
 interface Props {
   onClick: () => void;
+  state: boolean;
 }
 
-const CloseBtn = ({ onClick }: Props) => {
+const CloseBtn = ({ onClick, state }: Props) => {
   return (
     <button onClick={onClick} className={styles.btn}>
-      <X size={20} weight="regular" />
+      {state ? <X size={20} weight="regular" /> : <List size={20} weight='regular'/>}
     </button>
   );
 };
