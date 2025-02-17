@@ -1,0 +1,12 @@
+.wrapper{
+    display: none;
+}
+
+@media (max-width: 760px){
+    .wrapper{
+        display: flex;
+        justify-content: flex-start;
+        position: fixed;
+        z-index: 2;
+    }
+}

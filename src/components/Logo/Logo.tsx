@@ -2,16 +2,21 @@ import logo from '../../assets/logo.json';
 import styles from './Logo.module.css';
 import Lottie from 'lottie-react';
 
-const Logo = () => {
+interface Props {
+  type?: string;
+  onClick?: () => void;
+}
+
+const Logo = ({ type, onClick }: Props) => {
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.wrapper} onClick={onClick}>
       <div className={styles.logo}>
         <Lottie
           animationData={logo}
           style={{ width: '50px', height: '50px' }}
         />
       </div>
-      <p>delicium</p>
+      {type === 'full' ? <p>delicium</p> : <></>}
     </div>
   );
 };

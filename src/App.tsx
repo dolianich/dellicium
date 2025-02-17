@@ -12,11 +12,13 @@ import CreatorsPage from './pages/CreatorsPage';
 import NotificationsPage from './pages/NotificationsPage';
 import NotFoundPage from './pages/NotFoundPage';
 import CreatorPage from './pages/CreatorPage';
+import MobNav from './components/MobNav/MobNav';
 
 function App() {
   return (
     <Router>
       <SideBar />
+      <MobNav />
       <Routes>
         <Route path="/" element={<Navigate to="discover" />} />
         <Route path="/discover" Component={DiscoverPage} />

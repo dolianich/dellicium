@@ -7,7 +7,7 @@ const SideBar = () => {
   return (
     <div className={styles.sideBar}>
       <div className={styles.main}>
-        <Logo />
+        <Logo type="full" />
         <Navigation />
       </div>
       <Profile />
