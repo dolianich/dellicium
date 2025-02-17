@@ -8,7 +8,7 @@ const SideBar = () => {
     <div className={styles.sideBar}>
       <div className={styles.main}>
         <Logo type="full" />
-        <Navigation />
+        <Navigation direction="horizontal" />
       </div>
       <Profile />
     </div>

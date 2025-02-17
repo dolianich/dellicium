@@ -17,7 +17,7 @@ const MobNav = () => {
       </div>
       <div className={isOpen ? styles.menuContainer : styles.menuClosed}>
         <div className={styles.nav}>
-          <Navigation onClick={openMenu} />
+          <Navigation onClick={openMenu} direction='vertical'/>
         </div>
       </div>
     </>

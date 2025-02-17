@@ -11,6 +11,7 @@ import { useLocation } from 'react-router-dom';
 
 interface Props{
     onClick?: () => void;
+    direction?: string;
 }
 
 const navButtons = [
@@ -27,7 +28,7 @@ const navButtons = [
   { id: 5, text: 'Assets', icon: Toolbox, link: '/assets', size: 20 },
 ];
 
-const Navigation = ({onClick}: Props) => {
+const Navigation = ({onClick, direction}: Props) => {
   const location = useLocation();
 
   return (
@@ -40,6 +41,7 @@ const Navigation = ({onClick}: Props) => {
           icon={button.icon}
           size={button.size}
           weight={location.pathname.includes(button.link) ? 'fill' : 'regular'}
+          direction={direction}
         />
       ))}
     </ul>
