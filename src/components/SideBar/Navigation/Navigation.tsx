@@ -9,6 +9,10 @@ import {
 import NavButton from './NavButton/NavButton';
 import { useLocation } from 'react-router-dom';
 
+interface Props{
+    onClick?: () => void;
+}
+
 const navButtons = [
   { id: 1, text: 'Discover', icon: SquaresFour, link: '/discover', size: 20 },
   {
@@ -23,11 +27,11 @@ const navButtons = [
   { id: 5, text: 'Assets', icon: Toolbox, link: '/assets', size: 20 },
 ];
 
-const Navigation = () => {
+const Navigation = ({onClick}: Props) => {
   const location = useLocation();
 
   return (
-    <ul className={styles.navUl}>
+    <ul className={styles.navUl} onClick={onClick}>
       {navButtons.map((button) => (
         <NavButton
           key={button.id}
