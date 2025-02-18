@@ -19,6 +19,14 @@
   --middle-grey: #313333;
   --dark-grey: #1E1F1F;
   --white: #F4F6FE;
+  --pink: #FCBBC7;
+  --dark-purple: #BCBBFC;
+  --middle-purple: #F6BBFC;
+  --light-green: #BBFCEC;
+  --green: #C8FCBB;
+  --peach: #FCD2BB;
+  --middle-yellow: #FCE4BB;
+  --secondary-purple: #E6BBFC;
 }
 
 #root{

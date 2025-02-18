@@ -1,4 +1,17 @@
-import { SealCheck, Fire, Medal } from '@phosphor-icons/react';
+import {
+  Pepper,
+  MusicNotes,
+  BoundingBox,
+  Sparkle,
+  Joystick,
+  GraduationCap,
+  PersonSimpleRun,
+  ShirtFolded,
+  PaintBrush,
+  Dress,
+  Code,
+  Camera
+} from '@phosphor-icons/react';
 import styles from './Badge.module.css';
 
 interface Props {
@@ -9,14 +22,34 @@ const Badge = ({ type }: Props) => {
   const badgeType = type ? styles[type] : styles.verified;
   return (
     <div className={badgeType}>
-      {type === 'verified' ? (
-        <SealCheck size={16} weight="regular" />
-      ) : type === 'new' ? (
-        <Fire size={16} weight="regular" />
+      {type === 'nsfw' ? (
+        <Pepper size={16} weight="regular" />
+      ) : type === 'music' ? (
+        <MusicNotes size={16} weight="regular" />
+      ) : type === 'design' ? (
+        <BoundingBox size={16} weight="regular" />
+      ) : type === 'ai' ? (
+        <Sparkle size={16} weight="regular" />
+      ) : type === 'gaming' ? (
+        <Joystick size={16} weight="regular" />
+      ) : type === 'education' ? (
+        <GraduationCap size={16} weight="regular" />
+      ) : type === 'fitness' ? (
+        <PersonSimpleRun size={16} weight="regular" />
+      ) : type === 'business' ? (
+        <ShirtFolded size={16} weight="regular" />
+      ) : type === 'art' ? (
+        <PaintBrush size={16} weight="regular" />
+      ) : type === 'fashion' ? (
+        <Dress size={16} weight="regular" />
+      ) : type === 'technology' ? (
+        <Code size={16} weight="regular" />
+      ) : type === 'content' ? (
+        <Camera size={16} weight="regular" />
       ) : (
-        <Medal size={16} weight="regular" />
+        <></>
       )}
-      <p>{type}</p>
+      <p className={styles.text}>{type}</p>
     </div>
   );
 };

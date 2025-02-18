@@ -1,4 +1,34 @@
-.verified{
+.nsfw{
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    align-items: center;
+    justify-content: center;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 8px;
+    padding-right: 8px;
+    background-color: var(--pink);
+    border-radius: 10px;
+    color: var(--dark);
+}
+
+.music{
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    align-items: center;
+    justify-content: center;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 8px;
+    padding-right: 8px;
+    background-color: var(--dark-purple);
+    border-radius: 10px;
+    color: var(--dark);
+}
+
+.design{
     display: flex;
     flex-direction: row;
     gap: 4px;
@@ -13,7 +43,82 @@
     color: var(--dark);
 }
 
-.new{
+.ai{
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    align-items: center;
+    justify-content: center;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 8px;
+    padding-right: 8px;
+    background-color: var(--white);
+    border-radius: 10px;
+    color: var(--dark);
+}
+
+.gaming{
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    align-items: center;
+    justify-content: center;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 8px;
+    padding-right: 8px;
+    background-color: var(--primary);
+    border-radius: 10px;
+    color: var(--dark);
+}
+
+.education{
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    align-items: center;
+    justify-content: center;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 8px;
+    padding-right: 8px;
+    background-color: var(--middle-purple);
+    border-radius: 10px;
+    color: var(--dark);
+}
+
+.fitness{
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    align-items: center;
+    justify-content: center;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 8px;
+    padding-right: 8px;
+    background-color: var(--secondary-purple);
+    border-radius: 10px;
+    color: var(--dark);
+}
+
+.business{
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    align-items: center;
+    justify-content: center;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 8px;
+    padding-right: 8px;
+    background-color: var(--light-green);
+    border-radius: 10px;
+    color: var(--dark);
+}
+
+.art{
     display: flex;
     flex-direction: row;
     gap: 4px;
@@ -28,7 +133,7 @@
     color: var(--dark);
 }
 
-.top{
+.fashion{
     display: flex;
     flex-direction: row;
     gap: 4px;
@@ -38,12 +143,42 @@
     padding-bottom: 6px;
     padding-left: 8px;
     padding-right: 8px;
-    background-color: var(--purple);
+    background-color: var(--green);
     border-radius: 10px;
     color: var(--dark);
 }
 
-.verified p{
+.technology{
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    align-items: center;
+    justify-content: center;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 8px;
+    padding-right: 8px;
+    background-color: var(--peach);
+    border-radius: 10px;
+    color: var(--dark);
+}
+
+.content{
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    align-items: center;
+    justify-content: center;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 8px;
+    padding-right: 8px;
+    background-color: var(--middle-yellow);
+    border-radius: 10px;
+    color: var(--dark);
+}
+
+.text{
     text-align: center;
     font-size: 12px;
     font-family: "Inter";
@@ -53,22 +188,3 @@
     margin: 0;
 }
 
-.new p{
-    text-align: center;
-    font-size: 12px;
-    font-family: "Inter";
-    line-height: 16px;
-    color: var(--dark);
-    font-weight: 400;
-    margin: 0;
-}
-
-.top p{
-    text-align: center;
-    font-size: 12px;
-    font-family: "Inter";
-    line-height: 16px;
-    color: var(--dark);
-    font-weight: 400;
-    margin: 0;
-}
