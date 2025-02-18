@@ -8,9 +8,9 @@
     padding-bottom: 6px;
     padding-left: 8px;
     padding-right: 8px;
-    background-color: var(--pink);
+    background-color: var(--light-grey);
     border-radius: 10px;
-    color: var(--dark);
+    color: var(--white);
 }
 
 .music{
@@ -23,9 +23,9 @@
     padding-bottom: 6px;
     padding-left: 8px;
     padding-right: 8px;
-    background-color: var(--dark-purple);
+    background-color: var(--light-grey);
     border-radius: 10px;
-    color: var(--dark);
+    color: var(--white);
 }
 
 .design{
@@ -38,9 +38,9 @@
     padding-bottom: 6px;
     padding-left: 8px;
     padding-right: 8px;
-    background-color: var(--blue);
+    background-color: var(--light-grey);
     border-radius: 10px;
-    color: var(--dark);
+    color: var(--white);
 }
 
 .ai{
@@ -53,9 +53,9 @@
     padding-bottom: 6px;
     padding-left: 8px;
     padding-right: 8px;
-    background-color: var(--white);
+    background-color: var(--light-grey);
     border-radius: 10px;
-    color: var(--dark);
+    color: var(--white);
 }
 
 .gaming{
@@ -68,9 +68,9 @@
     padding-bottom: 6px;
     padding-left: 8px;
     padding-right: 8px;
-    background-color: var(--primary);
+    background-color: var(--light-grey);
     border-radius: 10px;
-    color: var(--dark);
+    color: var(--white);
 }
 
 .education{
@@ -83,9 +83,9 @@
     padding-bottom: 6px;
     padding-left: 8px;
     padding-right: 8px;
-    background-color: var(--middle-purple);
+    background-color: var(--light-grey);
     border-radius: 10px;
-    color: var(--dark);
+    color: var(--white);
 }
 
 .fitness{
@@ -98,9 +98,9 @@
     padding-bottom: 6px;
     padding-left: 8px;
     padding-right: 8px;
-    background-color: var(--secondary-purple);
+    background-color: var(--light-grey);
     border-radius: 10px;
-    color: var(--dark);
+    color: var(--white);
 }
 
 .business{
@@ -113,9 +113,9 @@
     padding-bottom: 6px;
     padding-left: 8px;
     padding-right: 8px;
-    background-color: var(--light-green);
+    background-color: var(--light-grey);
     border-radius: 10px;
-    color: var(--dark);
+    color: var(--white);
 }
 
 .art{
@@ -128,9 +128,9 @@
     padding-bottom: 6px;
     padding-left: 8px;
     padding-right: 8px;
-    background-color: var(--yellow);
+    background-color: var(--light-grey);
     border-radius: 10px;
-    color: var(--dark);
+    color: var(--white);
 }
 
 .fashion{
@@ -143,9 +143,9 @@
     padding-bottom: 6px;
     padding-left: 8px;
     padding-right: 8px;
-    background-color: var(--green);
+    background-color: var(--light-grey);
     border-radius: 10px;
-    color: var(--dark);
+    color: var(--white);
 }
 
 .technology{
@@ -158,9 +158,9 @@
     padding-bottom: 6px;
     padding-left: 8px;
     padding-right: 8px;
-    background-color: var(--peach);
+    background-color: var(--light-grey);
     border-radius: 10px;
-    color: var(--dark);
+    color: var(--white);
 }
 
 .content{
@@ -173,9 +173,9 @@
     padding-bottom: 6px;
     padding-left: 8px;
     padding-right: 8px;
-    background-color: var(--middle-yellow);
+    background-color: var(--light-grey);
     border-radius: 10px;
-    color: var(--dark);
+    color: var(--white);
 }
 
 .text{
@@ -183,7 +183,7 @@
     font-size: 12px;
     font-family: "Inter";
     line-height: 16px;
-    color: var(--dark);
+    color: var(--white);
     font-weight: 400;
     margin: 0;
 }
