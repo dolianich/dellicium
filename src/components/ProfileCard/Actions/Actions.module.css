@@ -69,21 +69,28 @@
 }
 
 .arrowIcon{
-    color: var(--white);
-    transition: all ease-in-out 0.2s;
+    display: none;
 }
 
-.arrowIconDown{
-    color: var(--white);
-    transform: rotate(-180deg);
-    transition: all ease-in-out 0.2s;
-}
+
 
 @media (max-width: 1260px){
     .wrapper{
         width: calc(100% - 56px);
         margin-left: 4px;
         margin-top: 0px;
+    }
+    .arrowIcon{
+        display: flex;
+        color: var(--white);
+        margin-right: 8px;
+        transition: all ease-in-out 0.2s;
+    }
+    .arrowIconDown{
+        color: var(--white);
+        transform: rotate(-180deg);
+        margin-right: 8px;
+        transition: all ease-in-out 0.2s;
     }
 }
 

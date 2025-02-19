@@ -15,15 +15,13 @@ const Actions = ({ tips, gift }: Props) => {
 
   return (
     <div className={styles.wrapper}>
-      <div
-        className={styles.actionsDropdown}
-        onClick={() => setVisible(!visible)}
-      >
+      <div className={styles.actionsDropdown}>
         <h2 className={styles.actions}>actions</h2>
         <CaretUp
           size={20}
           weight="regular"
           className={visible ? styles.arrowIcon : styles.arrowIconDown}
+          onClick={() => setVisible(!visible)}
         />
       </div>
       <div className={visible ? styles.section : styles.sectionHide}>
