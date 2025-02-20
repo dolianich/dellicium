@@ -19,8 +19,7 @@
 .defaultVertical{
     display: flex;
     flex-direction: column;
-    padding-top: 48px;
-    padding-bottom: 48px;
+    flex: 1;
     padding-left: 0px;
     padding-right: 0px;
     text-decoration: none;
@@ -42,8 +41,7 @@
 .selectedVertical{
     display: flex;
     flex-direction: column;
-    padding-top: 48px;
-    padding-bottom: 48px;
+    flex: 1;
     padding-left: 0px;
     padding-right: 0px;
     text-decoration: none;
