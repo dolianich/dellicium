@@ -24,7 +24,7 @@
 
 .wrapper{
     display: flex;
-    background-color: var(--grey);
+    background-color: var(--dark);
     height: 8px;
     padding: 4px;
     border-radius: 100px;

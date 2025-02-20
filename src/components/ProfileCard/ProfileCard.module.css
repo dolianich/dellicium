@@ -3,9 +3,8 @@
     align-items: flex-start;
     flex-direction: row;
     width: 100%;
-    background-color: var(--grey);
-    border-radius: 42px;
-    gap: 4px;
+    border-radius: 32px;
+    gap: 8px;
 }
 
 @media (max-width: 1260px){
