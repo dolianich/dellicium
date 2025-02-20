@@ -1,14 +1,11 @@
 .wrapper{
     display: flex;
     flex-direction: column;
-    background-color: var(--dark);
+    background-color: var(--grey);
     flex: 1;
-    margin-top: 4px;
-    margin-bottom: 4px;
-    margin-right: 4px;
     padding: 24px;
-    border-radius: 38px;
-    height: calc(100% - 56px);
+    border-radius: 32px;
+    height: calc(100% - 48px);
     gap: 8px;
 }
 
@@ -20,7 +17,7 @@
     background-image: url(../../../../assets/creatorCardBg.svg);
     background-size: cover;
     background-position: center center;
-    border-radius: 14px;
+    border-radius: 8px;
 }
 
 .text{
@@ -38,10 +35,7 @@
 
 @media (max-width: 1260px){
     .wrapper{
-        width: calc(100% - 56px);
-        margin-left: 4px;
-        margin-bottom: 4px;
-        margin-top: 0;
+        width: calc(100% - 48px);
     }
     .text{
         height: 150px;

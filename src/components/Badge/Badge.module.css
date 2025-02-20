@@ -1,4 +1,4 @@
-.nsfw{
+.badge{
     display: flex;
     flex-direction: row;
     gap: 4px;
@@ -9,7 +9,7 @@
     padding-left: 8px;
     padding-right: 8px;
     background-color: var(--light-grey);
-    border-radius: 10px;
+    border-radius: 4px;
     color: var(--white);
 }
 

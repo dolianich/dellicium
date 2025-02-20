@@ -19,9 +19,8 @@ interface Props {
 }
 
 const Badge = ({ type }: Props) => {
-  const badgeType = type ? styles[type] : styles.verified;
   return (
-    <div className={badgeType}>
+    <div className={styles.badge}>
       {type === 'nsfw' ? (
         <Pepper size={16} weight="regular" />
       ) : type === 'music' ? (
