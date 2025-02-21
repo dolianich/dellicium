@@ -73,8 +73,7 @@
 
 @media (max-width: 1260px){
     .wrapper{
-        width: calc(100% - 56px);
-        margin-left: 4px;
+        width: calc(100% - 48px);
         margin-top: 0px;
     }
     .arrowIcon{

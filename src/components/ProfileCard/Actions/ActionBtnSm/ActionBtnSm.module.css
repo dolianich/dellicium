@@ -47,6 +47,6 @@
 }
 
 .btn:hover{
-    background-color: var(--middle-grey);
+    background-color: var(--dark-grey);
     transition: all ease-in-out 0.2s;
 }
