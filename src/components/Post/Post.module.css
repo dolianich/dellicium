@@ -7,6 +7,18 @@
     background-color: var(--grey);
 }
 
+.media{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.content{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
 .elements{
     position: absolute;
     top: 0;

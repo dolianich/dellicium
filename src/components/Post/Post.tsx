@@ -1,6 +1,7 @@
 import styles from './Post.module.css';
 import Avatar from '../Avatar/Avatar';
 import { Heart, ChatCircle, ImageSquare } from '@phosphor-icons/react';
+import img from '../../assets/post_test_img.png';
 
 interface Props {
   avatar?: string;
@@ -10,7 +11,9 @@ interface Props {
 const Post = ({ avatar, name }: Props) => {
   return (
     <div className={styles.container}>
-      <div className={styles.media}></div>
+      <div className={styles.media}>
+        <img src={img} alt="post" className={styles.content}/>
+      </div>
       <div className={styles.elements}>
         <div className={styles.top}>
           <Avatar size="xs" img={avatar} />

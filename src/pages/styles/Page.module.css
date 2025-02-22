@@ -22,7 +22,7 @@
     width: 100%;
 }
 
-@media (max-width: 1260px){
+@media (max-width: 1300px){
     .posts{
         grid-template-columns: repeat(auto-fit, minmax(300px, 0.5fr));   
     }
@@ -30,7 +30,7 @@
 
 @media (max-width: 900px){
     .posts{
-        grid-template-columns: repeat(auto-fit, minmax(200px, 0.5fr));   
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));   
     }
 }
 
