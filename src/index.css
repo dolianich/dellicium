@@ -27,6 +27,7 @@
   --peach: #FCD2BB;
   --middle-yellow: #FCE4BB;
   --secondary-purple: #E6BBFC;
+  --dark-tr: rgba(17, 17, 17, 0.8);
 }
 
 #root{

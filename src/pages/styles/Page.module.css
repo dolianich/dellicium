@@ -17,7 +17,7 @@
 
 .posts{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 0.25fr)); 
+    grid-template-columns: repeat(auto-fit, minmax(236px, 0.25fr)); 
     gap: 8px; 
     width: 100%;
 }

@@ -35,37 +35,10 @@ const CreatorPage = () => {
         x={creator?.socials.x}
       />
       <div className={styles.posts}>
-        <Post avatar={creator?.avatar}></Post>
-        <Post avatar={creator?.avatar}></Post>
-        <Post avatar={creator?.avatar}></Post>
-        <Post avatar={creator?.avatar}></Post>
-        <Post avatar={creator?.avatar}></Post>
-        <Post avatar={creator?.avatar}></Post>
-        <Post avatar={creator?.avatar}></Post>
-        <Post avatar={creator?.avatar}></Post>
-        <Post avatar={creator?.avatar}></Post>
-        <Post avatar={creator?.avatar}></Post>
-        <Post avatar={creator?.avatar}></Post>
-        <Post avatar={creator?.avatar}></Post>
-        <Post avatar={creator?.avatar}></Post>
-        <Post avatar={creator?.avatar}></Post>
-        <Post avatar={creator?.avatar}></Post>
-        <Post avatar={creator?.avatar}></Post>
-        <Post avatar={creator?.avatar}></Post>
-        <Post avatar={creator?.avatar}></Post>
-        <Post avatar={creator?.avatar}></Post>
-        <Post avatar={creator?.avatar}></Post>
-        <Post avatar={creator?.avatar}></Post>
-        <Post avatar={creator?.avatar}></Post>
-        <Post avatar={creator?.avatar}></Post>
-        <Post avatar={creator?.avatar}></Post>
-        <Post avatar={creator?.avatar}></Post>
-        <Post avatar={creator?.avatar}></Post>
-        <Post avatar={creator?.avatar}></Post>
-        <Post avatar={creator?.avatar}></Post>
-        <Post avatar={creator?.avatar}></Post>
-        <Post avatar={creator?.avatar}></Post>
-        <Post avatar={creator?.avatar}></Post>
+        <Post avatar={creator?.avatar} name={creator?.name}></Post>
+        <Post avatar={creator?.avatar} name={creator?.name}></Post>
+        <Post avatar={creator?.avatar} name={creator?.name}></Post>
+        <Post avatar={creator?.avatar} name={creator?.name}></Post>
       </div>
     </div>
   );
