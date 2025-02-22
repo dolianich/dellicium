@@ -4,9 +4,7 @@
     align-items: flex-start;
     justify-content: space-between;
     flex: 1;
-    background-image: url(../../../../assets/tipsBg.svg);
-    background-size: cover;
-    background-position: center center;
+    background-color: var(--dark);
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -20,9 +18,7 @@
     align-items: flex-start;
     justify-content: space-between;
     flex: 1;
-    background-image: url(../../../../assets/giftBg.svg);
-    background-size: cover;
-    background-position: center center;
+    background-color: var(--dark);
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -30,7 +26,7 @@
     transition: all ease-in-out 0.2s;
 }
 
-.iconContainer{
+.animContainer{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -46,13 +42,13 @@
     font-size: 14px;
     font-family: "Inter";
     line-height: 20px;
-    color: var(--dark);
+    color: var(--white);
     font-weight: 900;
     letter-spacing: 0%;
     margin-top: 0;
     margin-right: 0;
     margin-bottom: 0;
-    margin-left: 8px;
+    margin-left: 14px;
     margin-bottom: 0px; 
 }
 
@@ -68,24 +64,41 @@
     padding-right: 4px;
 }
 
+.animation{
+    width: 68px;
+    height: 68px;
+}
+
 .tips:hover{
-    background-image: url(../../../../assets/tipsBg_hover.svg);
     transition: all ease-in-out 0.2s;
 }
 
 .gift:hover{
-    background-image: url(../../../../assets/giftBg_hover.svg);
     transition: all ease-in-out 0.2s;
+}
+
+@media(max-width: 1260px){
+    .animation{
+        width: 60px;
+        height: 60px;
+        padding: 4px;
+    }
+
+    .text{
+        margin-left: 12px;
+    }
 }
 
 @media(max-width: 580px){
     .tips{
         flex-direction: row;
         width: 100%;
+        align-items: center;
     }
     .gift{
         flex-direction: row;
         width: 100%;
+        align-items: center;
     }
     .text{
         font-size: 14px;

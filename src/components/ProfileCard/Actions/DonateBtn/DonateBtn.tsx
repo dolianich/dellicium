@@ -1,5 +1,8 @@
 import styles from './DonateBtn.module.css';
-import { Coins, CaretRight, Gift } from '@phosphor-icons/react';
+import { CaretRight} from '@phosphor-icons/react';
+import Lottie from 'lottie-react';
+import tip from '../../../../assets/animations/tip_anim.json'
+import gift from '../../../../assets/animations/gift.json'
 
 interface Props {
   type: string;
@@ -12,12 +15,11 @@ const DonateBtn = ({ type, onClick }: Props) => {
       onClick={onClick}
       className={type === 'tips' ? styles.tips : styles.gift}
     >
-      <div className={styles.iconContainer}>
-        {type === 'tips' ? (
-          <Coins size={20} weight="regular" />
-        ) : (
-          <Gift size={20} weight="regular" />
-        )}
+      <div className={styles.animContainer}>
+      <Lottie
+          animationData={type === 'tips' ? tip : gift}
+          className={styles.animation}
+        />
       </div>
 
       <div className={styles.arrow}>
