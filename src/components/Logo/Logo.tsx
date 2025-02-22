@@ -10,10 +10,10 @@ interface Props {
 const Logo = ({ type, onClick }: Props) => {
   return (
     <div className={styles.wrapper} onClick={onClick}>
-      <div className={styles.logo}>
+      <div className={type === 'full' ? styles.logo : styles.logoS}>
         <Lottie
           animationData={logo}
-          style={{ width: '50px', height: '50px' }}
+          className={type === 'full' ? styles.animation : styles.animationS}
         />
       </div>
       {type === 'full' ? <p>delicium</p> : <></>}

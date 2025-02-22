@@ -42,12 +42,12 @@
 
 @media (max-width: 760px){
     .profile{
-        margin-top: 68px;
+        margin-top: 60px;
         height: calc(100% - 68px)
     }
 
     .cardsGrid{
-        margin-top: 68px;
+        margin-top: 60px;
         height: calc(100% - 68px);
     }
 }
