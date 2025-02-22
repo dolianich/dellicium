@@ -3,6 +3,7 @@ import styles from './styles/Page.module.css';
 import creators from '../data/creators';
 import ProfileCard from '../components/ProfileCard/ProfileCard';
 import useScrollToTop from '../utils/useScrollToTop';
+import Post from '../components/Post/Post';
 
 type Socials = {
   website?: string;
@@ -19,7 +20,7 @@ const CreatorPage = () => {
   useScrollToTop();
 
   return (
-    <div className={styles.main}>
+    <div className={styles.profile}>
       <ProfileCard
         avatar={creator?.avatar}
         username={creator?.username as string}
@@ -33,6 +34,39 @@ const CreatorPage = () => {
         ig={creator?.socials.ig}
         x={creator?.socials.x}
       />
+      <div className={styles.posts}>
+        <Post avatar={creator?.avatar}></Post>
+        <Post avatar={creator?.avatar}></Post>
+        <Post avatar={creator?.avatar}></Post>
+        <Post avatar={creator?.avatar}></Post>
+        <Post avatar={creator?.avatar}></Post>
+        <Post avatar={creator?.avatar}></Post>
+        <Post avatar={creator?.avatar}></Post>
+        <Post avatar={creator?.avatar}></Post>
+        <Post avatar={creator?.avatar}></Post>
+        <Post avatar={creator?.avatar}></Post>
+        <Post avatar={creator?.avatar}></Post>
+        <Post avatar={creator?.avatar}></Post>
+        <Post avatar={creator?.avatar}></Post>
+        <Post avatar={creator?.avatar}></Post>
+        <Post avatar={creator?.avatar}></Post>
+        <Post avatar={creator?.avatar}></Post>
+        <Post avatar={creator?.avatar}></Post>
+        <Post avatar={creator?.avatar}></Post>
+        <Post avatar={creator?.avatar}></Post>
+        <Post avatar={creator?.avatar}></Post>
+        <Post avatar={creator?.avatar}></Post>
+        <Post avatar={creator?.avatar}></Post>
+        <Post avatar={creator?.avatar}></Post>
+        <Post avatar={creator?.avatar}></Post>
+        <Post avatar={creator?.avatar}></Post>
+        <Post avatar={creator?.avatar}></Post>
+        <Post avatar={creator?.avatar}></Post>
+        <Post avatar={creator?.avatar}></Post>
+        <Post avatar={creator?.avatar}></Post>
+        <Post avatar={creator?.avatar}></Post>
+        <Post avatar={creator?.avatar}></Post>
+      </div>
     </div>
   );
 };
