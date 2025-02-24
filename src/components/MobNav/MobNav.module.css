@@ -15,7 +15,7 @@
         display: flex;
         justify-content: space-between;
         position: fixed;
-        z-index: 2;
+        z-index: 4;
         width: calc(100% - 32px);
         border-radius: 18px;
     }
@@ -27,7 +27,7 @@
         position: fixed;
         top: 0;
         left: 0;
-        z-index: 1;
+        z-index: 3;
         background-color: var(--dark);
         width: calc(100% + 32px);
         height: 100dvh;
