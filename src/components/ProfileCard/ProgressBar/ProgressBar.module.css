@@ -41,6 +41,6 @@
 @media (max-width: 500px){
     .progress{
         align-items: center;
-        gap: 4px;
+        gap: 8px;
     }
 }
