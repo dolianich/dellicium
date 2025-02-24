@@ -65,7 +65,7 @@
     align-items: center;
 }
 
-.arrowIcon{
+.icon{
     display: none;
 }
 
@@ -76,18 +76,12 @@
         width: calc(100% - 48px);
         margin-top: 0px;
     }
-    .arrowIcon{
+    .icon{
         display: flex;
-        color: var(--white);
+        color: var(--light-grey);
         margin-right: 8px;
-        transition: all ease-in-out 0.2s;
     }
-    .arrowIconDown{
-        color: var(--white);
-        transform: rotate(-180deg);
-        margin-right: 8px;
-        transition: all ease-in-out 0.2s;
-    }
+    
 }
 
 @media (max-width: 580px){

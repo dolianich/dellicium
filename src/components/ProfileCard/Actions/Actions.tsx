@@ -2,7 +2,7 @@ import styles from './Actions.module.css';
 import DonateBtn from './DonateBtn/DonateBtn';
 import ActionBtn from './ActionBtn/ActionBtn';
 import ActionBtnSm from './ActionBtnSm/ActionBtnSm';
-import { CaretUp } from '@phosphor-icons/react';
+import { Eye, EyeSlash } from '@phosphor-icons/react';
 import { useState } from 'react';
 
 interface Props {
@@ -17,12 +17,21 @@ const Actions = ({ tips, gift }: Props) => {
     <div className={styles.wrapper}>
       <div className={styles.actionsDropdown}>
         <h2 className={styles.actions}>actions</h2>
-        <CaretUp
-          size={20}
-          weight="regular"
-          className={visible ? styles.arrowIcon : styles.arrowIconDown}
-          onClick={() => setVisible(!visible)}
-        />
+        {visible ? (
+          <EyeSlash
+            size={20}
+            weight="regular"
+            className={styles.icon}
+            onClick={() => setVisible(!visible)}
+          />
+        ) : (
+          <Eye
+            size={20}
+            weight="regular"
+            className={styles.icon}
+            onClick={() => setVisible(!visible)}
+          />
+        )}
       </div>
       <div className={visible ? styles.section : styles.sectionHide}>
         <div className={styles.donations}>
