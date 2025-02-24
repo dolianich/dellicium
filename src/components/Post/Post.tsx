@@ -6,14 +6,22 @@ import img from '../../assets/post_test_img.png';
 interface Props {
   avatar?: string;
   name?: string;
+  userLevel: number;
+  requiredLevel: number;
 }
 
-const Post = ({ avatar, name }: Props) => {
+const Post = ({ avatar, name, userLevel, requiredLevel }: Props) => {
+
+  const isLocked = userLevel < requiredLevel;
+
   return (
     <div className={styles.container}>
       <div className={styles.media}>
         <img src={img} alt="post" className={styles.content}/>
       </div>
+
+      {isLocked &&  <div className={styles.postLock}>required level: {requiredLevel}</div>}
+
       <div className={styles.elements}>
         <div className={styles.top}>
           <Avatar size="xs" img={avatar} />

@@ -1,4 +1,5 @@
 import { useParams } from 'react-router-dom';
+import { useState } from 'react';
 import styles from './styles/Page.module.css';
 import creators from '../data/creators';
 import ProfileCard from '../components/ProfileCard/ProfileCard';
@@ -12,6 +13,25 @@ type Socials = {
 };
 
 const CreatorPage = () => {
+  const [points, setPoints] = useState(0);
+  const [userLevel, setUserLevel] = useState(0);
+  const [adopted, setAdopted] = useState(false);
+
+  const pointsRequiredForNextLevel = userLevel === 1 ? 50 : userLevel * 100;
+  const progress = (points / pointsRequiredForNextLevel) * 100;
+
+  const addPoints = (xpAmount: number) => {
+    const newPoints = points + xpAmount;
+
+    if (newPoints >= pointsRequiredForNextLevel) {
+      const excessPoints = newPoints - pointsRequiredForNextLevel;
+      setUserLevel((prevLevel) => prevLevel + 1);
+      setPoints(excessPoints);
+    } else {
+      setPoints(newPoints);
+    }
+  };
+
   const params = useParams<{ creatorId: string }>();
   const creator = creators.find(
     (creator) => creator.username === params.creatorId
@@ -33,6 +53,16 @@ const CreatorPage = () => {
         website={creator?.socials.website}
         ig={creator?.socials.ig}
         x={creator?.socials.x}
+        adopt={() => {
+          setAdopted(!adopted);
+          setUserLevel(1);
+        }}
+        progress={progress}
+        adopted={adopted}
+        userXp={points}
+        userLevel={userLevel}
+        tips={() => addPoints(10)}
+        gift={() => addPoints(20)}
       />
       <div className={styles.posts}>
         <Post avatar={creator?.avatar} name={creator?.name}></Post>

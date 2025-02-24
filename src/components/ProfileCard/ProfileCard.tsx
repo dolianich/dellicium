@@ -22,6 +22,13 @@ interface Props {
   website?: string;
   ig?: string;
   x?: string;
+  adopt: () => void;
+  progress: number;
+  adopted: boolean;
+  userXp: number;
+  userLevel: number;
+  tips: () => void;
+  gift: () => void;
 }
 
 const ProfileCard = ({
@@ -36,27 +43,14 @@ const ProfileCard = ({
   website,
   ig,
   x,
+  progress,
+  adopt,
+  adopted,
+  userXp,
+  userLevel,
+  tips,
+  gift
 }: Props) => {
-  const [points, setPoints] = useState(0);
-  const [userLevel, setUserLevel] = useState(0);
-
-  const pointsRequiredForNextLevel = userLevel === 1 ? 50 : userLevel * 100;
-
-  const progress = (points / pointsRequiredForNextLevel) * 100;
-
-  const addPoints = (xpAmount: number) => {
-    const newPoints = points + xpAmount;
-
-    if (newPoints >= pointsRequiredForNextLevel) {
-      const excessPoints = newPoints - pointsRequiredForNextLevel;
-      setUserLevel((prevLevel) => prevLevel + 1);
-      setPoints(excessPoints);
-    } else {
-      setPoints(newPoints);
-    }
-  };
-
-  const [adopted, setAdopted] = useState(false);
 
   return (
     <div className={styles.profile}>
@@ -73,16 +67,13 @@ const ProfileCard = ({
         website={website}
         x={x}
         progress={progress}
-        adopt={() => {
-          setAdopted(!adopted);
-          setUserLevel(1);
-        }}
+        adopt={adopt}
         adopted={adopted}
-        userXp={points}
+        userXp={userXp}
         userLevel={userLevel}
       />
       {adopted ? (
-        <Actions tips={() => addPoints(10)} gift={() => addPoints(20)} />
+        <Actions tips={tips} gift={gift} />
       ) : (
         <Hide />
       )}
