@@ -32,6 +32,8 @@ const CreatorPage = () => {
     }
   };
 
+  
+
   const params = useParams<{ creatorId: string }>();
   const creator = creators.find(
     (creator) => creator.username === params.creatorId
@@ -65,10 +67,14 @@ const CreatorPage = () => {
         gift={() => addPoints(20)}
       />
       <div className={styles.posts}>
-        <Post avatar={creator?.avatar} name={creator?.name}></Post>
-        <Post avatar={creator?.avatar} name={creator?.name}></Post>
-        <Post avatar={creator?.avatar} name={creator?.name}></Post>
-        <Post avatar={creator?.avatar} name={creator?.name}></Post>
+        <Post avatar={creator?.avatar} name={creator?.name} userLevel={userLevel} requiredLevel={0}></Post>
+        <Post avatar={creator?.avatar} name={creator?.name} userLevel={userLevel} requiredLevel={1}></Post>
+        <Post avatar={creator?.avatar} name={creator?.name} userLevel={userLevel} requiredLevel={2}></Post>
+        <Post avatar={creator?.avatar} name={creator?.name} userLevel={userLevel} requiredLevel={3}></Post>
+        <Post avatar={creator?.avatar} name={creator?.name} userLevel={userLevel} requiredLevel={0}></Post>
+        <Post avatar={creator?.avatar} name={creator?.name} userLevel={userLevel} requiredLevel={1}></Post>
+        <Post avatar={creator?.avatar} name={creator?.name} userLevel={userLevel} requiredLevel={2}></Post>
+        <Post avatar={creator?.avatar} name={creator?.name} userLevel={userLevel} requiredLevel={3}></Post>
       </div>
     </div>
   );

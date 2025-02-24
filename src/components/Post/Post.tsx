@@ -2,6 +2,7 @@ import styles from './Post.module.css';
 import Avatar from '../Avatar/Avatar';
 import { Heart, ChatCircle, ImageSquare } from '@phosphor-icons/react';
 import img from '../../assets/post_test_img.png';
+import Indicator from '../ProfileCard/ProgressBar/Indicator/Indicator';
 
 interface Props {
   avatar?: string;
@@ -11,16 +12,31 @@ interface Props {
 }
 
 const Post = ({ avatar, name, userLevel, requiredLevel }: Props) => {
-
   const isLocked = userLevel < requiredLevel;
 
   return (
     <div className={styles.container}>
-      <div className={styles.media}>
-        <img src={img} alt="post" className={styles.content}/>
+      <div className={`${styles.media} ${isLocked ? styles.mediaLocked : ''}`}>
+        <img src={img} alt="post" className={styles.content} />
       </div>
 
-      {isLocked &&  <div className={styles.postLock}>required level: {requiredLevel}</div>}
+      {isLocked && (
+        <div className={styles.postLock}>
+          <p className={styles.requiredText}>required level:</p>
+          <Indicator
+            state="active"
+            type={
+              requiredLevel === 1
+                ? 'first'
+                : requiredLevel === 2
+                ? 'second'
+                : requiredLevel === 3
+                ? 'third'
+                : ''
+            }
+          />
+        </div>
+      )}
 
       <div className={styles.elements}>
         <div className={styles.top}>
@@ -38,19 +54,19 @@ const Post = ({ avatar, name, userLevel, requiredLevel }: Props) => {
             </p>
           </div>
           <div className={styles.bottomLine}>
-          <div className={styles.stats}>
-            <div className={styles.stat}>
-              <Heart size={20} weight="regular" />
-              <p className={styles.number}>999</p>
+            <div className={styles.stats}>
+              <div className={styles.stat}>
+                <Heart size={20} weight="regular" />
+                <p className={styles.number}>999</p>
+              </div>
+              <div className={styles.stat}>
+                <ChatCircle size={20} weight="regular" />
+                <p className={styles.number}>999</p>
+              </div>
             </div>
-            <div className={styles.stat}>
-              <ChatCircle size={20} weight='regular'/>
-              <p className={styles.number}>999</p>
+            <div className={styles.iconContainer}>
+              <ImageSquare size={20} weight="regular" />
             </div>
-          </div>
-          <div className={styles.iconContainer}>
-            <ImageSquare size={20} weight='regular'/>
-          </div>
           </div>
         </div>
       </div>

@@ -13,6 +13,10 @@
     object-fit: cover;
 }
 
+.mediaLocked{
+    filter: blur(6px);
+}
+
 .content{
     height: 100%;
     width: 100%;
@@ -29,6 +33,7 @@
     justify-content: space-between;
     height: calc(100% - 48px);
     width: calc(100% - 48px);
+    z-index: 2;
 }
 
 .top{
@@ -140,10 +145,24 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgba(0, 0, 0, 0.6); 
-  color: white;
   font-size: 1.5rem;
   font-weight: bold;
   text-align: center;
   z-index: 1;
+  display: flex;
+  background: var(--dark-tr);
+  flex-direction: column;
+  gap: 6px;
+  align-items: center;
+  justify-content: center;
+}
+
+.requiredText{
+    text-align: center;
+    font-size: 14px;
+    font-family: "Inter";
+    line-height: 20px;
+    color: var(--white);
+    font-weight: 900;
+    margin: 0;
 }
