@@ -7,7 +7,15 @@ import miainmotion from '../storage/miainmotion.jpg';
 import noahontheego from '../storage/noahonthego.jpg';
 import sophiaspark from '../storage/sophiaspark.jpg';
 
-
+import first from '../storage/posts/100.png';
+import second from '../storage/posts/101.png';
+import third from '../storage/posts/102.png';
+import fourth from '../storage/posts/103.png';
+import fifth from '../storage/posts/104.png';
+import sixth from '../storage/posts/105.png';
+import seventh from '../storage/posts/106.png'
+import eighth from '../storage/posts/107.png';
+import ninth from '../storage/posts/108.png';
 
 const creators = [
     {
@@ -30,9 +38,80 @@ const creators = [
           date: '25.05.2025',
           time: '14:00',
           description: 'description text',
-          mediaLink: 'https://example.com/image1.jpg',
+          mediaLink: first,
           likes: 123,
           comments: 123,
+          levelRequired: 1
+        },
+        {
+          id: 101,
+          date: '25.05.2025',
+          time: '14:00',
+          description: 'description text',
+          mediaLink: second,
+          likes: 123,
+          comments: 123,
+          levelRequired: 0
+        },
+        {
+          id: 101,
+          date: '25.05.2025',
+          time: '14:00',
+          description: 'description text',
+          mediaLink: third,
+          likes: 123,
+          comments: 123,
+          levelRequired: 3
+        },
+        {
+          id: 101,
+          date: '25.05.2025',
+          time: '14:00',
+          description: 'description text',
+          mediaLink: fifth,
+          likes: 123,
+          comments: 123,
+          levelRequired: 0
+        },
+        {
+          id: 101,
+          date: '25.05.2025',
+          time: '14:00',
+          description: 'description text',
+          mediaLink: sixth,
+          likes: 123,
+          comments: 123,
+          levelRequired: 2
+        },
+        {
+          id: 101,
+          date: '25.05.2025',
+          time: '14:00',
+          description: 'description text',
+          mediaLink: seventh,
+          likes: 123,
+          comments: 123,
+          levelRequired: 1
+        },
+        {
+          id: 101,
+          date: '25.05.2025',
+          time: '14:00',
+          description: 'description text',
+          mediaLink: eighth,
+          likes: 123,
+          comments: 123,
+          levelRequired: 3
+        },
+        {
+          id: 101,
+          date: '25.05.2025',
+          time: '14:00',
+          description: 'description text',
+          mediaLink: ninth,
+          likes: 123,
+          comments: 123,
+          levelRequired: 1
         },
       ]
     },
