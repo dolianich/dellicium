@@ -1,3 +1,28 @@
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 16px;
+}
+
 .container{
-    
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 32px;
+    background-color: var(--grey);
+}
+
+.stats{
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+}
+
+.bottom{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 24px;
+    padding-right: 24px;
 }

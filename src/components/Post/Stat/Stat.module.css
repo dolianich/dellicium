@@ -21,3 +21,12 @@
     font-weight: 400;
     margin: 0;
 }
+
+.statSecondary{
+    display: flex;
+    flex-direction: row;
+    background-color: var(--dark-tr);
+    color: var(--white);
+    gap: 4px;
+    align-items: center;
+}

@@ -1,9 +1,25 @@
 import styles from './Description.module.css';
 
-const Description = () => {
+interface Props {
+  type?: string;
+}
+
+const Description = ({ type }: Props) => {
   return (
-    <div className={styles.descriptionContainer}>
-      <p className={styles.description}>
+    <div
+      className={
+        type === 'secondary'
+          ? styles.descriptionContainerSecondary
+          : styles.descriptionContainer
+      }
+    >
+      <p
+        className={
+          type === 'secondary'
+            ? styles.descriptionSecondary
+            : styles.description
+        }
+      >
         text text text text text text text text text text text text text text
       </p>
     </div>

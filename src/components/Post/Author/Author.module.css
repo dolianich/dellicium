@@ -4,6 +4,13 @@
     gap: 8px;
 }
 
+.topSecondary{
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    padding-left: 24px;
+}
+
 .topText{
     display: flex;
     flex-direction: column;

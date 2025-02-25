@@ -66,7 +66,12 @@ const CreatorPage = () => {
         gift={() => addPoints(20)}
       />
       <div className={styles.posts}>
-        <PostSecondary />
+        <PostSecondary
+          avatar={creator?.avatar}
+          name={creator?.name}
+          userLevel={userLevel}
+          requiredLevel={2}
+        />
         <Post
           avatar={creator?.avatar}
           name={creator?.name}
