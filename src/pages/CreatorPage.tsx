@@ -5,6 +5,7 @@ import creators from '../data/creators';
 import ProfileCard from '../components/ProfileCard/ProfileCard';
 import useScrollToTop from '../utils/useScrollToTop';
 import Post from '../components/Post/Post';
+import PostSecondary from '../components/Post/PostSecondary';
 
 type Socials = {
   website?: string;
@@ -31,8 +32,6 @@ const CreatorPage = () => {
       setPoints(newPoints);
     }
   };
-
-  
 
   const params = useParams<{ creatorId: string }>();
   const creator = creators.find(
@@ -67,11 +66,37 @@ const CreatorPage = () => {
         gift={() => addPoints(20)}
       />
       <div className={styles.posts}>
-        <Post avatar={creator?.avatar} name={creator?.name} userLevel={userLevel} requiredLevel={0}></Post>
-        <Post avatar={creator?.avatar} name={creator?.name} userLevel={userLevel} requiredLevel={1}></Post>
-        <Post avatar={creator?.avatar} name={creator?.name} userLevel={userLevel} requiredLevel={2}></Post>
-        <Post avatar={creator?.avatar} name={creator?.name} userLevel={userLevel} requiredLevel={3}></Post>
-        <Post avatar={creator?.avatar} name={creator?.name} userLevel={userLevel} requiredLevel={3}></Post>
+        <PostSecondary />
+        <Post
+          avatar={creator?.avatar}
+          name={creator?.name}
+          userLevel={userLevel}
+          requiredLevel={0}
+        ></Post>
+        <Post
+          avatar={creator?.avatar}
+          name={creator?.name}
+          userLevel={userLevel}
+          requiredLevel={1}
+        ></Post>
+        <Post
+          avatar={creator?.avatar}
+          name={creator?.name}
+          userLevel={userLevel}
+          requiredLevel={2}
+        ></Post>
+        <Post
+          avatar={creator?.avatar}
+          name={creator?.name}
+          userLevel={userLevel}
+          requiredLevel={3}
+        ></Post>
+        <Post
+          avatar={creator?.avatar}
+          name={creator?.name}
+          userLevel={userLevel}
+          requiredLevel={3}
+        ></Post>
       </div>
     </div>
   );

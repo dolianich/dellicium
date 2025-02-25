@@ -1,0 +1,15 @@
+.description{
+    text-align: left;
+    font-size: 12px;
+    font-family: "Inter";
+    line-height: 14px;
+    color: var(--white);
+    font-weight: 400;
+    margin: 0;
+    padding: 12px;
+}
+
+.descriptionContainer{
+    background-color: var(--dark-tr);
+    border-radius: 8px;
+}

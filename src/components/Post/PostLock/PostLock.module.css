@@ -1,0 +1,30 @@
+.postLock{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    z-index: 1;
+    display: flex;
+    background: var(--dark-tr);
+    flex-direction: column;
+    gap: 6px;
+    align-items: center;
+    justify-content: center;
+}
+
+.requiredText{
+    text-align: center;
+    font-size: 14px;
+    font-family: "Inter";
+    line-height: 20px;
+    color: var(--white);
+    font-weight: 900;
+    margin: 0;
+}

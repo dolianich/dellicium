@@ -1,0 +1,31 @@
+.top{
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
+.topText{
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.name{
+    text-align: left;
+    font-size: 14px;
+    font-family: "Inter";
+    line-height: 20px;
+    color: var(--white);
+    font-weight: 900;
+    margin: 0;
+}
+
+.date{
+    text-align: left;
+    font-size: 12px;
+    font-family: "Inter";
+    line-height: 14px;
+    color: var(--white);
+    font-weight: 400;
+    margin: 0;
+}

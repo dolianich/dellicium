@@ -1,0 +1,15 @@
+.media{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.mediaLocked{
+    filter: blur(6px);
+}
+
+.content{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
