@@ -72,10 +72,16 @@ const CreatorPage = () => {
           {creator?.posts ? (
             creator?.posts.map((post) => (
               <PostSecondary
+                key={post.id}
                 avatar={creator?.avatar}
                 name={creator?.name}
                 userLevel={userLevel}
                 requiredLevel={post.levelRequired}
+                media={post.mediaLink}
+                likes={post.likes}
+                comments={post.comments}
+                descriptionText={post.description}
+                createdAt={post.createdAt}
               />
             ))
           ) : (
@@ -87,10 +93,16 @@ const CreatorPage = () => {
           {creator?.posts ? (
             creator?.posts.map((post) => (
               <Post
+                key={post.id}
                 avatar={creator?.avatar}
                 name={creator?.name}
                 userLevel={userLevel}
                 requiredLevel={post.levelRequired}
+                media={post.mediaLink}
+                likes={post.likes}
+                comments={post.comments}
+                descriptionText={post.description}
+                createdAt={post.createdAt}
               />
             ))
           ) : (

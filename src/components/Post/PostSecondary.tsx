@@ -1,6 +1,5 @@
 import styles from './PostSecondary.module.css';
 import { Heart, ChatCircle } from '@phosphor-icons/react';
-import pic from '../../storage/elenathestar.jpg';
 import Author from './Author/Author';
 import Media from './Media/Media';
 import PostLock from './PostLock/PostLock';
@@ -13,23 +12,43 @@ interface Props {
   name?: string;
   userLevel: number;
   requiredLevel: number;
+  media?: string;
+  likes?: number;
+  comments?: number;
+  descriptionText?: string;
+  createdAt: string;
 }
 
-const PostSecondary = ({ avatar, name, userLevel, requiredLevel }: Props) => {
+const PostSecondary = ({
+  avatar,
+  name,
+  userLevel,
+  requiredLevel,
+  media,
+  likes,
+  comments,
+  descriptionText,
+  createdAt,
+}: Props) => {
   const isLocked = userLevel < requiredLevel;
 
   return (
     <div className={styles.wrapper}>
-      <Author avatar={avatar} name={name} type='secondary'/>
+      <Author
+        avatar={avatar}
+        name={name}
+        type="secondary"
+        timestamp={createdAt}
+      />
       <div className={styles.container}>
-        <Media img={pic} type="secondary" isLocked={isLocked} />
+        <Media img={media} type="secondary" isLocked={isLocked} />
         {isLocked && <PostLock requiredLevel={requiredLevel} />}
       </div>
-      <Description type="secondary" />
+      <Description type="secondary" descriptionText={descriptionText} />
       <div className={styles.bottom}>
         <div className={styles.stats}>
-          <Stat icon={Heart} type="secondary" />
-          <Stat icon={ChatCircle} type="secondary" />
+          <Stat icon={Heart} type="secondary" value={likes} />
+          <Stat icon={ChatCircle} type="secondary" value={comments} />
         </div>
         <DonateBtn />
       </div>

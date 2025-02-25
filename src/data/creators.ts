@@ -35,8 +35,7 @@ const creators = [
         {
           id: 100,
           date: '25.05.2025',
-          time: '14:00',
-          description: 'description text',
+          createdAt: '2023-10-01T12:00:00Z',
           mediaLink: first,
           likes: 123,
           comments: 123,
@@ -44,8 +43,7 @@ const creators = [
         },
         {
           id: 101,
-          date: '25.05.2025',
-          time: '14:00',
+          createdAt: '2023-10-02T14:30:00Z',
           description: 'description text',
           mediaLink: second,
           likes: 123,
@@ -54,8 +52,7 @@ const creators = [
         },
         {
           id: 102,
-          date: '25.05.2025',
-          time: '14:00',
+          createdAt: '2023-10-02T14:30:00Z',
           description: 'description text',
           mediaLink: third,
           likes: 123,
@@ -64,8 +61,7 @@ const creators = [
         },
         {
           id: 103,
-          date: '25.05.2025',
-          time: '14:00',
+          createdAt: '2023-10-02T14:30:00Z',
           description: 'description text',
           mediaLink: fourth,
           likes: 123,
@@ -74,8 +70,7 @@ const creators = [
         },
         {
           id: 104,
-          date: '25.05.2025',
-          time: '14:00',
+          createdAt: '2023-10-02T14:30:00Z',
           description: 'description text',
           mediaLink: fifth,
           likes: 123,
@@ -84,8 +79,7 @@ const creators = [
         },
         {
           id: 105,
-          date: '25.05.2025',
-          time: '14:00',
+          createdAt: '2023-10-02T14:30:00Z',
           description: 'description text',
           mediaLink: sixth,
           likes: 123,
@@ -94,8 +88,7 @@ const creators = [
         },
         {
           id: 106,
-          date: '25.05.2025',
-          time: '14:00',
+          createdAt: '2023-10-02T14:30:00Z',
           description: 'description text',
           mediaLink: seventh,
           likes: 123,
@@ -104,8 +97,7 @@ const creators = [
         },
         {
           id: 107,
-          date: '25.05.2025',
-          time: '14:00',
+          createdAt: '2023-10-02T14:30:00Z',
           description: 'description text',
           mediaLink: eighth,
           likes: 123,

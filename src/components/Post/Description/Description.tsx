@@ -2,9 +2,10 @@ import styles from './Description.module.css';
 
 interface Props {
   type?: string;
+  descriptionText?: string;
 }
 
-const Description = ({ type }: Props) => {
+const Description = ({ type, descriptionText }: Props) => {
   return (
     <div
       className={
@@ -20,7 +21,7 @@ const Description = ({ type }: Props) => {
             : styles.description
         }
       >
-        text text text text text text text text text text text text text text
+        {descriptionText}
       </p>
     </div>
   );

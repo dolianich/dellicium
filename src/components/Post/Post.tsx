@@ -1,6 +1,5 @@
 import styles from './Post.module.css';
 import { Heart, ChatCircle, ImageSquare } from '@phosphor-icons/react';
-import img from '../../assets/post_test_img.png';
 import Author from './Author/Author';
 import PostLock from './PostLock/PostLock';
 import Media from './Media/Media';
@@ -12,25 +11,30 @@ interface Props {
   name?: string;
   userLevel: number;
   requiredLevel: number;
+  media?: string;
+  likes?: number;
+  comments?: number;
+  descriptionText?: string;
+  createdAt: string;
 }
 
-const Post = ({ avatar, name, userLevel, requiredLevel }: Props) => {
+const Post = ({ avatar, name, userLevel, requiredLevel, media, likes, comments, descriptionText, createdAt }: Props) => {
   const isLocked = userLevel < requiredLevel;
 
   return (
     <div className={styles.container}>
-      <Media img={img} isLocked={isLocked} />
+      <Media img={media} isLocked={isLocked} />
 
       {isLocked && <PostLock requiredLevel={requiredLevel} />}
 
       <div className={styles.elements}>
-        <Author avatar={avatar} name={name} />
+        <Author avatar={avatar} name={name} timestamp={createdAt}/>
         <div className={styles.bottom}>
-          <Description />
+          <Description descriptionText={descriptionText}/>
           <div className={styles.bottomLine}>
             <div className={styles.stats}>
-              <Stat icon={Heart} />
-              <Stat icon={ChatCircle} />
+              <Stat icon={Heart} value={likes}/>
+              <Stat icon={ChatCircle} value={comments}/>
             </div>
             <div className={styles.iconContainer}>
               <ImageSquare size={20} weight="regular" />

@@ -25,7 +25,7 @@
 .mobilePosts{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100%, 1fr)); 
-    gap: 0;
+    gap: 4px;
     width: 100%;
 }
 
