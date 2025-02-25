@@ -1,6 +1,5 @@
 import styles from './PostSecondary.module.css';
 import { Heart, ChatCircle } from '@phosphor-icons/react';
-import img from '../../assets/post_test_img.png';
 import pic from '../../storage/elenathestar.jpg';
 import Author from './Author/Author';
 import Media from './Media/Media';

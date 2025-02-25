@@ -65,13 +65,7 @@ const CreatorPage = () => {
         tips={() => addPoints(10)}
         gift={() => addPoints(20)}
       />
-      <div className={styles.posts}>
-        <PostSecondary
-          avatar={creator?.avatar}
-          name={creator?.name}
-          userLevel={userLevel}
-          requiredLevel={2}
-        />
+      {<div className={styles.posts}>
         <Post
           avatar={creator?.avatar}
           name={creator?.name}
@@ -103,6 +97,7 @@ const CreatorPage = () => {
           requiredLevel={3}
         ></Post>
       </div>
+      }
     </div>
   );
 };
