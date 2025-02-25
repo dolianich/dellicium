@@ -15,7 +15,6 @@ import fifth from '../storage/posts/104.png';
 import sixth from '../storage/posts/105.png';
 import seventh from '../storage/posts/106.png'
 import eighth from '../storage/posts/107.png';
-import ninth from '../storage/posts/108.png';
 
 const creators = [
     {
@@ -34,7 +33,7 @@ const creators = [
       },
       posts: [
         {
-          id: 101,
+          id: 100,
           date: '25.05.2025',
           time: '14:00',
           description: 'description text',
@@ -54,7 +53,7 @@ const creators = [
           levelRequired: 0
         },
         {
-          id: 101,
+          id: 102,
           date: '25.05.2025',
           time: '14:00',
           description: 'description text',
@@ -64,51 +63,51 @@ const creators = [
           levelRequired: 3
         },
         {
-          id: 101,
+          id: 103,
+          date: '25.05.2025',
+          time: '14:00',
+          description: 'description text',
+          mediaLink: fourth,
+          likes: 123,
+          comments: 123,
+          levelRequired: 0
+        },
+        {
+          id: 104,
           date: '25.05.2025',
           time: '14:00',
           description: 'description text',
           mediaLink: fifth,
           likes: 123,
           comments: 123,
-          levelRequired: 0
+          levelRequired: 2
         },
         {
-          id: 101,
+          id: 105,
           date: '25.05.2025',
           time: '14:00',
           description: 'description text',
           mediaLink: sixth,
           likes: 123,
           comments: 123,
-          levelRequired: 2
+          levelRequired: 1
         },
         {
-          id: 101,
+          id: 106,
           date: '25.05.2025',
           time: '14:00',
           description: 'description text',
           mediaLink: seventh,
           likes: 123,
           comments: 123,
-          levelRequired: 1
+          levelRequired: 3
         },
         {
-          id: 101,
+          id: 107,
           date: '25.05.2025',
           time: '14:00',
           description: 'description text',
           mediaLink: eighth,
-          likes: 123,
-          comments: 123,
-          levelRequired: 3
-        },
-        {
-          id: 101,
-          date: '25.05.2025',
-          time: '14:00',
-          description: 'description text',
-          mediaLink: ninth,
           likes: 123,
           comments: 123,
           levelRequired: 1

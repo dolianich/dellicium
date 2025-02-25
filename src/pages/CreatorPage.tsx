@@ -69,57 +69,33 @@ const CreatorPage = () => {
       />
       {isMobile ? (
         <div className={styles.mobilePosts}>
-          <PostSecondary
-            avatar={creator?.avatar}
-            name={creator?.name}
-            userLevel={userLevel}
-            requiredLevel={0}
-          />
-          <PostSecondary
-            avatar={creator?.avatar}
-            name={creator?.name}
-            userLevel={userLevel}
-            requiredLevel={0}
-          />
-          <PostSecondary
-            avatar={creator?.avatar}
-            name={creator?.name}
-            userLevel={userLevel}
-            requiredLevel={0}
-          />
+          {creator?.posts ? (
+            creator?.posts.map((post) => (
+              <PostSecondary
+                avatar={creator?.avatar}
+                name={creator?.name}
+                userLevel={userLevel}
+                requiredLevel={post.levelRequired}
+              />
+            ))
+          ) : (
+            <></>
+          )}
         </div>
       ) : (
         <div className={styles.posts}>
-          <Post
-            avatar={creator?.avatar}
-            name={creator?.name}
-            userLevel={userLevel}
-            requiredLevel={0}
-          ></Post>
-          <Post
-            avatar={creator?.avatar}
-            name={creator?.name}
-            userLevel={userLevel}
-            requiredLevel={1}
-          ></Post>
-          <Post
-            avatar={creator?.avatar}
-            name={creator?.name}
-            userLevel={userLevel}
-            requiredLevel={2}
-          ></Post>
-          <Post
-            avatar={creator?.avatar}
-            name={creator?.name}
-            userLevel={userLevel}
-            requiredLevel={3}
-          ></Post>
-          <Post
-            avatar={creator?.avatar}
-            name={creator?.name}
-            userLevel={userLevel}
-            requiredLevel={3}
-          ></Post>
+          {creator?.posts ? (
+            creator?.posts.map((post) => (
+              <Post
+                avatar={creator?.avatar}
+                name={creator?.name}
+                userLevel={userLevel}
+                requiredLevel={post.levelRequired}
+              />
+            ))
+          ) : (
+            <></>
+          )}
         </div>
       )}
     </div>
