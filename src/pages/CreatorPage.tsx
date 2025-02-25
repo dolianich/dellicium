@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { useState } from 'react';
+import useScreenSize from '../utils/useScreenSize';
 import styles from './styles/Page.module.css';
 import creators from '../data/creators';
 import ProfileCard from '../components/ProfileCard/ProfileCard';
@@ -14,6 +15,7 @@ type Socials = {
 };
 
 const CreatorPage = () => {
+  const isMobile = useScreenSize();
   const [points, setPoints] = useState(0);
   const [userLevel, setUserLevel] = useState(0);
   const [adopted, setAdopted] = useState(false);
@@ -65,39 +67,61 @@ const CreatorPage = () => {
         tips={() => addPoints(10)}
         gift={() => addPoints(20)}
       />
-      {<div className={styles.posts}>
-        <Post
-          avatar={creator?.avatar}
-          name={creator?.name}
-          userLevel={userLevel}
-          requiredLevel={0}
-        ></Post>
-        <Post
-          avatar={creator?.avatar}
-          name={creator?.name}
-          userLevel={userLevel}
-          requiredLevel={1}
-        ></Post>
-        <Post
-          avatar={creator?.avatar}
-          name={creator?.name}
-          userLevel={userLevel}
-          requiredLevel={2}
-        ></Post>
-        <Post
-          avatar={creator?.avatar}
-          name={creator?.name}
-          userLevel={userLevel}
-          requiredLevel={3}
-        ></Post>
-        <Post
-          avatar={creator?.avatar}
-          name={creator?.name}
-          userLevel={userLevel}
-          requiredLevel={3}
-        ></Post>
-      </div>
-      }
+      {isMobile ? (
+        <div className={styles.mobilePosts}>
+          <PostSecondary
+            avatar={creator?.avatar}
+            name={creator?.name}
+            userLevel={userLevel}
+            requiredLevel={0}
+          />
+          <PostSecondary
+            avatar={creator?.avatar}
+            name={creator?.name}
+            userLevel={userLevel}
+            requiredLevel={0}
+          />
+          <PostSecondary
+            avatar={creator?.avatar}
+            name={creator?.name}
+            userLevel={userLevel}
+            requiredLevel={0}
+          />
+        </div>
+      ) : (
+        <div className={styles.posts}>
+          <Post
+            avatar={creator?.avatar}
+            name={creator?.name}
+            userLevel={userLevel}
+            requiredLevel={0}
+          ></Post>
+          <Post
+            avatar={creator?.avatar}
+            name={creator?.name}
+            userLevel={userLevel}
+            requiredLevel={1}
+          ></Post>
+          <Post
+            avatar={creator?.avatar}
+            name={creator?.name}
+            userLevel={userLevel}
+            requiredLevel={2}
+          ></Post>
+          <Post
+            avatar={creator?.avatar}
+            name={creator?.name}
+            userLevel={userLevel}
+            requiredLevel={3}
+          ></Post>
+          <Post
+            avatar={creator?.avatar}
+            name={creator?.name}
+            userLevel={userLevel}
+            requiredLevel={3}
+          ></Post>
+        </div>
+      )}
     </div>
   );
 };

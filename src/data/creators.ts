@@ -5,7 +5,9 @@ import liamthebold from '../storage/liamthebold.jpg';
 import lucaslights from '../storage/lucaslights.jpg';
 import miainmotion from '../storage/miainmotion.jpg';
 import noahontheego from '../storage/noahonthego.jpg';
-import sophiaspark from '../storage/sophiaspark.jpg'
+import sophiaspark from '../storage/sophiaspark.jpg';
+
+
 
 const creators = [
     {
@@ -21,7 +23,18 @@ const creators = [
         website: 'https://www.google.com/',
         ig: 'https://www.instagram.com/',
         x: 'https://x.com/'
-      }
+      },
+      posts: [
+        {
+          id: 101,
+          date: '25.05.2025',
+          time: '14:00',
+          description: 'description text',
+          mediaLink: 'https://example.com/image1.jpg',
+          likes: 123,
+          comments: 123,
+        },
+      ]
     },
 
     {
