@@ -9,7 +9,12 @@ export const formatCreatedAt = (timestamp: string): string => {
   
     
     if (diffInDays < 1) {
-      return formatDistanceToNow(postDate, { addSuffix: true }); 
+      const relativeTime = formatDistanceToNow(postDate, { addSuffix: true }); 
+      const cleanedTime = relativeTime.replace(/^in /i, '');
+
+      return cleanedTime
+      .replace(/minutes?/, 'min')
+      .replace(/hours?/, 'h');
     }
   
    

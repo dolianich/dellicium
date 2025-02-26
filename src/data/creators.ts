@@ -35,7 +35,8 @@ const creators = [
         {
           id: 100,
           date: '25.05.2025',
-          createdAt: '2023-10-01T12:00:00Z',
+          createdAt: '2025-02-26T09:00:00Z',
+          description: 'description text',
           mediaLink: first,
           likes: 123,
           comments: 123,
