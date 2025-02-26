@@ -7,6 +7,7 @@ import ProfileCard from '../components/ProfileCard/ProfileCard';
 import useScrollToTop from '../utils/useScrollToTop';
 import Post from '../components/Post/Post';
 import PostSecondary from '../components/Post/PostSecondary';
+import PostsFilter from '../components/PostsFilter/PostsFilter';
 
 type Socials = {
   website?: string;
@@ -67,6 +68,7 @@ const CreatorPage = () => {
         tips={() => addPoints(10)}
         gift={() => addPoints(20)}
       />
+      <PostsFilter />
       {isMobile ? (
         <div className={styles.mobilePosts}>
           {creator?.posts ? (

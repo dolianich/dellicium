@@ -1,7 +1,6 @@
 import styles from './ProfileCard.module.css';
 import ProfileInfo from './Profile/ProfileInfo';
 import Actions from './Actions/Actions';
-import { useState } from 'react';
 import Hide from './Actions/Hide/Hide';
 
 type Socials = {

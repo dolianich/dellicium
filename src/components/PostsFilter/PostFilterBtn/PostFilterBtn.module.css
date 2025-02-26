@@ -2,11 +2,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border: none;
-    color: var(--light-grey);
     width: 44px;
     height: 44px;
-    background-color: var(--grey);
-    padding: 0;
     border-radius: 8px;
+    background-color: var(--grey);
+    border: none;
+    color: var(--light-grey);
+    cursor: pointer;
 }
+
