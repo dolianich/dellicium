@@ -2,16 +2,42 @@ import styles from './MobNav.module.css';
 import Logo from '../Logo/Logo';
 import Navigation from '../SideBar/Navigation/Navigation';
 import CloseBtn from './CloseBtn/CloseBtn';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const MobNav = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isTransparent, setIsTransparent] = useState(false);
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPos = window.pageYOffset;
+
+      if (currentScrollPos > prevScrollPos) {
+        setIsTransparent(true);
+      } else {
+        setIsTransparent(false);
+      }
+
+      setPrevScrollPos(currentScrollPos);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [prevScrollPos]);
 
   const openMenu = () => setIsOpen(!isOpen);
 
   return (
     <>
-      <div className={styles.wrapper}>
+      <div
+        className={`${styles.wrapper} ${
+          isTransparent ? styles.transparent : ''
+        }`}
+      >
         <Logo onClick={openMenu} />
         <CloseBtn onClick={openMenu} state={isOpen} />
       </div>

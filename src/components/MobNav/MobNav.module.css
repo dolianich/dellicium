@@ -18,6 +18,12 @@
         z-index: 4;
         width: calc(100% - 32px);
         border-radius: 18px;
+        transition: all ease-in-out 0.2s;
+    }
+
+    .wrapper.transparent{
+        opacity: 0;
+        visibility: hidden;
     }
     
     .menuContainer{
