@@ -1,4 +1,5 @@
 import styles from './Description.module.css';
+import { truncateText } from '../../../utils/truncateText';
 
 interface Props {
   type?: string;
@@ -21,7 +22,7 @@ const Description = ({ type, descriptionText }: Props) => {
             : styles.description
         }
       >
-        {descriptionText}
+        {truncateText(descriptionText!, 80)}
       </p>
     </div>
   );
