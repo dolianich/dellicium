@@ -1,4 +1,5 @@
 import styles from './Description.module.css';
+import { useState } from 'react';
 import { truncateText } from '../../../utils/truncateText';
 
 interface Props {
@@ -7,6 +8,14 @@ interface Props {
 }
 
 const Description = ({ type, descriptionText }: Props) => {
+  const [isExpanded, setIsExpended] = useState(false);
+
+  const displayText = isExpanded
+    ? descriptionText
+    : truncateText(descriptionText!, 80);
+
+  const showButton = descriptionText!.length > 80;
+
   return (
     <div
       className={
@@ -22,7 +31,15 @@ const Description = ({ type, descriptionText }: Props) => {
             : styles.description
         }
       >
-        {truncateText(descriptionText!, 80)}
+        {displayText}
+        {showButton && (
+          <button
+            onClick={() => setIsExpended(!isExpanded)}
+            className={styles.expandBtn}
+          >
+            {isExpanded ? 'Hide' : 'More'}
+          </button>
+        )}
       </p>
     </div>
   );

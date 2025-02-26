@@ -12,9 +12,11 @@
 .descriptionContainer{
     background-color: var(--dark-tr);
     border-radius: 8px;
+   
 }
 
 .descriptionSecondary{
+    display: flex;
     text-align: left;
     font-size: 12px;
     font-family: "Inter";
@@ -22,10 +24,33 @@
     color: var(--white);
     font-weight: 400;
     margin: 0;
+    gap: 8px;
+    justify-content: space-between;
+    align-items: flex-end;
+    
 }
 
 .descriptionContainerSecondary{
     border-radius: 8px;
     padding-left: 24px;
     padding-right: 24px;
+}
+
+.expandBtn{
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    color: var(--light-grey);
+    text-align: left;
+    font-size: 12px;
+    font-family: "Inter";
+    line-height: 14px;
+    font-weight: 400;
+}
+
+@media (min-width: 580px){
+    .expandBtn{
+        display: none;
+    }
 }
