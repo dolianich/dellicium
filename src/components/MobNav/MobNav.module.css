@@ -10,6 +10,7 @@
     display: none;
 }
 
+
 @media (max-width: 760px){
     .wrapper{
         display: flex;
@@ -51,5 +52,9 @@
 
     .menuClosed{
         display: none;
+    }
+
+    .body.noScroll{
+        overflow: hidden;
     }
 }

@@ -22,12 +22,16 @@ const MobNav = () => {
       setPrevScrollPos(currentScrollPos);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    if (isOpen) {
+      window.removeEventListener('scroll', handleScroll);
+    }else{
+      window.addEventListener('scroll', handleScroll)
+    }
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [prevScrollPos]);
+  }, [prevScrollPos, isOpen]);
 
   const openMenu = () => setIsOpen(!isOpen);
 
