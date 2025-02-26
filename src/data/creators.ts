@@ -38,8 +38,8 @@ const creators = [
           createdAt: '2025-02-26T09:00:00Z',
           description: 'description text',
           mediaLink: first,
-          likes: 123,
-          comments: 123,
+          likes: 10000,
+          comments: 2000,
           levelRequired: 1
         },
         {
