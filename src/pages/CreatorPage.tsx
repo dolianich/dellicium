@@ -1,11 +1,13 @@
 import { useParams } from 'react-router-dom';
 import { useState } from 'react';
+import { useRef } from 'react';
 import styles from './styles/Page.module.css';
 import creators from '../data/creators';
 import ProfileCard from '../components/ProfileCard/ProfileCard';
 import useScrollToTop from '../utils/useScrollToTop';
 import PostsFilter from '../components/PostsFilter/PostsFilter';
 import PostsGrid from '../components/PostsGrid/PostsGrid';
+import Dialog from '../components/Dialog/Dialog';
 
 type Socials = {
   website?: string;
@@ -29,9 +31,23 @@ const CreatorPage = () => {
   const [userLevel, setUserLevel] = useState(0);
   const [adopted, setAdopted] = useState(false);
   const [selectedFilter, setSelectedFilter] = useState<string>('all');
+  const [dialogContent, setDialogContent] = useState<React.ReactNode>(null);
 
   const handleFilterChange = (filter: string) => {
     setSelectedFilter(filter);
+  };
+
+  const dialogRef = useRef<HTMLDialogElement>(null);
+  const toggleDialog = () => {
+    if (!dialogRef.current) {
+      return;
+    }
+
+    if (dialogRef.current.hasAttribute('open')) {
+      dialogRef.current.close();
+    } else {
+      dialogRef.current.showModal();
+    }
   };
 
   const renderSection = () => {
@@ -43,6 +59,7 @@ const CreatorPage = () => {
             userLevel={userLevel}
             creatorAvatar={creator?.avatar}
             creatorName={creator?.name}
+            donate={toggleDialog}
           />
         );
       case 'images':
@@ -117,6 +134,11 @@ const CreatorPage = () => {
         selectedFilter={selectedFilter}
       />
       {renderSection()}
+      <Dialog
+        toggleDialog={toggleDialog}
+        children={<p>Test</p>}
+        ref={dialogRef}
+      />
     </div>
   );
 };

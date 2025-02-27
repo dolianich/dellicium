@@ -19,9 +19,16 @@ interface Props {
   creatorAvatar?: string;
   creatorName?: string;
   userLevel: number;
+  donate?: () => void;
 }
 
-const PostsGrid = ({ posts, creatorAvatar, creatorName, userLevel }: Props) => {
+const PostsGrid = ({
+  posts,
+  creatorAvatar,
+  creatorName,
+  userLevel,
+  donate,
+}: Props) => {
   const isMobile = useScreenSize();
   return (
     <>
@@ -40,6 +47,7 @@ const PostsGrid = ({ posts, creatorAvatar, creatorName, userLevel }: Props) => {
                 comments={post.comments}
                 descriptionText={post.description}
                 createdAt={post.createdAt}
+                donate={donate}
               />
             ))
           ) : (
