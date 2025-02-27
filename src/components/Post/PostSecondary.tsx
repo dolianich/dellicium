@@ -17,6 +17,7 @@ interface Props {
   comments?: number;
   descriptionText?: string;
   createdAt: string;
+  donate?: () => void;
 }
 
 const PostSecondary = ({
@@ -29,6 +30,7 @@ const PostSecondary = ({
   comments,
   descriptionText,
   createdAt,
+  donate,
 }: Props) => {
   const isLocked = userLevel < requiredLevel;
 
@@ -50,7 +52,7 @@ const PostSecondary = ({
           <Stat icon={Heart} type="secondary" value={likes} />
           <Stat icon={ChatCircle} type="secondary" value={comments} />
         </div>
-        <DonateBtn />
+        <DonateBtn donate={donate} />
       </div>
     </div>
   );

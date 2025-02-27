@@ -1,13 +1,11 @@
 import { useParams } from 'react-router-dom';
 import { useState } from 'react';
-import useScreenSize from '../utils/useScreenSize';
 import styles from './styles/Page.module.css';
 import creators from '../data/creators';
 import ProfileCard from '../components/ProfileCard/ProfileCard';
 import useScrollToTop from '../utils/useScrollToTop';
-import Post from '../components/Post/Post';
-import PostSecondary from '../components/Post/PostSecondary';
 import PostsFilter from '../components/PostsFilter/PostsFilter';
+import PostsGrid from '../components/PostsGrid/PostsGrid';
 
 type Socials = {
   website?: string;
@@ -15,8 +13,18 @@ type Socials = {
   x?: string;
 };
 
+type Post = {
+  id: number;
+  date: string;
+  createdAt: string;
+  description: string;
+  mediaLink: string;
+  likes: number;
+  comments: number;
+  levelRequired: number;
+};
+
 const CreatorPage = () => {
-  const isMobile = useScreenSize();
   const [points, setPoints] = useState(0);
   const [userLevel, setUserLevel] = useState(0);
   const [adopted, setAdopted] = useState(false);
@@ -30,51 +38,12 @@ const CreatorPage = () => {
     switch (selectedFilter) {
       case 'all':
         return (
-          <>
-            {isMobile ? (
-              <div className={styles.mobilePosts}>
-                {creator?.posts ? (
-                  creator?.posts.map((post) => (
-                    <PostSecondary
-                      key={post.id}
-                      avatar={creator?.avatar}
-                      name={creator?.name}
-                      userLevel={userLevel}
-                      requiredLevel={post.levelRequired}
-                      media={post.mediaLink}
-                      likes={post.likes}
-                      comments={post.comments}
-                      descriptionText={post.description}
-                      createdAt={post.createdAt}
-                    />
-                  ))
-                ) : (
-                  <></>
-                )}
-              </div>
-            ) : (
-              <div className={styles.posts}>
-                {creator?.posts ? (
-                  creator?.posts.map((post) => (
-                    <Post
-                      key={post.id}
-                      avatar={creator?.avatar}
-                      name={creator?.name}
-                      userLevel={userLevel}
-                      requiredLevel={post.levelRequired}
-                      media={post.mediaLink}
-                      likes={post.likes}
-                      comments={post.comments}
-                      descriptionText={post.description}
-                      createdAt={post.createdAt}
-                    />
-                  ))
-                ) : (
-                  <></>
-                )}
-              </div>
-            )}
-          </>
+          <PostsGrid
+            posts={creator?.posts as Post[]}
+            userLevel={userLevel}
+            creatorAvatar={creator?.avatar}
+            creatorName={creator?.name}
+          />
         );
       case 'images':
         return <div>Images</div>;
@@ -86,51 +55,12 @@ const CreatorPage = () => {
         return <div>Leaderboard</div>;
       default:
         return (
-          <>
-            {isMobile ? (
-              <div className={styles.mobilePosts}>
-                {creator?.posts ? (
-                  creator?.posts.map((post) => (
-                    <PostSecondary
-                      key={post.id}
-                      avatar={creator?.avatar}
-                      name={creator?.name}
-                      userLevel={userLevel}
-                      requiredLevel={post.levelRequired}
-                      media={post.mediaLink}
-                      likes={post.likes}
-                      comments={post.comments}
-                      descriptionText={post.description}
-                      createdAt={post.createdAt}
-                    />
-                  ))
-                ) : (
-                  <></>
-                )}
-              </div>
-            ) : (
-              <div className={styles.posts}>
-                {creator?.posts ? (
-                  creator?.posts.map((post) => (
-                    <Post
-                      key={post.id}
-                      avatar={creator?.avatar}
-                      name={creator?.name}
-                      userLevel={userLevel}
-                      requiredLevel={post.levelRequired}
-                      media={post.mediaLink}
-                      likes={post.likes}
-                      comments={post.comments}
-                      descriptionText={post.description}
-                      createdAt={post.createdAt}
-                    />
-                  ))
-                ) : (
-                  <></>
-                )}
-              </div>
-            )}
-          </>
+          <PostsGrid
+            posts={creator?.posts as Post[]}
+            userLevel={userLevel}
+            creatorAvatar={creator?.avatar}
+            creatorName={creator?.name}
+          />
         );
     }
   };

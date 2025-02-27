@@ -1,9 +1,13 @@
 import styles from './DonateBtn.module.css';
 import { HandCoins } from '@phosphor-icons/react';
 
-const DonateBtn = () => {
+interface Props {
+  donate?: () => void;
+}
+
+const DonateBtn = ({ donate }: Props) => {
   return (
-    <button className={styles.btn}>
+    <button className={styles.btn} onClick={donate}>
       <HandCoins size={20} weight="regular" />
     </button>
   );
