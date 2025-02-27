@@ -25,6 +25,20 @@
     margin: 0;
 }
 
+.textSelected{
+    text-align: center;
+    font-size: 14px;
+    font-family: "Inter";
+    font-weight: 400;
+    line-height: 20px;
+    margin: 0;
+    color: var(--primary);
+}
+
+.iconSelected{
+    color: var(--primary);
+}
+
 @media(max-width: 580px){
     .filter{
         margin-bottom: 0;

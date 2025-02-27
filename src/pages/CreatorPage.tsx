@@ -20,6 +20,120 @@ const CreatorPage = () => {
   const [points, setPoints] = useState(0);
   const [userLevel, setUserLevel] = useState(0);
   const [adopted, setAdopted] = useState(false);
+  const [selectedFilter, setSelectedFilter] = useState<string>('all');
+
+  const handleFilterChange = (filter: string) => {
+    setSelectedFilter(filter);
+  };
+
+  const renderSection = () => {
+    switch (selectedFilter) {
+      case 'all':
+        return (
+          <>
+            {isMobile ? (
+              <div className={styles.mobilePosts}>
+                {creator?.posts ? (
+                  creator?.posts.map((post) => (
+                    <PostSecondary
+                      key={post.id}
+                      avatar={creator?.avatar}
+                      name={creator?.name}
+                      userLevel={userLevel}
+                      requiredLevel={post.levelRequired}
+                      media={post.mediaLink}
+                      likes={post.likes}
+                      comments={post.comments}
+                      descriptionText={post.description}
+                      createdAt={post.createdAt}
+                    />
+                  ))
+                ) : (
+                  <></>
+                )}
+              </div>
+            ) : (
+              <div className={styles.posts}>
+                {creator?.posts ? (
+                  creator?.posts.map((post) => (
+                    <Post
+                      key={post.id}
+                      avatar={creator?.avatar}
+                      name={creator?.name}
+                      userLevel={userLevel}
+                      requiredLevel={post.levelRequired}
+                      media={post.mediaLink}
+                      likes={post.likes}
+                      comments={post.comments}
+                      descriptionText={post.description}
+                      createdAt={post.createdAt}
+                    />
+                  ))
+                ) : (
+                  <></>
+                )}
+              </div>
+            )}
+          </>
+        );
+      case 'images':
+        return <div>Images</div>;
+      case 'videos':
+        return <div>Videos</div>;
+      case 'gifts':
+        return <div>Gifts</div>;
+      case 'leaderboard':
+        return <div>Leaderboard</div>;
+      default:
+        return (
+          <>
+            {isMobile ? (
+              <div className={styles.mobilePosts}>
+                {creator?.posts ? (
+                  creator?.posts.map((post) => (
+                    <PostSecondary
+                      key={post.id}
+                      avatar={creator?.avatar}
+                      name={creator?.name}
+                      userLevel={userLevel}
+                      requiredLevel={post.levelRequired}
+                      media={post.mediaLink}
+                      likes={post.likes}
+                      comments={post.comments}
+                      descriptionText={post.description}
+                      createdAt={post.createdAt}
+                    />
+                  ))
+                ) : (
+                  <></>
+                )}
+              </div>
+            ) : (
+              <div className={styles.posts}>
+                {creator?.posts ? (
+                  creator?.posts.map((post) => (
+                    <Post
+                      key={post.id}
+                      avatar={creator?.avatar}
+                      name={creator?.name}
+                      userLevel={userLevel}
+                      requiredLevel={post.levelRequired}
+                      media={post.mediaLink}
+                      likes={post.likes}
+                      comments={post.comments}
+                      descriptionText={post.description}
+                      createdAt={post.createdAt}
+                    />
+                  ))
+                ) : (
+                  <></>
+                )}
+              </div>
+            )}
+          </>
+        );
+    }
+  };
 
   const pointsRequiredForNextLevel = userLevel === 1 ? 50 : userLevel * 100;
   const progress = (points / pointsRequiredForNextLevel) * 100;
@@ -68,50 +182,11 @@ const CreatorPage = () => {
         tips={() => addPoints(10)}
         gift={() => addPoints(20)}
       />
-      <PostsFilter />
-      {isMobile ? (
-        <div className={styles.mobilePosts}>
-          {creator?.posts ? (
-            creator?.posts.map((post) => (
-              <PostSecondary
-                key={post.id}
-                avatar={creator?.avatar}
-                name={creator?.name}
-                userLevel={userLevel}
-                requiredLevel={post.levelRequired}
-                media={post.mediaLink}
-                likes={post.likes}
-                comments={post.comments}
-                descriptionText={post.description}
-                createdAt={post.createdAt}
-              />
-            ))
-          ) : (
-            <></>
-          )}
-        </div>
-      ) : (
-        <div className={styles.posts}>
-          {creator?.posts ? (
-            creator?.posts.map((post) => (
-              <Post
-                key={post.id}
-                avatar={creator?.avatar}
-                name={creator?.name}
-                userLevel={userLevel}
-                requiredLevel={post.levelRequired}
-                media={post.mediaLink}
-                likes={post.likes}
-                comments={post.comments}
-                descriptionText={post.description}
-                createdAt={post.createdAt}
-              />
-            ))
-          ) : (
-            <></>
-          )}
-        </div>
-      )}
+      <PostsFilter
+        onFilterChange={handleFilterChange}
+        selectedFilter={selectedFilter}
+      />
+      {renderSection()}
     </div>
   );
 };

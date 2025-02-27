@@ -1,13 +1,17 @@
 import styles from './PostFilterBtn.module.css';
 
-interface Props{
-    children?: React.ReactNode;
+interface Props {
+  children?: React.ReactNode;
+  onFilterChange: (filter: string) => void;
+  id: string;
 }
 
-const PostFilterBtn = ({children}: Props) => {
+const PostFilterBtn = ({ children, onFilterChange, id}: Props) => {
   return (
-    <button className={styles.btn}>{children}</button>
-  )
-}
+    <button onClick={() => onFilterChange(id)} className={styles.btn}>
+      {children}
+    </button>
+  );
+};
 
-export default PostFilterBtn
+export default PostFilterBtn;
