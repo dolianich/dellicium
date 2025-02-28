@@ -8,6 +8,7 @@ import useScrollToTop from '../utils/useScrollToTop';
 import PostsFilter from '../components/PostsFilter/PostsFilter';
 import PostsGrid from '../components/PostsGrid/PostsGrid';
 import Dialog from '../components/Dialog/Dialog';
+import DonateContent from '../components/Dialog/ModalContent/DonateContent';
 
 type Socials = {
   website?: string;
@@ -31,22 +32,54 @@ const CreatorPage = () => {
   const [userLevel, setUserLevel] = useState(0);
   const [adopted, setAdopted] = useState(false);
   const [selectedFilter, setSelectedFilter] = useState<string>('all');
-  const [dialogContent, setDialogContent] = useState<React.ReactNode>(null);
+
+  const pointsRequiredForNextLevel = userLevel === 1 ? 50 : userLevel * 100;
+  const progress = (points / pointsRequiredForNextLevel) * 100;
+
+  const addPoints = (xpAmount: number) => {
+    const newPoints = points + xpAmount;
+
+    if (newPoints >= pointsRequiredForNextLevel) {
+      const excessPoints = newPoints - pointsRequiredForNextLevel;
+      setUserLevel((prevLevel) => prevLevel + 1);
+      setPoints(excessPoints);
+    } else {
+      setPoints(newPoints);
+    }
+  };
+
+  const params = useParams<{ creatorId: string }>();
+  const creator = creators.find(
+    (creator) => creator.username === params.creatorId
+  );
 
   const handleFilterChange = (filter: string) => {
     setSelectedFilter(filter);
   };
 
-  const dialogRef = useRef<HTMLDialogElement>(null);
-  const toggleDialog = () => {
-    if (!dialogRef.current) {
+  const donateDialogRef = useRef<HTMLDialogElement>(null);
+  const donateToggleDialog = () => {
+    if (!donateDialogRef.current) {
       return;
     }
 
-    if (dialogRef.current.hasAttribute('open')) {
-      dialogRef.current.close();
+    if (donateDialogRef.current.hasAttribute('open')) {
+      donateDialogRef.current.close();
     } else {
-      dialogRef.current.showModal();
+      donateDialogRef.current.showModal();
+    }
+  };
+
+  const dialogRefSecond = useRef<HTMLDialogElement>(null);
+  const toggleDialogSecond = () => {
+    if (!dialogRefSecond.current) {
+      return;
+    }
+
+    if (dialogRefSecond.current.hasAttribute('open')) {
+      dialogRefSecond.current.close();
+    } else {
+      dialogRefSecond.current.showModal();
     }
   };
 
@@ -59,7 +92,7 @@ const CreatorPage = () => {
             userLevel={userLevel}
             creatorAvatar={creator?.avatar}
             creatorName={creator?.name}
-            donate={toggleDialog}
+            donate={donateToggleDialog}
           />
         );
       case 'images':
@@ -81,26 +114,6 @@ const CreatorPage = () => {
         );
     }
   };
-
-  const pointsRequiredForNextLevel = userLevel === 1 ? 50 : userLevel * 100;
-  const progress = (points / pointsRequiredForNextLevel) * 100;
-
-  const addPoints = (xpAmount: number) => {
-    const newPoints = points + xpAmount;
-
-    if (newPoints >= pointsRequiredForNextLevel) {
-      const excessPoints = newPoints - pointsRequiredForNextLevel;
-      setUserLevel((prevLevel) => prevLevel + 1);
-      setPoints(excessPoints);
-    } else {
-      setPoints(newPoints);
-    }
-  };
-
-  const params = useParams<{ creatorId: string }>();
-  const creator = creators.find(
-    (creator) => creator.username === params.creatorId
-  );
 
   useScrollToTop();
 
@@ -135,9 +148,27 @@ const CreatorPage = () => {
       />
       {renderSection()}
       <Dialog
-        toggleDialog={toggleDialog}
-        children={<p>Test</p>}
-        ref={dialogRef}
+        ref={dialogRefSecond}
+        toggleDialog={toggleDialogSecond}
+        children={<p>test</p>}
+      />
+      <Dialog
+        toggleDialog={donateToggleDialog}
+        children={
+          <DonateContent
+            tips={() => addPoints(10)}
+            gift={() => addPoints(20)}
+            adopted={adopted}
+            userLevel={userLevel}
+            progress={progress}
+            userXp={points}
+            adopt={() => {
+              setAdopted(!adopted);
+              setUserLevel(1);
+            }}
+          />
+        }
+        ref={donateDialogRef}
       />
     </div>
   );
