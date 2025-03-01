@@ -1,7 +1,7 @@
 import styles from './Avatar.module.css';
 
 interface Props {
-  size?: 'small' | 'big' | 'xs';
+  size?: 'small' | 'big' | 'xs' | 'medium';
   img?: string;
 }
 
@@ -13,6 +13,8 @@ const Avatar = ({ size, img }: Props) => {
           ? styles.avatarSmall
           : size === 'xs'
           ? styles.avatarXs
+          : size === 'medium'
+          ? styles.avatarMedium
           : styles.avatarBig
       }
     >
