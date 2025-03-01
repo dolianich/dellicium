@@ -166,6 +166,8 @@ const CreatorPage = () => {
               setAdopted(!adopted);
               setUserLevel(1);
             }}
+            avatar={creator?.avatar}
+            toggleDialog={donateToggleDialog}
           />
         }
         ref={donateDialogRef}
