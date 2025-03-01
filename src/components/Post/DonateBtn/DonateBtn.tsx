@@ -8,7 +8,7 @@ interface Props {
 const DonateBtn = ({ donate }: Props) => {
   return (
     <button className={styles.btn} onClick={donate}>
-      <HandCoins size={20} weight="regular" />
+      <HandCoins size={20} weight="fill" />
     </button>
   );
 };

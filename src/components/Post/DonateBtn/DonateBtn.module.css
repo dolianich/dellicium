@@ -4,5 +4,10 @@
     justify-content: center;
     border: none;
     background-color: transparent;
-    color: var(--primary);
+    color: var(--dark);
+    width: 34px;
+    height: 34px;
+    background-color: var(--primary);
+    border-radius: 8px;
+    padding: 0;
 }

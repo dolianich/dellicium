@@ -12,7 +12,7 @@ const Description = ({ type, descriptionText }: Props) => {
 
   const displayText = isExpanded
     ? descriptionText
-    : truncateText(descriptionText!, 80);
+    : truncateText(descriptionText!, 60);
 
   const showButton = descriptionText!.length > 80;
 

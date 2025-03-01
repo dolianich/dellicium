@@ -11,7 +11,14 @@ interface Props {
 const Stat = ({ icon: Icon, type, value }: Props) => {
   return (
     <div className={type === 'secondary' ? styles.statSecondary : styles.stat}>
-      <Icon size={20} weight="regular" />
+      <button className={type === 'secondary' ? styles.btn : styles.btnDesktop}>
+        <Icon
+          size={20}
+          weight={type === 'secondary' ? 'fill' : 'regular'}
+          color={type === 'secondary' ? '#6E6E6E' : '#F4F6FE'}
+        />
+      </button>
+
       <p className={styles.number}>{formatPoints(value!)}</p>
     </div>
   );
