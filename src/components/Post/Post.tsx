@@ -16,25 +16,37 @@ interface Props {
   comments?: number;
   descriptionText?: string;
   createdAt: string;
+  contentType: 'image' | 'video';
 }
 
-const Post = ({ avatar, name, userLevel, requiredLevel, media, likes, comments, descriptionText, createdAt }: Props) => {
+const Post = ({
+  avatar,
+  name,
+  userLevel,
+  requiredLevel,
+  media,
+  likes,
+  comments,
+  descriptionText,
+  createdAt,
+  contentType,
+}: Props) => {
   const isLocked = userLevel < requiredLevel;
 
   return (
     <div className={styles.container}>
-      <Media img={media} isLocked={isLocked} />
+      <Media img={media} isLocked={isLocked} contentType={contentType} />
 
       {isLocked && <PostLock requiredLevel={requiredLevel} />}
 
       <div className={styles.elements}>
-        <Author avatar={avatar} name={name} timestamp={createdAt}/>
+        <Author avatar={avatar} name={name} timestamp={createdAt} />
         <div className={styles.bottom}>
-          <Description descriptionText={descriptionText}/>
+          <Description descriptionText={descriptionText} />
           <div className={styles.bottomLine}>
             <div className={styles.stats}>
-              <Stat icon={Heart} value={likes}/>
-              <Stat icon={ChatCircle} value={comments}/>
+              <Stat icon={Heart} value={likes} />
+              <Stat icon={ChatCircle} value={comments} />
             </div>
             <div className={styles.iconContainer}>
               <ImageSquare size={20} weight="regular" />

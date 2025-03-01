@@ -40,7 +40,8 @@ const creators = [
           mediaLink: first,
           likes: 10000,
           comments: 2000,
-          levelRequired: 1
+          levelRequired: 1,
+          contentType: 'image'
         },
         {
           id: 101,
@@ -49,7 +50,8 @@ const creators = [
           mediaLink: second,
           likes: 123,
           comments: 123,
-          levelRequired: 0
+          levelRequired: 0,
+          contentType: 'image'
         },
         {
           id: 102,
@@ -58,7 +60,8 @@ const creators = [
           mediaLink: third,
           likes: 123,
           comments: 123,
-          levelRequired: 3
+          levelRequired: 3,
+          contentType: 'image'
         },
         {
           id: 103,
@@ -67,7 +70,8 @@ const creators = [
           mediaLink: fourth,
           likes: 123,
           comments: 123,
-          levelRequired: 0
+          levelRequired: 0,
+          contentType: 'image'
         },
         {
           id: 104,
@@ -76,7 +80,8 @@ const creators = [
           mediaLink: fifth,
           likes: 123,
           comments: 123,
-          levelRequired: 2
+          levelRequired: 2,
+          contentType: 'image'
         },
         {
           id: 105,
@@ -85,7 +90,8 @@ const creators = [
           mediaLink: sixth,
           likes: 123,
           comments: 123,
-          levelRequired: 1
+          levelRequired: 1,
+          contentType: 'image'
         },
         {
           id: 106,
@@ -94,7 +100,8 @@ const creators = [
           mediaLink: seventh,
           likes: 123,
           comments: 123,
-          levelRequired: 3
+          levelRequired: 3,
+          contentType: 'image'
         },
         {
           id: 107,
@@ -103,7 +110,8 @@ const creators = [
           mediaLink: eighth,
           likes: 123,
           comments: 123,
-          levelRequired: 1
+          levelRequired: 1,
+          contentType: 'image'
         },
       ]
     },

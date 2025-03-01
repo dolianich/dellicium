@@ -12,6 +12,7 @@ type Post = {
   likes: number;
   comments: number;
   levelRequired: number;
+  contentType: 'image' | 'video';
 };
 
 interface Props {
@@ -48,6 +49,7 @@ const PostsGrid = ({
                 descriptionText={post.description}
                 createdAt={post.createdAt}
                 donate={donate}
+                contentType={post.contentType}
               />
             ))
           ) : (
@@ -69,6 +71,7 @@ const PostsGrid = ({
                 comments={post.comments}
                 descriptionText={post.description}
                 createdAt={post.createdAt}
+                contentType={post.contentType}
               />
             ))
           ) : (

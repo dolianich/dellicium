@@ -18,6 +18,7 @@ interface Props {
   descriptionText?: string;
   createdAt: string;
   donate?: () => void;
+  contentType?: 'image' | 'video';
 }
 
 const PostSecondary = ({
@@ -31,6 +32,7 @@ const PostSecondary = ({
   descriptionText,
   createdAt,
   donate,
+  contentType,
 }: Props) => {
   const isLocked = userLevel < requiredLevel;
 
@@ -43,7 +45,12 @@ const PostSecondary = ({
         timestamp={createdAt}
       />
       <div className={styles.container}>
-        <Media img={media} type="secondary" isLocked={isLocked} />
+        <Media
+          img={media}
+          type="secondary"
+          isLocked={isLocked}
+          contentType={contentType}
+        />
         {isLocked && <PostLock requiredLevel={requiredLevel} />}
       </div>
       <Description type="secondary" descriptionText={descriptionText} />
