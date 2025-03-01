@@ -7,7 +7,7 @@ import miainmotion from '../storage/miainmotion.jpg';
 import noahontheego from '../storage/noahonthego.jpg';
 import sophiaspark from '../storage/sophiaspark.jpg';
 
-import first from '../storage/posts/100.png';
+import testVideo from '../storage/posts/testVideo.MOV';
 import second from '../storage/posts/101.png';
 import third from '../storage/posts/102.png';
 import fourth from '../storage/posts/103.png';
@@ -37,11 +37,11 @@ const creators = [
           date: '25.05.2025',
           createdAt: '2025-02-26T09:00:00Z',
           description: 'description text description text description text description text description text',
-          mediaLink: first,
+          mediaLink: testVideo,
           likes: 10000,
           comments: 2000,
           levelRequired: 1,
-          contentType: 'image'
+          contentType: 'video'
         },
         {
           id: 101,

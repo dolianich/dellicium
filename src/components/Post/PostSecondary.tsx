@@ -12,13 +12,13 @@ interface Props {
   name?: string;
   userLevel: number;
   requiredLevel: number;
-  media?: string;
+  src?: string;
   likes?: number;
   comments?: number;
   descriptionText?: string;
   createdAt: string;
   donate?: () => void;
-  contentType?: 'image' | 'video';
+  contentType: 'image' | 'video';
 }
 
 const PostSecondary = ({
@@ -26,7 +26,7 @@ const PostSecondary = ({
   name,
   userLevel,
   requiredLevel,
-  media,
+  src,
   likes,
   comments,
   descriptionText,
@@ -46,7 +46,7 @@ const PostSecondary = ({
       />
       <div className={styles.container}>
         <Media
-          img={media}
+          src={src}
           type="secondary"
           isLocked={isLocked}
           contentType={contentType}

@@ -1,25 +1,31 @@
 import styles from './Media.module.css';
 
 interface Props {
-  img?: string;
+  src?: string;
   isLocked: boolean;
   type?: string;
-  contentType?: 'image' | 'video';
+  contentType: 'image' | 'video';
 }
 
-const Media = ({ img, isLocked, type, contentType }: Props) => {
+const Media = ({ src, isLocked, type, contentType }: Props) => {
   return (
     <div className={`${styles.media} ${isLocked ? styles.mediaLocked : ''}`}>
       {contentType === 'image' ? (
         <img
-          src={img}
+          src={src}
           alt="post"
           className={
             type === 'secondary' ? styles.contentSecondary : styles.content
           }
         />
       ) : contentType === 'video' ? (
-        <video />
+        <video
+          src={src}
+          controls
+          className={
+            type === 'secondary' ? styles.contentSecondary : styles.content
+          }
+        />
       ) : (
         ''
       )}

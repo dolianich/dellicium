@@ -25,6 +25,7 @@ type Post = {
   likes: number;
   comments: number;
   levelRequired: number;
+  contentType: 'image' | 'video';
 };
 
 const CreatorPage = () => {

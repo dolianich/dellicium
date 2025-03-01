@@ -11,7 +11,7 @@ interface Props {
   name?: string;
   userLevel: number;
   requiredLevel: number;
-  media?: string;
+  src?: string;
   likes?: number;
   comments?: number;
   descriptionText?: string;
@@ -24,7 +24,7 @@ const Post = ({
   name,
   userLevel,
   requiredLevel,
-  media,
+  src,
   likes,
   comments,
   descriptionText,
@@ -35,7 +35,7 @@ const Post = ({
 
   return (
     <div className={styles.container}>
-      <Media img={media} isLocked={isLocked} contentType={contentType} />
+      <Media src={src} isLocked={isLocked} contentType={contentType} />
 
       {isLocked && <PostLock requiredLevel={requiredLevel} />}
 
