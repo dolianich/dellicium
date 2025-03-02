@@ -1,6 +1,6 @@
 import styles from './ActionBtn.module.css';
 import Lottie from 'lottie-react';
-import game from '../../../../assets/animations/game.json';
+import wishlist from '../../../../assets/animations/game.json';
 import custom from '../../../../assets/animations/custom.json';
 
 interface Props {
@@ -18,7 +18,7 @@ const ActionBtn = ({ title, subtitle, type }: Props) => {
       </div>
       <div className={styles.animContainer}>
         <Lottie
-          animationData={type === 'game' ? game : custom}
+          animationData={type === 'wishlist' ? wishlist : custom}
           className={styles.animation}
         />
       </div>

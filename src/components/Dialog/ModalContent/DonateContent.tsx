@@ -6,6 +6,7 @@ import { UserCirclePlus } from '@phosphor-icons/react';
 import styles from './DonateContent.module.css';
 import Avatar from '../../Avatar/Avatar';
 import DonateCloseBtn from './DonateCloseBtn/DonateCloseBtn';
+import ActionBtn from '../../ProfileCard/Actions/ActionBtn/ActionBtn';
 
 interface Props {
   tips: () => void;
@@ -47,6 +48,11 @@ const DonateContent = ({
           <>
             <DonateBtn onClick={tips} type="tips" />
             <DonateBtn onClick={gift} type="gift" />
+            <ActionBtn
+              title="Wishlist"
+              subtitle="make dreams happen"
+              type="wishlist"
+            />
           </>
         ) : (
           <Button

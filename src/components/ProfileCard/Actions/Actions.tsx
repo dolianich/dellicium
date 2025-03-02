@@ -41,15 +41,15 @@ const Actions = ({ tips, gift }: Props) => {
         <div className={styles.secondary}>
           <div className={styles.actionsBtns}>
             <ActionBtn
+              title="Wishlist"
+              subtitle="make dreams happen"
+              type="wishlist"
+            />
+            <ActionBtn
               title="Custom"
               subtitle="custom content request"
               type="custom"
             />{' '}
-            <ActionBtn
-              title="Mini-Game"
-              subtitle="level up your creator"
-              type="game"
-            />
           </div>
           <div className={styles.actionsSm}>
             <ActionBtnSm type="Challenges" /> <ActionBtnSm type="Rewards" />
