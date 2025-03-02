@@ -1,5 +1,10 @@
 import styles from './Post.module.css';
-import { Heart, ChatCircle, ImageSquare } from '@phosphor-icons/react';
+import {
+  Heart,
+  ChatCircle,
+  ImageSquare,
+  FilmStrip,
+} from '@phosphor-icons/react';
 import Author from './Author/Author';
 import PostLock from './PostLock/PostLock';
 import Media from './Media/Media';
@@ -49,7 +54,13 @@ const Post = ({
               <Stat icon={ChatCircle} value={comments} />
             </div>
             <div className={styles.iconContainer}>
-              <ImageSquare size={20} weight="regular" />
+              {contentType === 'image' ? (
+                <ImageSquare size={20} weight="regular" />
+              ) : contentType === 'video' ? (
+                <FilmStrip size={20} weight="regular" />
+              ) : (
+                ''
+              )}
             </div>
           </div>
         </div>
