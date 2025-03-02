@@ -21,6 +21,7 @@ interface Props {
   creatorName?: string;
   userLevel: number;
   donate?: () => void;
+  filter: string;
 }
 
 const PostsGrid = ({
@@ -29,14 +30,22 @@ const PostsGrid = ({
   creatorName,
   userLevel,
   donate,
+  filter,
 }: Props) => {
   const isMobile = useScreenSize();
+
+  const imagePosts = posts?.filter((post) => post.contentType === 'image');
+  const videoPosts = posts?.filter((post) => post.contentType === 'video');
+
+  const postsToRender =
+    filter === 'images' ? imagePosts : filter === 'videos' ? videoPosts : posts;
+
   return (
     <>
       {isMobile ? (
         <div className={styles.mobilePosts}>
-          {posts ? (
-            posts.map((post) => (
+          {postsToRender ? (
+            postsToRender.map((post) => (
               <PostSecondary
                 key={post.id}
                 avatar={creatorAvatar}
@@ -58,8 +67,8 @@ const PostsGrid = ({
         </div>
       ) : (
         <div className={styles.posts}>
-          {posts ? (
-            posts.map((post) => (
+          {postsToRender ? (
+            postsToRender.map((post) => (
               <Post
                 key={post.id}
                 avatar={creatorAvatar}

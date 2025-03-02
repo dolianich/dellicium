@@ -94,12 +94,31 @@ const CreatorPage = () => {
             creatorAvatar={creator?.avatar}
             creatorName={creator?.name}
             donate={donateToggleDialog}
+            filter={selectedFilter}
           />
         );
       case 'images':
-        return <div>Images</div>;
+        return (
+          <PostsGrid
+            posts={creator?.posts as Post[]}
+            userLevel={userLevel}
+            creatorAvatar={creator?.avatar}
+            creatorName={creator?.name}
+            donate={donateToggleDialog}
+            filter={selectedFilter}
+          />
+        );
       case 'videos':
-        return <div>Videos</div>;
+        return (
+          <PostsGrid
+            posts={creator?.posts as Post[]}
+            userLevel={userLevel}
+            creatorAvatar={creator?.avatar}
+            creatorName={creator?.name}
+            donate={donateToggleDialog}
+            filter={selectedFilter}
+          />
+        );
       case 'gifts':
         return <div>Gifts</div>;
       case 'leaderboard':
@@ -111,6 +130,7 @@ const CreatorPage = () => {
             userLevel={userLevel}
             creatorAvatar={creator?.avatar}
             creatorName={creator?.name}
+            filter={selectedFilter}
           />
         );
     }
