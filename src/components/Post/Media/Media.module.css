@@ -19,3 +19,10 @@
     height: auto; 
     display: block;
 }
+
+
+.media video{
+    display: block;
+    object-fit: cover;
+}
+  

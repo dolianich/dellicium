@@ -1,4 +1,5 @@
 import styles from './Media.module.css';
+import ReactPlayer from 'react-player';
 
 interface Props {
   src?: string;
@@ -19,13 +20,7 @@ const Media = ({ src, isLocked, type, contentType }: Props) => {
           }
         />
       ) : contentType === 'video' ? (
-        <video
-          src={src}
-          controls
-          className={
-            type === 'secondary' ? styles.contentSecondary : styles.content
-          }
-        />
+        <ReactPlayer url={src} controls={true} width={'100%'} height={'auto'} />
       ) : (
         ''
       )}
