@@ -8,6 +8,7 @@ import {
   SpeakerSlash,
 } from '@phosphor-icons/react';
 import { formatTime } from '../../../../utils/formatTime';
+import { useState } from 'react';
 
 interface Props {
   handlePlay?: () => void;
@@ -35,16 +36,22 @@ const VideoControls = ({
   const progress =
     loadedSeconds! > 0 ? (playedSeconds! / loadedSeconds!) * 100 : 0;
 
+  const [visible, setVisible] = useState(true);
+
   return (
     <>
-      <button className={styles.playBtn} onClick={handlePlay}>
+      <div className={styles.hideArea} onClick={() => setVisible(!visible)} />
+      <button
+        className={visible ? styles.playBtn : styles.playBtnHide}
+        onClick={handlePlay}
+      >
         {playing ? (
           <Pause weight="fill" size={20} />
         ) : (
           <Play weight="fill" size={20} />
         )}
       </button>
-      <div className={styles.controls}>
+      <div className={visible ? styles.controls : styles.hideControls}>
         <div className={styles.duration}>
           <p className={styles.playedSeconds}>{formatTime(playedSeconds!)}</p>
           <p className={styles.loadedSeconds}>{formatTime(loadedSeconds!)}</p>

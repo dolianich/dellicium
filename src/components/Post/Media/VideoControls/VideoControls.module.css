@@ -12,6 +12,7 @@
     padding: 12px;
     gap: 12px;
     align-items: center;
+    transition: all ease-in-out 0.2s;
 }
 
 .playBtn{
@@ -120,4 +121,52 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
+}
+
+.hideArea{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    background-color: transparent
+}
+
+.hideControls{
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    z-index: 2;
+    bottom: 24px;
+    left: 24px;
+    right: 24px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    border-radius: 8px;
+    padding: 12px;
+    gap: 12px;
+    align-items: center;
+    transition: all ease-in-out 0.2s;
+}
+
+.playBtnHide{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    color: var(--primary);
+    background-color: var(--dark-tr);
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all ease-in-out 0.2s;
 }

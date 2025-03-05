@@ -80,7 +80,7 @@ const Media = ({ src, isLocked, type, contentType }: Props) => {
             url={src}
             controls={false}
             width={'100%'}
-            height={'auto'}
+            height={'100%'}
             loop
             muted={mute}
             ref={refPlayer}
