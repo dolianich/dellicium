@@ -13,11 +13,11 @@ const MobNav = () => {
     const handleScroll = () => {
       const currentScrollPos = window.pageYOffset;
 
-      if (currentScrollPos > prevScrollPos) {
+      if (currentScrollPos > 76){if (currentScrollPos > prevScrollPos) {
         setIsTransparent(true);
       } else {
         setIsTransparent(false);
-      }
+      }}
 
       setPrevScrollPos(currentScrollPos);
     };
