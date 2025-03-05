@@ -1,4 +1,5 @@
 import styles from './VideoControls.module.css';
+import { Play, Pause } from '@phosphor-icons/react';
 
 interface Props {
   handlePlay?: () => void;
@@ -26,7 +27,7 @@ const VideoControls = ({
   return (
     <>
       <button className={styles.playBtn} onClick={handlePlay}>
-        {playing ? 'Pause' : 'Play'}
+        {playing ? <Pause weight='fill' size={20}/> : <Play weight='fill' size={20}/>}
       </button>
       <div className={styles.controls}>
         <button onClick={handleScreenSize}>{fullScreen ? 'H' : 'S'}</button>
