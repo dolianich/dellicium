@@ -45,6 +45,11 @@ const VideoControls = ({
         )}
       </button>
       <div className={styles.controls}>
+        <div className={styles.duration}>
+          <p className={styles.playedSeconds}>{formatTime(playedSeconds!)}</p>
+          <p className={styles.loadedSeconds}>{formatTime(loadedSeconds!)}</p>
+        </div>
+
         <input
           type="range"
           min={0}
@@ -57,26 +62,30 @@ const VideoControls = ({
             background: `linear-gradient(to right, #BBFCDC ${progress}%, #111111 ${progress}%)`,
           }}
         />
-        <div className={styles.bottom}>
-          <div className={styles.duration}>
-            <p className={styles.playedSeconds}>{formatTime(playedSeconds!)}</p>
-            <p className={styles.playedSeconds}>/</p>
-            <p className={styles.loadedSeconds}>{formatTime(loadedSeconds!)}</p>
-          </div>
 
+        <div className={styles.bottom}>
           <div className={styles.topControls}>
             <button onClick={handleMute} className={styles.controlBtn}>
               {mute ? (
-                <SpeakerSlash weight="regular" size={16} />
+                <SpeakerSlash weight="fill" size={20} />
               ) : (
-                <SpeakerHigh weight="regular" size={16} />
+                <SpeakerHigh weight="fill" size={20} />
               )}
             </button>
+
+            <button onClick={handlePlay} className={styles.controlBtn}>
+              {playing ? (
+                <Pause weight="fill" size={20} />
+              ) : (
+                <Play weight="fill" size={20} />
+              )}
+            </button>
+
             <button onClick={handleScreenSize} className={styles.controlBtn}>
               {fullScreen ? (
-                <CornersIn weight="regular" size={16} />
+                <CornersIn weight="fill" size={20} />
               ) : (
-                <CornersOut weight="regular" size={16} />
+                <CornersOut weight="fill" size={20} />
               )}
             </button>
           </div>
