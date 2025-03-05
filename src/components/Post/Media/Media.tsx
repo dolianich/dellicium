@@ -64,17 +64,21 @@ const Media = ({ src, isLocked, type, contentType }: Props) => {
         />
       ) : contentType === 'video' ? (
         <div ref={refPlayerContainer} className={styles.videoWrapper}>
-          <VideoControls
-            handlePlay={handlePlay}
-            handleMute={handleMute}
-            fullScreen={fullScreen}
-            playing={playing}
-            mute={mute}
-            loadedSeconds={loadedSeconds}
-            playedSeconds={playedSeconds}
-            handleProgressTrack={handleProgressTrack}
-            handleScreenSize={handleScreenSize}
-          />
+          {type === 'secondary' ? (
+            <VideoControls
+              handlePlay={handlePlay}
+              handleMute={handleMute}
+              fullScreen={fullScreen}
+              playing={playing}
+              mute={mute}
+              loadedSeconds={loadedSeconds}
+              playedSeconds={playedSeconds}
+              handleProgressTrack={handleProgressTrack}
+              handleScreenSize={handleScreenSize}
+            />
+          ) : (
+            ''
+          )}
           <ReactPlayer
             playing={playing}
             url={src}
