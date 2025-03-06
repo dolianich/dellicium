@@ -62,7 +62,7 @@
     font-size: 10px;
     font-family: "Inter";
     line-height: 10px;
-    color: var(--white);
+    color: var(--light-grey);
     font-weight: 200;
     margin: 0;
 }
@@ -72,7 +72,7 @@
     font-size: 10px;
     font-family: "Inter";
     line-height: 10px;
-    color: var(--white);
+    color: var(--light-grey);
     font-weight: 200;
     margin: 0;
 }
@@ -93,7 +93,7 @@
     appearance: none;
     width: 10px; 
     height: 10px; 
-    background: var(--primary); 
+    background: transparent; 
     border-radius: 100px; 
     cursor: pointer;
     
@@ -166,6 +166,78 @@
     border-radius: 8px;
     padding: 0;
     margin: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all ease-in-out 0.2s;
+}
+
+.muteBtn{
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 8px;
+    width: 34px;
+    height: 34px;
+    color: var(--light-grey);
+    background-color: var(--dark-tr);
+    padding: 0;
+    margin: 0;
+    transition: all ease-in-out 0.2s;
+}
+
+.muteBtnHide{
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 8px;
+    width: 34px;
+    height: 34px;
+    color: var(--light-grey);
+    background-color: var(--dark-tr);
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all ease-in-out 0.2s;
+}
+
+.progressContainer{
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    width: calc(100% - 72px);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px;
+    background-color: var(--dark-tr);
+    border-radius: 8px;
+    z-index: 2;
+    transition: all ease-in-out 0.2s;
+}
+
+.progressContainerHide{
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    width: calc(100% - 72px);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px;
+    background-color: var(--dark-tr);
+    border-radius: 8px;
+    z-index: 2;
     opacity: 0;
     visibility: hidden;
     transition: all ease-in-out 0.2s;

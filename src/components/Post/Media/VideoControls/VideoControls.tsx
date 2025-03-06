@@ -41,6 +41,41 @@ const VideoControls = ({
   return (
     <>
       <div className={styles.hideArea} onClick={() => setVisible(!visible)} />
+
+      <button
+        onClick={handleMute}
+        className={visible ? styles.muteBtn : styles.muteBtnHide}
+      >
+        {mute ? (
+          <SpeakerSlash weight="fill" size={20} />
+        ) : (
+          <SpeakerHigh weight="fill" size={20} />
+        )}
+      </button>
+
+      <div
+        className={
+          visible && playing ? styles.progressContainer : styles.progressContainerHide
+        }
+      >
+        <div className={styles.duration}>
+          <p className={styles.playedSeconds}>{formatTime(playedSeconds!)}</p>
+          <p className={styles.loadedSeconds}>{formatTime(loadedSeconds!)}</p>
+        </div>
+        <input
+          type="range"
+          min={0}
+          max={loadedSeconds}
+          value={playedSeconds}
+          step={0.000001}
+          onChange={(e) => handleProgressTrack(e.target.value)}
+          className={styles.progress}
+          style={{
+            background: `linear-gradient(to right, #BBFCDC ${progress}%, #111111 ${progress}%)`,
+          }}
+        />
+      </div>
+
       <button
         className={visible ? styles.playBtn : styles.playBtnHide}
         onClick={handlePlay}
@@ -51,7 +86,8 @@ const VideoControls = ({
           <Play weight="fill" size={20} />
         )}
       </button>
-      <div className={visible ? styles.controls : styles.hideControls}>
+
+      <div style={{ display: 'none' }}>
         <div className={styles.duration}>
           <p className={styles.playedSeconds}>{formatTime(playedSeconds!)}</p>
           <p className={styles.loadedSeconds}>{formatTime(loadedSeconds!)}</p>

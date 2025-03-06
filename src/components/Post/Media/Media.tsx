@@ -20,8 +20,13 @@ const Media = ({ src, isLocked, type, contentType }: Props) => {
     playedSeconds: 0,
   });
 
-  const { playing, mute, fullScreen, loadedSeconds, playedSeconds } =
-    videoControls;
+  const {
+    playing,
+    mute,
+    fullScreen,
+    loadedSeconds,
+    playedSeconds,
+  } = videoControls;
 
   const refPlayer = useRef<ReactPlayer | null>(null);
   const refPlayerContainer = useRef<HTMLDivElement>(null);
@@ -89,6 +94,14 @@ const Media = ({ src, isLocked, type, contentType }: Props) => {
             muted={mute}
             ref={refPlayer}
             onProgress={handleProgress}
+            config={{
+              file: {
+                attributes: {
+                  playsInline: true,
+                  webkitPlaysInline: true,
+                },
+              },
+            }}
           />
         </div>
       ) : (
