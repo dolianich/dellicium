@@ -25,6 +25,7 @@ import handsome from '../storage/tosha/posts/handsome.jpg';
 import freeze from '../storage/tosha/posts/freeze.jpg';
 import hunt from '../storage/tosha/posts/hunt.jpg';
 import scream from '../storage/tosha/posts/scream.jpg';
+import breakfast from '../storage/tosha/posts/eating.MOV';
 
 const creators = [
   {
@@ -42,6 +43,17 @@ const creators = [
       x: 'https://x.com/'
     },
     posts: [
+      {
+        id: 99,
+        date: '25.05.2025',
+        createdAt: '2025-02-26T09:00:00Z',
+        description: 'Breakfast',
+        mediaLink: breakfast,
+        likes: 10000,
+        comments: 2000,
+        levelRequired: 0,
+        contentType: 'video'
+      },
       {
         id: 100,
         date: '25.05.2025',
