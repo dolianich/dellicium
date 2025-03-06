@@ -180,15 +180,16 @@ const CreatorPage = () => {
             tips={() => addPoints(10)}
             gift={() => addPoints(20)}
             adopted={adopted}
-            userLevel={userLevel}
-            progress={progress}
-            userXp={points}
+            name={creator?.name}
             adopt={() => {
               setAdopted(!adopted);
               setUserLevel(1);
             }}
             avatar={creator?.avatar}
             toggleDialog={donateToggleDialog}
+            userLevel={userLevel}
+            userXp={points}
+            progress={progress}
           />
         }
         ref={donateDialogRef}

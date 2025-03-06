@@ -1,0 +1,44 @@
+.btn{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    border: none;
+    border-radius: 8px;
+    padding: 4px;
+    background-color: var(--dark);
+    cursor: pointer;
+    flex: 1;
+}
+
+.title{
+    text-align: left;
+    font-size: 14px;
+    font-family: "Inter";
+    line-height: 20px;
+    color: var(--white);
+    font-weight: 900;
+    margin: 0; 
+}
+
+.iconContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--grey);
+    border-radius: 4px;
+    width: 36px;
+    height: 36px;
+}
+
+.left{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+.arrow{
+    color: var(--light-grey);
+    margin-right: 4px;
+}

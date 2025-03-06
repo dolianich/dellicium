@@ -98,7 +98,7 @@ const Media = ({ src, isLocked, type, contentType }: Props) => {
               file: {
                 attributes: {
                   playsInline: true,
-                  webkitPlaysInline: true,
+                  webkitplaysinline: "true",
                 },
               },
             }}

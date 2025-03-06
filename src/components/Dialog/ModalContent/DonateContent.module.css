@@ -36,3 +36,13 @@
     margin-top: 8px;
 }
 
+.name{
+    text-align: center;
+    font-size: 36px;
+    font-family: "Nighty";
+    line-height: 28px;
+    letter-spacing: 2px;
+    color: var(--white);
+    font-weight: 400;
+    margin: 0;
+}

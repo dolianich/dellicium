@@ -38,9 +38,21 @@ const VideoControls = ({
 
   const [visible, setVisible] = useState(true);
 
+  const playClick = () => {
+    handlePlay!();
+    setTimeout(() => {
+      if (visible) setVisible(!visible);
+    }, 2000);
+  };
+
   return (
     <>
-      <div className={styles.hideArea} onClick={() => setVisible(!visible)} />
+      <div
+        className={styles.hideArea}
+        onClick={() => {
+          setVisible(!visible);
+        }}
+      />
 
       <button
         onClick={handleMute}
@@ -55,7 +67,9 @@ const VideoControls = ({
 
       <div
         className={
-          visible && playing ? styles.progressContainer : styles.progressContainerHide
+          visible && playedSeconds! > 0
+            ? styles.progressContainer
+            : styles.progressContainerHide
         }
       >
         <div className={styles.duration}>
@@ -78,7 +92,7 @@ const VideoControls = ({
 
       <button
         className={visible ? styles.playBtn : styles.playBtnHide}
-        onClick={handlePlay}
+        onClick={playClick}
       >
         {playing ? (
           <Pause weight="fill" size={20} />
