@@ -22,6 +22,7 @@ interface Props {
   userLevel: number;
   donate?: () => void;
   filter: string;
+  postClick?: () => void;
 }
 
 const PostsGrid = ({
@@ -31,6 +32,7 @@ const PostsGrid = ({
   userLevel,
   donate,
   filter,
+  postClick,
 }: Props) => {
   const isMobile = useScreenSize();
 
@@ -81,6 +83,7 @@ const PostsGrid = ({
                 descriptionText={post.description}
                 createdAt={post.createdAt}
                 contentType={post.contentType}
+                onClick={postClick}
               />
             ))
           ) : (

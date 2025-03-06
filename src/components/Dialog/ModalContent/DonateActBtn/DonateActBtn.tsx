@@ -17,7 +17,7 @@ const DonateActBtn = ({ text, type, onClick }: Props) => {
           ) : type === 'gift' ? (
             <Gift weight="fill" size={20} color="#E6BBFC" />
           ) : (
-            <ClipboardText weight="fill" size={20} />
+            <ClipboardText weight="fill" size={20} color="#BBF2FC" />
           )}
         </div>
         <h4 className={styles.title}>{text}</h4>

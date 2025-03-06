@@ -22,6 +22,7 @@ interface Props {
   descriptionText?: string;
   createdAt: string;
   contentType: 'image' | 'video';
+  onClick?: () => void;
 }
 
 const Post = ({
@@ -35,11 +36,12 @@ const Post = ({
   descriptionText,
   createdAt,
   contentType,
+  onClick,
 }: Props) => {
   const isLocked = userLevel < requiredLevel;
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} onClick={onClick}>
       <Media src={src} isLocked={isLocked} contentType={contentType} />
 
       {isLocked && <PostLock requiredLevel={requiredLevel} />}

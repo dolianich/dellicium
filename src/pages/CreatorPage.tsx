@@ -71,16 +71,16 @@ const CreatorPage = () => {
     }
   };
 
-  const dialogRefSecond = useRef<HTMLDialogElement>(null);
-  const toggleDialogSecond = () => {
-    if (!dialogRefSecond.current) {
+  const dialogOnPostClick = useRef<HTMLDialogElement>(null);
+  const toggleDialogOnPOstClick = () => {
+    if (!dialogOnPostClick.current) {
       return;
     }
 
-    if (dialogRefSecond.current.hasAttribute('open')) {
-      dialogRefSecond.current.close();
+    if (dialogOnPostClick.current.hasAttribute('open')) {
+      dialogOnPostClick.current.close();
     } else {
-      dialogRefSecond.current.showModal();
+      dialogOnPostClick.current.showModal();
     }
   };
 
@@ -95,6 +95,7 @@ const CreatorPage = () => {
             creatorName={creator?.name}
             donate={donateToggleDialog}
             filter={selectedFilter}
+            postClick={toggleDialogOnPOstClick}
           />
         );
       case 'images':
@@ -106,6 +107,7 @@ const CreatorPage = () => {
             creatorName={creator?.name}
             donate={donateToggleDialog}
             filter={selectedFilter}
+            postClick={toggleDialogOnPOstClick}
           />
         );
       case 'videos':
@@ -117,6 +119,7 @@ const CreatorPage = () => {
             creatorName={creator?.name}
             donate={donateToggleDialog}
             filter={selectedFilter}
+            postClick={toggleDialogOnPOstClick}
           />
         );
       case 'gifts':
@@ -131,6 +134,7 @@ const CreatorPage = () => {
             creatorAvatar={creator?.avatar}
             creatorName={creator?.name}
             filter={selectedFilter}
+            postClick={toggleDialogOnPOstClick}
           />
         );
     }
@@ -169,8 +173,8 @@ const CreatorPage = () => {
       />
       {renderSection()}
       <Dialog
-        ref={dialogRefSecond}
-        toggleDialog={toggleDialogSecond}
+        ref={dialogOnPostClick}
+        toggleDialog={toggleDialogOnPOstClick}
         children={<p>test</p>}
       />
       <Dialog
