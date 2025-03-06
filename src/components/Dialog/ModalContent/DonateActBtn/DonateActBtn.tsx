@@ -7,9 +7,9 @@ interface Props {
   onClick?: () => void;
 }
 
-const DonateActBtn = ({ text, type }: Props) => {
+const DonateActBtn = ({ text, type, onClick }: Props) => {
   return (
-    <button className={styles.btn}>
+    <button className={styles.btn} onClick={onClick}>
       <div className={styles.left}>
         <div className={styles.iconContainer}>
           {type === 'tips' ? (
@@ -17,7 +17,7 @@ const DonateActBtn = ({ text, type }: Props) => {
           ) : type === 'gift' ? (
             <Gift weight="fill" size={20} color="#E6BBFC" />
           ) : (
-            <ClipboardText weight="fill" size={20} color="#BBF2FC" />
+            <ClipboardText weight="fill" size={20} />
           )}
         </div>
         <h4 className={styles.title}>{text}</h4>

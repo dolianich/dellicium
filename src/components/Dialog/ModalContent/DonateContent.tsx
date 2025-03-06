@@ -1,10 +1,8 @@
-import DonateBtn from '../../ProfileCard/Actions/DonateBtn/DonateBtn';
 import Button from '../../Button/Button';
 import { UserCirclePlus } from '@phosphor-icons/react';
 import styles from './DonateContent.module.css';
 import Avatar from '../../Avatar/Avatar';
 import DonateCloseBtn from './DonateCloseBtn/DonateCloseBtn';
-import ActionBtn from '../../ProfileCard/Actions/ActionBtn/ActionBtn';
 import Indicator from '../../ProfileCard/ProgressBar/Indicator/Indicator';
 import ProgressBar from '../../ProfileCard/ProgressBar/ProgressBar';
 import DonateActBtn from './DonateActBtn/DonateActBtn';
@@ -63,14 +61,11 @@ const DonateContent = ({
               userXp={userXp}
               userLevel={userLevel}
             />
-            <DonateActBtn text='Send Tips' type='tips' onClick={tips}/>
-            <DonateBtn onClick={tips} type="tips" />
-            <DonateBtn onClick={gift} type="gift" />
-            <ActionBtn
-              title="Wishlist"
-              subtitle="make dreams happen"
-              type="wishlist"
-            />
+            <div className={styles.actionBtns}>
+              <DonateActBtn text="Send Tips" type="tips" onClick={tips} />
+              <DonateActBtn text="NFT Gift" type="gift" onClick={gift} />
+              <DonateActBtn text="Wishlist" type="wishlist" />
+            </div>
           </>
         ) : (
           <Button
