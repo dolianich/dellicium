@@ -10,6 +10,8 @@ import PostLock from './PostLock/PostLock';
 import Media from './Media/Media';
 import Description from './Description/Description';
 import Stat from './Stat/Stat';
+import { useRef } from 'react';
+import Dialog from '../Dialog/Dialog';
 
 interface Props {
   avatar?: string;
@@ -22,10 +24,9 @@ interface Props {
   descriptionText?: string;
   createdAt: string;
   contentType: 'image' | 'video';
-  onClick?: () => void;
 }
 
-const Post = ({
+const PostSquare = ({
   avatar,
   name,
   userLevel,
@@ -36,12 +37,24 @@ const Post = ({
   descriptionText,
   createdAt,
   contentType,
-  onClick,
 }: Props) => {
   const isLocked = userLevel < requiredLevel;
 
+  const donateDialogRef = useRef<HTMLDialogElement>(null);
+  const donateToggleDialog = () => {
+    if (!donateDialogRef.current) {
+      return;
+    }
+
+    if (donateDialogRef.current.hasAttribute('open')) {
+      donateDialogRef.current.close();
+    } else {
+      donateDialogRef.current.showModal();
+    }
+  };
+
   return (
-    <div className={styles.container} onClick={onClick}>
+    <div className={styles.container} onClick={donateToggleDialog}>
       <Media src={src} isLocked={isLocked} contentType={contentType} />
 
       {isLocked && <PostLock requiredLevel={requiredLevel} />}
@@ -67,8 +80,18 @@ const Post = ({
           </div>
         </div>
       </div>
+      <Dialog
+        toggleDialog={donateToggleDialog}
+        ref={donateDialogRef}
+        children={
+          <div>
+            {descriptionText}
+            <button onClick={donateToggleDialog}>close</button>
+          </div>
+        }
+      />
     </div>
   );
 };
 
-export default Post;
+export default PostSquare;

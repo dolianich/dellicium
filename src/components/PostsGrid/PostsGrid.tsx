@@ -1,6 +1,6 @@
 import styles from './PostsGrid.module.css';
 import PostSecondary from '../Post/PostSecondary';
-import Post from '../Post/Post';
+import PostSquare from '../Post/PostSquare';
 import useScreenSize from '../../utils/useScreenSize';
 
 type Post = {
@@ -22,7 +22,6 @@ interface Props {
   userLevel: number;
   donate?: () => void;
   filter: string;
-  postClick?: () => void;
 }
 
 const PostsGrid = ({
@@ -32,7 +31,6 @@ const PostsGrid = ({
   userLevel,
   donate,
   filter,
-  postClick,
 }: Props) => {
   const isMobile = useScreenSize();
 
@@ -71,7 +69,7 @@ const PostsGrid = ({
         <div className={styles.posts}>
           {postsToRender ? (
             postsToRender.map((post) => (
-              <Post
+              <PostSquare
                 key={post.id}
                 avatar={creatorAvatar}
                 name={creatorName}
@@ -83,7 +81,6 @@ const PostsGrid = ({
                 descriptionText={post.description}
                 createdAt={post.createdAt}
                 contentType={post.contentType}
-                onClick={postClick}
               />
             ))
           ) : (

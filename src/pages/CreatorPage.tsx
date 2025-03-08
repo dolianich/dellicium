@@ -71,18 +71,7 @@ const CreatorPage = () => {
     }
   };
 
-  const dialogOnPostClick = useRef<HTMLDialogElement>(null);
-  const toggleDialogOnPOstClick = () => {
-    if (!dialogOnPostClick.current) {
-      return;
-    }
-
-    if (dialogOnPostClick.current.hasAttribute('open')) {
-      dialogOnPostClick.current.close();
-    } else {
-      dialogOnPostClick.current.showModal();
-    }
-  };
+  
 
   const renderSection = () => {
     switch (selectedFilter) {
@@ -95,7 +84,6 @@ const CreatorPage = () => {
             creatorName={creator?.name}
             donate={donateToggleDialog}
             filter={selectedFilter}
-            postClick={toggleDialogOnPOstClick}
           />
         );
       case 'images':
@@ -107,7 +95,6 @@ const CreatorPage = () => {
             creatorName={creator?.name}
             donate={donateToggleDialog}
             filter={selectedFilter}
-            postClick={toggleDialogOnPOstClick}
           />
         );
       case 'videos':
@@ -119,7 +106,6 @@ const CreatorPage = () => {
             creatorName={creator?.name}
             donate={donateToggleDialog}
             filter={selectedFilter}
-            postClick={toggleDialogOnPOstClick}
           />
         );
       case 'gifts':
@@ -134,7 +120,6 @@ const CreatorPage = () => {
             creatorAvatar={creator?.avatar}
             creatorName={creator?.name}
             filter={selectedFilter}
-            postClick={toggleDialogOnPOstClick}
           />
         );
     }
@@ -172,11 +157,7 @@ const CreatorPage = () => {
         selectedFilter={selectedFilter}
       />
       {renderSection()}
-      <Dialog
-        ref={dialogOnPostClick}
-        toggleDialog={toggleDialogOnPOstClick}
-        children={<p>test</p>}
-      />
+      
       <Dialog
         toggleDialog={donateToggleDialog}
         children={
