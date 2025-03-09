@@ -20,7 +20,7 @@ const Dialog = forwardRef<HTMLDialogElement, Props>(
 
     return (
       <dialog className={styles.dialog} ref={ref} onClick={handleClickOutside}>
-        <div onClick={handleClickInside}>{children}</div>
+        <div className={styles.inside} onClick={handleClickInside}>{children}</div>
       </dialog>
     );
   }

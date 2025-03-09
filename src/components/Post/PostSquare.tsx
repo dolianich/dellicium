@@ -12,6 +12,7 @@ import Description from './Description/Description';
 import Stat from './Stat/Stat';
 import { useRef } from 'react';
 import Dialog from '../Dialog/Dialog';
+import PostPopUp from '../Dialog/ModalContent/PostPopUp/PostPopUp';
 
 interface Props {
   avatar?: string;
@@ -85,8 +86,12 @@ const PostSquare = ({
         ref={donateDialogRef}
         children={
           <div>
-            {descriptionText}
-            <button onClick={donateToggleDialog}>close</button>
+            <PostPopUp
+              src={src}
+              isLocked={isLocked}
+              contentType={contentType}
+              requiredLevel={requiredLevel}
+            />
           </div>
         }
       />
