@@ -4,10 +4,11 @@ import styles from './Dialog.module.css';
 interface Props {
   children?: React.ReactNode;
   toggleDialog: () => void;
+  type?: 'primary' | 'secondary';
 }
 
 const Dialog = forwardRef<HTMLDialogElement, Props>(
-  ({ children, toggleDialog }, ref) => {
+  ({ children, toggleDialog, type }, ref) => {
     const handleClickOutside = (e: React.MouseEvent<HTMLDialogElement>) => {
       if (e.currentTarget === e.target) {
         toggleDialog();
@@ -19,8 +20,16 @@ const Dialog = forwardRef<HTMLDialogElement, Props>(
     };
 
     return (
-      <dialog className={styles.dialog} ref={ref} onClick={handleClickOutside}>
-        <div className={styles.inside} onClick={handleClickInside}>{children}</div>
+      <dialog
+        className={
+          type === 'primary' ? styles.dialogPrimary : styles.dialogSecondary
+        }
+        ref={ref}
+        onClick={handleClickOutside}
+      >
+        <div className={styles.inside} onClick={handleClickInside}>
+          {children}
+        </div>
       </dialog>
     );
   }

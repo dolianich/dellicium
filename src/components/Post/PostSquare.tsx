@@ -91,9 +91,13 @@ const PostSquare = ({
               isLocked={isLocked}
               contentType={contentType}
               requiredLevel={requiredLevel}
+              avatar={avatar}
+              createdAt={createdAt}
+              name={name}
             />
           </div>
         }
+        type="primary"
       />
     </div>
   );

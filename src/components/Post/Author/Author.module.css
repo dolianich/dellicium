@@ -11,6 +11,12 @@
     padding-left: 24px;
 }
 
+.topThird{
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
 .topText{
     display: flex;
     flex-direction: column;

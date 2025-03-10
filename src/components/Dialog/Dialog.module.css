@@ -1,27 +1,53 @@
-.dialog{
+.dialogPrimary{
     padding: 24px;
     border-radius: 32px;
     background-color: var(--grey);
     border: none;
     outline: none;
-    width: calc(100vh / 2.4);
+    height: calc(100vh / 1.6);
+}
+
+.dialogSecondary{
+    padding: 24px;
+    border-radius: 32px;
+    background-color: var(--grey);
+    border: none;
+    outline: none;
+    width: calc(100% - 80px);
+    height: fit-content;
 }
 
 .inside{
     display: flex;
+    height: 100%;
 }
 
 ::backdrop {
     background-color: var(--dark-tr);
 }
 
+@media(min-width: 581px){
+    .dialogSecondary{
+        display: none;
+    }
+}
+
 @media(max-width: 580px){
-    .dialog{
-        padding: 24px;
-        border-radius: 32px;
-        background-color: var(--grey);
-        border: none;
-        outline: none;
+    .dialogPrimary{
+        display: none;
+    }
+}
+
+@media(max-width: 940px){
+    .dialogPrimary{
+        width: calc(100% - 96px);
+        height: fit-content;
+    }
+}
+
+@media(max-width: 760px){
+    .dialogPrimary{
         width: calc(100% - 80px);
+        height: fit-content;
     }
 }

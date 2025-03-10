@@ -7,11 +7,20 @@ interface Props {
   name?: string;
   type?: string;
   timestamp: string;
+  style?: object;
 }
 
 const Author = ({ avatar, name, type, timestamp }: Props) => {
   return (
-    <div className={type === 'secondary' ? styles.topSecondary : styles.top}>
+    <div
+      className={
+        type === 'secondary'
+          ? styles.topSecondary
+          : type === 'third'
+          ? styles.topThird
+          : styles.top
+      }
+    >
       <Avatar size="xs" img={avatar} />
       <div className={styles.topText}>
         <p className={styles.name}>{name}</p>
