@@ -49,10 +49,28 @@
 
 .descriptionContainerThird{
     border-radius: 8px;
+    width: calc(100% - 24px);
+    padding-right: 24px;
 }
 
 .expandBtn{
     margin: 0;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    color: var(--light-grey);
+    text-align: left;
+    font-size: 14px;
+    font-family: "Inter";
+    line-height: 20px;
+    font-weight: 400;
+}
+
+.expandBtnThird{
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-right: 0;
+    margin-left: 8px;
     padding: 0;
     background-color: transparent;
     border: none;

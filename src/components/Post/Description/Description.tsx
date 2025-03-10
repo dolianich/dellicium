@@ -39,7 +39,9 @@ const Description = ({ type, descriptionText }: Props) => {
         {showButton && (
           <button
             onClick={() => setIsExpended(!isExpanded)}
-            className={styles.expandBtn}
+            className={
+              type === 'third' ? styles.expandBtnThird : styles.expandBtn
+            }
           >
             {isExpanded ? 'Hide' : 'More'}
           </button>

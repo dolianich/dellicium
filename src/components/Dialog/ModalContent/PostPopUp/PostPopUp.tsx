@@ -44,6 +44,7 @@ const PostPopUp = ({
           timestamp={createdAt}
         />
         <Description type="third" descriptionText={descriptionText} />
+        <div style={{backgroundColor: "#ffffff", display: "flex", flex: '1', minWidth: '100%'}}></div>
       </div>
     </div>
   );
