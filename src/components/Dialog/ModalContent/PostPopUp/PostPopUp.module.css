@@ -1,8 +1,9 @@
 .container{
     position: relative;
-    border-radius: 8px;
+    border-radius: 32px;
     overflow: hidden;
-    height: 100%;
+    height: auto;
+    flex: 1;
 }
 
 .wrapper{
@@ -17,4 +18,10 @@
     display: flex;
     flex-direction: column;
     flex: 1;
+}
+
+@media(max-width: 940px){
+    .container{
+        flex: 1.6;
+    }
 }

@@ -9,6 +9,17 @@
     padding: 12px;
 }
 
+.descriptionThird{
+    text-align: left;
+    font-size: 14px;
+    font-family: "Inter";
+    line-height: 20px;
+    color: var(--white);
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+}
+
 .descriptionContainer{
     background-color: var(--dark-tr);
     border-radius: 8px;
@@ -34,6 +45,10 @@
     border-radius: 8px;
     padding-left: 24px;
     padding-right: 24px;
+}
+
+.descriptionContainerThird{
+    border-radius: 8px;
 }
 
 .expandBtn{

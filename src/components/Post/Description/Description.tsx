@@ -21,6 +21,8 @@ const Description = ({ type, descriptionText }: Props) => {
       className={
         type === 'secondary'
           ? styles.descriptionContainerSecondary
+          : type === 'third'
+          ? styles.descriptionContainerThird
           : styles.descriptionContainer
       }
     >
@@ -28,6 +30,8 @@ const Description = ({ type, descriptionText }: Props) => {
         className={
           type === 'secondary'
             ? styles.descriptionSecondary
+            : type === 'third'
+            ? styles.descriptionThird
             : styles.description
         }
       >

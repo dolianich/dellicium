@@ -1,10 +1,11 @@
 .dialogPrimary{
     padding: 24px;
-    border-radius: 32px;
+    border-radius: 56px;
     background-color: var(--grey);
     border: none;
     outline: none;
-    height: calc(100vh / 1.6);
+    width: calc(100% / 2);
+    height: fit-content;
 }
 
 .dialogSecondary{

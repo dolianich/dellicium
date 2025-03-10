@@ -94,6 +94,7 @@ const PostSquare = ({
               avatar={avatar}
               createdAt={createdAt}
               name={name}
+              descriptionText={descriptionText}
             />
           </div>
         }

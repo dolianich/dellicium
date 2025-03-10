@@ -2,6 +2,7 @@ import styles from './PostPopUp.module.css';
 import Media from '../../../Post/Media/Media';
 import PostLock from '../../../Post/PostLock/PostLock';
 import Author from '../../../Post/Author/Author';
+import Description from '../../../Post/Description/Description';
 
 interface Props {
   src?: string;
@@ -11,6 +12,7 @@ interface Props {
   avatar?: string;
   name?: string;
   createdAt: string;
+  descriptionText?: string;
 }
 
 const PostPopUp = ({
@@ -21,6 +23,7 @@ const PostPopUp = ({
   avatar,
   name,
   createdAt,
+  descriptionText,
 }: Props) => {
   return (
     <div className={styles.wrapper}>
@@ -40,6 +43,7 @@ const PostPopUp = ({
           type="third"
           timestamp={createdAt}
         />
+        <Description type="third" descriptionText={descriptionText} />
       </div>
     </div>
   );
