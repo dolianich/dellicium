@@ -22,6 +22,10 @@ interface Props {
   userLevel: number;
   donate?: () => void;
   filter: string;
+  adopted: boolean;
+  gift: () => void;
+  tips: () => void;
+  adopt: () => void;
 }
 
 const PostsGrid = ({
@@ -31,6 +35,10 @@ const PostsGrid = ({
   userLevel,
   donate,
   filter,
+  adopted,
+  gift,
+  tips,
+  adopt
 }: Props) => {
   const isMobile = useScreenSize();
 
@@ -81,6 +89,10 @@ const PostsGrid = ({
                 descriptionText={post.description}
                 createdAt={post.createdAt}
                 contentType={post.contentType}
+                adopted={adopted}
+                gift={gift}
+                tips={tips}
+                adopt={adopt}
               />
             ))
           ) : (

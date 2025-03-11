@@ -71,8 +71,6 @@ const CreatorPage = () => {
     }
   };
 
-  
-
   const renderSection = () => {
     switch (selectedFilter) {
       case 'all':
@@ -84,6 +82,13 @@ const CreatorPage = () => {
             creatorName={creator?.name}
             donate={donateToggleDialog}
             filter={selectedFilter}
+            adopted={adopted}
+            gift={() => addPoints(20)}
+            tips={() => addPoints(10)}
+            adopt={() => {
+              setAdopted(!adopted);
+              setUserLevel(1);
+            }}
           />
         );
       case 'images':
@@ -95,6 +100,13 @@ const CreatorPage = () => {
             creatorName={creator?.name}
             donate={donateToggleDialog}
             filter={selectedFilter}
+            adopted={adopted}
+            gift={() => addPoints(20)}
+            tips={() => addPoints(10)}
+            adopt={() => {
+              setAdopted(!adopted);
+              setUserLevel(1);
+            }}
           />
         );
       case 'videos':
@@ -106,6 +118,13 @@ const CreatorPage = () => {
             creatorName={creator?.name}
             donate={donateToggleDialog}
             filter={selectedFilter}
+            adopted={adopted}
+            gift={() => addPoints(20)}
+            tips={() => addPoints(10)}
+            adopt={() => {
+              setAdopted(!adopted);
+              setUserLevel(1);
+            }}
           />
         );
       case 'gifts':
@@ -120,6 +139,13 @@ const CreatorPage = () => {
             creatorAvatar={creator?.avatar}
             creatorName={creator?.name}
             filter={selectedFilter}
+            adopted={adopted}
+            gift={() => addPoints(20)}
+            tips={() => addPoints(10)}
+            adopt={() => {
+              setAdopted(!adopted);
+              setUserLevel(1);
+            }}
           />
         );
     }
@@ -157,7 +183,7 @@ const CreatorPage = () => {
         selectedFilter={selectedFilter}
       />
       {renderSection()}
-      
+
       <Dialog
         toggleDialog={donateToggleDialog}
         children={

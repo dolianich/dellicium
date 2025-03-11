@@ -25,6 +25,10 @@ interface Props {
   descriptionText?: string;
   createdAt: string;
   contentType: 'image' | 'video';
+  adopted: boolean;
+  gift: () => void;
+  tips: () => void;
+  adopt: () => void;
 }
 
 const PostSquare = ({
@@ -38,24 +42,28 @@ const PostSquare = ({
   descriptionText,
   createdAt,
   contentType,
+  adopted,
+  gift,
+  tips,
+  adopt,
 }: Props) => {
   const isLocked = userLevel < requiredLevel;
 
-  const donateDialogRef = useRef<HTMLDialogElement>(null);
-  const donateToggleDialog = () => {
-    if (!donateDialogRef.current) {
+  const postDialogRef = useRef<HTMLDialogElement>(null);
+  const postToggleDialog = () => {
+    if (!postDialogRef.current) {
       return;
     }
 
-    if (donateDialogRef.current.hasAttribute('open')) {
-      donateDialogRef.current.close();
+    if (postDialogRef.current.hasAttribute('open')) {
+      postDialogRef.current.close();
     } else {
-      donateDialogRef.current.showModal();
+      postDialogRef.current.showModal();
     }
   };
 
   return (
-    <div className={styles.container} onClick={donateToggleDialog}>
+    <div className={styles.container} onClick={postToggleDialog}>
       <Media src={src} isLocked={isLocked} contentType={contentType} />
 
       {isLocked && <PostLock requiredLevel={requiredLevel} />}
@@ -82,8 +90,8 @@ const PostSquare = ({
         </div>
       </div>
       <Dialog
-        toggleDialog={donateToggleDialog}
-        ref={donateDialogRef}
+        toggleDialog={postToggleDialog}
+        ref={postDialogRef}
         children={
           <div>
             <PostPopUp
@@ -95,6 +103,13 @@ const PostSquare = ({
               createdAt={createdAt}
               name={name}
               descriptionText={descriptionText}
+              likes={likes}
+              comments={comments}
+              adopted={adopted}
+              gift={gift}
+              tips={tips}
+              adopt={adopt}
+              onClose={postToggleDialog}
             />
           </div>
         }
