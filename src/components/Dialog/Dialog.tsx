@@ -26,7 +26,9 @@ const Dialog = forwardRef<HTMLDialogElement, Props>(
         }
         ref={ref}
         onClick={handleClickOutside}
+        
       >
+        <div tabIndex={-1} autoFocus />
         <div className={styles.inside} onClick={handleClickInside}>
           {children}
         </div>
