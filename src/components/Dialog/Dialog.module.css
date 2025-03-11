@@ -4,10 +4,9 @@
     background-color: var(--grey);
     border: none;
     outline: none;
-    width: fit-content;
-    height: fit-content;
     overflow: visible;
-    max-width: calc(100% - 96px);
+    max-width: calc(50%);
+    max-height: calc(100vh - 100px);
 }
 
 .dialogSecondary{
@@ -42,7 +41,7 @@
 
 @media(max-width: 1030px){
     .dialogPrimary{
-        width: calc(100% - 96px);
+        max-width: calc(100% - 96px);
         height: fit-content;
     }
 }
