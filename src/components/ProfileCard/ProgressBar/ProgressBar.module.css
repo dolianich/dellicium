@@ -38,7 +38,7 @@
     transition: all ease-in-out 0.2s;
 }
 
-@media (max-width: 580px){
+@media (max-width: 700px){
     .progress{
         align-items: center;
         gap: 8px;
