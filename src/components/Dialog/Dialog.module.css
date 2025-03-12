@@ -5,8 +5,7 @@
     border: none;
     outline: none;
     overflow: visible;
-    max-width: calc(50%);
-    max-height: calc(100vh - 100px);
+    width: 80%;
 }
 
 .dialogSecondary{
@@ -39,9 +38,9 @@
     }
 }
 
-@media(max-width: 1030px){
+@media(max-width: 1260px){
     .dialogPrimary{
-        max-width: calc(100% - 96px);
+        width: calc(100% - 96px);
         height: fit-content;
     }
 }
