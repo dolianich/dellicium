@@ -14,7 +14,7 @@
     background-color: var(--grey);
     border: none;
     outline: none;
-    width: calc(100% - 80px);
+    width: 60%;
     height: fit-content;
 }
 
@@ -26,13 +26,25 @@
     background-color: var(--dark-tr);
 }
 
-@media(min-width: 701px){
+@media(max-width: 630px){
+    .dialogSecondary{
+        padding: 24px;
+        border-radius: 32px;
+        background-color: var(--grey);
+        border: none;
+        outline: none;
+        width: calc(100% - 80px);
+        height: fit-content;
+    }
+}
+
+@media(min-width: 1091px){
     .dialogSecondary{
         display: none;
     }
 }
 
-@media(max-width: 700px){
+@media(max-width: 1090px){
     .dialogPrimary{
         display: none;
     }
