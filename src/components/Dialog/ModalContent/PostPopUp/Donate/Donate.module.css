@@ -1,0 +1,29 @@
+.achievements{
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    width: fit-content;
+    background-color: var(--grey);
+}
+
+.donateActions{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.donations{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 8px;
+    padding-top: 12px;
+    padding-bottom: 4px;
+}
+
+.secondaryActions{
+    display: flex;
+    height: 98px;
+}

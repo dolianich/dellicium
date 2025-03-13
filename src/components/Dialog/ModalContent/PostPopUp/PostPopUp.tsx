@@ -10,8 +10,11 @@ import {
   UserCirclePlus,
   HandCoins,
   X,
+  CaretLeft,
 } from '@phosphor-icons/react';
 import Button from '../../../Button/Button';
+import { useState } from 'react';
+import Donate from './Donate/Donate';
 
 interface Props {
   src?: string;
@@ -29,6 +32,9 @@ interface Props {
   tips: () => void;
   adopt: () => void;
   onClose: () => void;
+  userLevel: number;
+  userXp: number;
+  progress: number;
 }
 
 const PostPopUp = ({
@@ -47,7 +53,12 @@ const PostPopUp = ({
   tips,
   adopt,
   onClose,
+  userLevel,
+  userXp,
+  progress,
 }: Props) => {
+  const [donation, setDonation] = useState(false);
+
   return (
     <div className={styles.wrapper}>
       <button className={styles.closeBtn} onClick={onClose}>
@@ -63,30 +74,45 @@ const PostPopUp = ({
         />
         {isLocked && <PostLock requiredLevel={requiredLevel} />}
       </div>
-      <div className={styles.postInfo}>
-        <div className={styles.right}>
+      <div className={!donation ? styles.postInfo : styles.postInfoDonate}>
+        <div className={styles.authorContainer}>
           <Author
             avatar={avatar}
             name={name}
             type="third"
             timestamp={createdAt}
           />
-          <Description type="third" descriptionText={descriptionText} />
-          <div className={styles.stats}>
-            <Stat icon={Heart} type="secondary" value={likes} />
-            <Stat icon={ChatCircle} type="secondary" value={comments} />
-          </div>
         </div>
+        <>
+          {!donation ? (
+            <div className={styles.right}>
+              <Description type="third" descriptionText={descriptionText} />
+              <div className={styles.stats}>
+                <Stat icon={Heart} type="secondary" value={likes} />
+                <Stat icon={ChatCircle} type="secondary" value={comments} />
+              </div>
+            </div>
+          ) : (
+            <div className={styles.right}>
+              <Donate
+                userLevel={userLevel}
+                userXp={userXp}
+                progress={progress}
+                tips={tips}
+                gift={gift}
+              />
+            </div>
+          )}
+        </>
 
         <div className={styles.action}>
-          {adopted ? (
-            <Button
-              onClick={() => {
-                adopt();
-              }}
-              title="Donate"
-            >
+          {adopted && !donation ? (
+            <Button onClick={() => setDonation(!donation)} title="Donate">
               <HandCoins size={20} weight="fill" /> Donate
+            </Button>
+          ) : adopted && donation ? (
+            <Button onClick={() => setDonation(!donation)} title="Donate">
+              <CaretLeft size={20} weight="regular" />
             </Button>
           ) : (
             <Button

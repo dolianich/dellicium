@@ -29,6 +29,8 @@ interface Props {
   gift: () => void;
   tips: () => void;
   adopt: () => void;
+  userXp: number;
+  progress: number;
 }
 
 const PostSquare = ({
@@ -46,6 +48,8 @@ const PostSquare = ({
   gift,
   tips,
   adopt,
+  userXp,
+  progress
 }: Props) => {
   const isLocked = userLevel < requiredLevel;
 
@@ -110,6 +114,9 @@ const PostSquare = ({
               tips={tips}
               adopt={adopt}
               onClose={postToggleDialog}
+              userLevel={userLevel}
+              userXp={userXp}
+              progress={progress}
             />
           </div>
         }

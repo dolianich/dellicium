@@ -14,7 +14,7 @@ interface Props {
 const Media = ({ src, isLocked, type, contentType }: Props) => {
   const [videoControls, setVideoControls] = useState({
     playing: false,
-    mute: false,
+    mute: true,
     fullScreen: false,
     loadedSeconds: 1,
     playedSeconds: 0,

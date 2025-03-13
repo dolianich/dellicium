@@ -89,6 +89,8 @@ const CreatorPage = () => {
               setAdopted(!adopted);
               setUserLevel(1);
             }}
+            userXp={points}
+            progress={progress}
           />
         );
       case 'images':
@@ -107,6 +109,8 @@ const CreatorPage = () => {
               setAdopted(!adopted);
               setUserLevel(1);
             }}
+            userXp={points}
+            progress={progress}
           />
         );
       case 'videos':
@@ -125,6 +129,8 @@ const CreatorPage = () => {
               setAdopted(!adopted);
               setUserLevel(1);
             }}
+            userXp={points}
+            progress={progress}
           />
         );
       case 'gifts':
@@ -146,6 +152,8 @@ const CreatorPage = () => {
               setAdopted(!adopted);
               setUserLevel(1);
             }}
+            userXp={points}
+            progress={progress}
           />
         );
     }
