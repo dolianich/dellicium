@@ -28,8 +28,8 @@ const Donate = ({ userLevel, userXp, progress, tips, gift }: Props) => {
         />
       </div>
       <div className={styles.donations}>
-        <DonateBtn onClick={() => tips} type="tips" />{' '}
-        <DonateBtn onClick={() => gift} type="gift" />
+        <DonateBtn onClick={() => tips} type="tips" variant="secondary" />{' '}
+        <DonateBtn onClick={() => gift} type="gift" variant="secondary" />
         <div className={styles.secondaryActions}>
           <ActionBtn
             title="Wishlist"
