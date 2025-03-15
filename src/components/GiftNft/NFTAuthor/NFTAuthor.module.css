@@ -1,0 +1,41 @@
+.img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.wrapper{
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--dark);
+    flex-shrink: 0;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.points{
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 12px;
+    padding-left: 12px;
+    background-color: var(--dark-tr);
+    border-radius: 8px;
+    color: var(--white);
+    text-align: center;
+    font-size: 14px;
+    font-family: "Inter";
+    line-height: 20px;
+    font-weight: 400;
+    margin: 0;
+}

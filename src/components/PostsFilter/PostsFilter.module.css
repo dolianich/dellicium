@@ -39,7 +39,7 @@
     color: var(--primary);
 }
 
-@media(max-width: 580px){
+@media(max-width: 1090px){
     .filter{
         margin-bottom: 0;
     }

@@ -1,0 +1,16 @@
+.container{
+    background-color: var(--dark-tr);
+    border-radius: 8px;
+    padding: 12px;
+}
+
+.description{
+    text-align: left;
+    font-size: 14px;
+    font-family: "Inter";
+    line-height: 20px;
+    color: var(--white);
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+}
