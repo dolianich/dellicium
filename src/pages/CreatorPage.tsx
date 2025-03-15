@@ -9,6 +9,7 @@ import PostsFilter from '../components/PostsFilter/PostsFilter';
 import PostsGrid from '../components/PostsGrid/PostsGrid';
 import Dialog from '../components/Dialog/Dialog';
 import DonateContent from '../components/Dialog/ModalContent/DonateContent';
+import GiftsGrid from '../components/GiftsGrid/GiftsGrid';
 
 type Socials = {
   website?: string;
@@ -134,7 +135,7 @@ const CreatorPage = () => {
           />
         );
       case 'gifts':
-        return <div>Gifts</div>;
+        return <GiftsGrid />;
       case 'leaderboard':
         return <div>Leaderboard</div>;
       default:

@@ -8,7 +8,7 @@ interface Props {
 }
 
 const Dialog = forwardRef<HTMLDialogElement, Props>(
-  ({ children, toggleDialog, type }, ref) => {
+  ({ children, toggleDialog, type}, ref) => {
     const handleClickOutside = (e: React.MouseEvent<HTMLDialogElement>) => {
       if (e.currentTarget === e.target) {
         toggleDialog();
@@ -20,18 +20,18 @@ const Dialog = forwardRef<HTMLDialogElement, Props>(
     };
 
     return (
-      <dialog
-        className={
-          type === 'primary' ? styles.dialogPrimary : styles.dialogSecondary
-        }
-        ref={ref}
-        onClick={handleClickOutside}
-      >
-        <div tabIndex={-1} autoFocus />
-        <div className={styles.inside} onClick={handleClickInside}>
-          {children}
-        </div>
-      </dialog>
+        <dialog
+          className={
+            type === 'primary' ? styles.dialogPrimary : styles.dialogSecondary
+          }
+          ref={ref}
+          onClick={handleClickOutside}
+        >
+          <div tabIndex={-1} autoFocus />
+          <div className={styles.inside} onClick={handleClickInside}>
+            {children}
+          </div>
+        </dialog>
     );
   }
 );

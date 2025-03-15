@@ -49,7 +49,7 @@ const PostSquare = ({
   tips,
   adopt,
   userXp,
-  progress
+  progress,
 }: Props) => {
   const isLocked = userLevel < requiredLevel;
 
@@ -69,9 +69,7 @@ const PostSquare = ({
   return (
     <div className={styles.container} onClick={postToggleDialog}>
       <Media src={src} isLocked={isLocked} contentType={contentType} />
-
       {isLocked && <PostLock requiredLevel={requiredLevel} />}
-
       <div className={styles.elements}>
         <Author avatar={avatar} name={name} timestamp={createdAt} />
         <div className={styles.bottom}>
@@ -93,6 +91,7 @@ const PostSquare = ({
           </div>
         </div>
       </div>
+      (
       <Dialog
         toggleDialog={postToggleDialog}
         ref={postDialogRef}
@@ -122,6 +121,7 @@ const PostSquare = ({
         }
         type="primary"
       />
+      )
     </div>
   );
 };
