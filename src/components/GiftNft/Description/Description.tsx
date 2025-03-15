@@ -1,11 +1,15 @@
 import styles from './Description.module.css';
 
-const Description = () => {
-  return (
-    <div className={styles.container}>
-      <p className={styles.description}>Description</p>
-    </div>
-  )
+interface Props {
+  description?: string;
 }
 
-export default Description
+const Description = ({ description }: Props) => {
+  return (
+    <div className={styles.container}>
+      <p className={styles.description}>{description}</p>
+    </div>
+  );
+};
+
+export default Description;

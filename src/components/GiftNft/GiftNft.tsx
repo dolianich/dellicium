@@ -1,15 +1,20 @@
 import styles from './GiftNft.module.css';
-import earth from '../../storage/gifts/earth.png';
 import NftAuthor from './NFTAuthor/NftAuthor';
 import Description from './Description/Description';
 
-const GiftNft = () => {
+interface Props {
+  description?: string;
+  points?: number;
+  img?: string;
+}
+
+const GiftNft = ({ description, points, img }: Props) => {
   return (
     <div className={styles.container}>
-      <img src={earth} className={styles.content} />
+      <img src={img} className={styles.content} />
       <div className={styles.info}>
-        <NftAuthor />
-        <Description />
+        <NftAuthor points={points} />
+        <Description description={description} />
       </div>
     </div>
   );
