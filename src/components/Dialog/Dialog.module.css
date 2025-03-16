@@ -4,7 +4,6 @@
     background-color: var(--grey);
     border: none;
     outline: none;
-    overflow: visible;
     width: 80%;
 }
 
@@ -15,11 +14,11 @@
     border: none;
     outline: none;
     width: 60%;
-    height: fit-content;
 }
 
+
 .inside{
-    height: 100%;
+    height: auto;
 }
 
 
@@ -36,7 +35,6 @@
         border: none;
         outline: none;
         width: calc(100% - 80px);
-        height: fit-content;
     }
 }
 
@@ -55,13 +53,13 @@
 @media(max-width: 1260px){
     .dialogPrimary{
         width: calc(100% - 96px);
-        height: fit-content;
+        min-height: fit-content;
     }
 }
 
 @media(max-width: 760px){
     .dialogPrimary{
         width: calc(100% - 80px);
-        height: fit-content;
+        min-height: fit-content;
     }
 }
