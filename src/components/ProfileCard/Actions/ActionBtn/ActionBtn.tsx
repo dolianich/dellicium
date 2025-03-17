@@ -2,16 +2,18 @@ import styles from './ActionBtn.module.css';
 import Lottie from 'lottie-react';
 import wishlist from '../../../../assets/animations/game.json';
 import custom from '../../../../assets/animations/custom.json';
+import { Link } from 'react-router-dom';
 
 interface Props {
   title: string;
   subtitle: string;
   type?: string;
+  link?: string;
 }
 
-const ActionBtn = ({ title, subtitle, type }: Props) => {
+const ActionBtn = ({ title, subtitle, type, link }: Props) => {
   return (
-    <button className={styles.wrapper}>
+    <Link to={link!} className={styles.wrapper}>
       <div className={styles.textContainer}>
         <h3 className={styles.title}>{title}</h3>
         <p className={styles.subtitle}>{subtitle}</p>
@@ -22,7 +24,7 @@ const ActionBtn = ({ title, subtitle, type }: Props) => {
           className={styles.animation}
         />
       </div>
-    </button>
+    </Link>
   );
 };
 

@@ -186,6 +186,7 @@ const CreatorPage = () => {
         userLevel={userLevel}
         tips={() => addPoints(10)}
         gift={() => addPoints(20)}
+        wishlistLink={`/creators/${creator!.username}/wishlist`}
       />
       <PostsFilter
         onFilterChange={handleFilterChange}

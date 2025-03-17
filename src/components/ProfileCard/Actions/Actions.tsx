@@ -8,9 +8,10 @@ import { useState } from 'react';
 interface Props {
   tips: () => void;
   gift: () => void;
+  link?: string;
 }
 
-const Actions = ({ tips, gift }: Props) => {
+const Actions = ({ tips, gift, link }: Props) => {
   const [visible, setVisible] = useState(true);
 
   return (
@@ -44,6 +45,7 @@ const Actions = ({ tips, gift }: Props) => {
               title="Wishlist"
               subtitle="make dreams happen"
               type="wishlist"
+              link={link}
             />
             <ActionBtn
               title="Custom"
