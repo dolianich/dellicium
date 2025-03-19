@@ -1,5 +1,6 @@
 import creators from '../data/creators';
 import { useParams, useNavigate } from 'react-router-dom';
+import WishCard from '../components/WishCard/WishCard';
 
 const WishlistPage = () => {
   const navigate = useNavigate();
@@ -11,8 +12,9 @@ const WishlistPage = () => {
     (creator) => creator.username === params.creatorId
   );
   return (
-    <div>
+    <div style={{ display: 'flex', flexDirection: 'column' }}>
       <button onClick={handleNavigate}>Back</button> Wishlist {creator?.name}
+      <WishCard />
     </div>
   );
 };
