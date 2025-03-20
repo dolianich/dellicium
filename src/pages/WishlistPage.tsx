@@ -2,6 +2,8 @@ import styles from './styles/Page.module.css';
 import creators from '../data/creators';
 import { useParams, useNavigate } from 'react-router-dom';
 import WishesGrid from '../components/WishesGrid/WishesGrid';
+import Avatar from '../components/Avatar/Avatar';
+import BackBtn from '../components/BackBtn/BackBtn';
 
 const WishlistPage = () => {
   const navigate = useNavigate();
@@ -15,7 +17,10 @@ const WishlistPage = () => {
 
   return (
     <div className={styles.container}>
-      <button onClick={handleNavigate}>Back</button> Wishlist {creator?.name}
+      <div className={styles.wishTop}>
+        <BackBtn onClick={handleNavigate} />
+        <Avatar size="medium" img={creator?.avatar} />
+      </div>
       <WishesGrid />
     </div>
   );
