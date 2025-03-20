@@ -79,3 +79,19 @@
     flex-direction: column;
     gap: 8px;
 }
+
+@media (max-width: 600px){
+    .wrapper{
+        flex-direction: column;
+    }
+
+    .imgContainer{
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1/1;
+    }
+
+    .description{
+        height: 60px;
+    }
+}
