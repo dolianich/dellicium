@@ -1,0 +1,12 @@
+.wishes{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(calc(50% - 4px), calc(50% - 4px)));
+    gap: 8px; 
+    width: 100%;
+}
+
+@media (max-width: 1130px){
+    .wishes{
+        grid-template-columns: repeat(auto-fit, minmax(100%, 1fr)); 
+    }
+}

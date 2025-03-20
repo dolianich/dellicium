@@ -5,12 +5,11 @@
     background-color: var(--grey);
     border-radius: 32px;
     gap: 12px;
-    width: 500px;
 }
 
 .imgContainer{
-    width: 140px;
-    height: 140px;
+    width: 200px;
+    height: 200px;
     overflow: hidden;
     background-color: var(--dark);
     border-radius: 8px;
