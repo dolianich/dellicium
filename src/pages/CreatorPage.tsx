@@ -92,6 +92,7 @@ const CreatorPage = () => {
             }}
             userXp={points}
             progress={progress}
+            userName={creator?.username as string}
           />
         );
       case 'images':
@@ -112,6 +113,7 @@ const CreatorPage = () => {
             }}
             userXp={points}
             progress={progress}
+            userName={creator?.username as string}
           />
         );
       case 'videos':
@@ -132,6 +134,7 @@ const CreatorPage = () => {
             }}
             userXp={points}
             progress={progress}
+            userName={creator?.username as string}
           />
         );
       case 'gifts':
@@ -155,6 +158,7 @@ const CreatorPage = () => {
             }}
             userXp={points}
             progress={progress}
+            userName={creator?.username as string}
           />
         );
     }

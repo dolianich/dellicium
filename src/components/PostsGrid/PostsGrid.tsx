@@ -28,6 +28,7 @@ interface Props {
   adopt: () => void;
   userXp: number;
   progress: number;
+  userName: string;
 }
 
 const PostsGrid = ({
@@ -43,6 +44,7 @@ const PostsGrid = ({
   adopt,
   userXp,
   progress,
+  userName,
 }: Props) => {
   const isMobile = useScreenSize();
 
@@ -99,6 +101,7 @@ const PostsGrid = ({
                 adopt={adopt}
                 userXp={userXp}
                 progress={progress}
+                userName={userName}
               />
             ))
           ) : (

@@ -10,9 +10,17 @@ interface Props {
   progress: number;
   tips?: () => void;
   gift?: () => void;
+  wishlistLink: string;
 }
 
-const Donate = ({ userLevel, userXp, progress, tips, gift }: Props) => {
+const Donate = ({
+  userLevel,
+  userXp,
+  progress,
+  tips,
+  gift,
+  wishlistLink,
+}: Props) => {
   return (
     <div className={styles.donateActions}>
       <div className={styles.achievements}>
@@ -35,6 +43,7 @@ const Donate = ({ userLevel, userXp, progress, tips, gift }: Props) => {
             title="Wishlist"
             subtitle="make dreams happen"
             type="wishlist"
+            link={wishlistLink}
           />
         </div>
       </div>

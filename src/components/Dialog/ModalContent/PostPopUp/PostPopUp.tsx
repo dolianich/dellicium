@@ -35,6 +35,7 @@ interface Props {
   userLevel: number;
   userXp: number;
   progress: number;
+  userName: string;
 }
 
 const PostPopUp = ({
@@ -56,6 +57,7 @@ const PostPopUp = ({
   userLevel,
   userXp,
   progress,
+  userName,
 }: Props) => {
   const [donation, setDonation] = useState(false);
 
@@ -100,6 +102,7 @@ const PostPopUp = ({
                 progress={progress}
                 tips={tips}
                 gift={gift}
+                wishlistLink={`/creators/${userName}/wishlist`}
               />
             </div>
           )}

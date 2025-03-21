@@ -31,6 +31,7 @@ interface Props {
   adopt: () => void;
   userXp: number;
   progress: number;
+  userName: string;
 }
 
 const PostSquare = ({
@@ -50,6 +51,7 @@ const PostSquare = ({
   adopt,
   userXp,
   progress,
+  userName,
 }: Props) => {
   const isLocked = userLevel < requiredLevel;
 
@@ -116,6 +118,7 @@ const PostSquare = ({
               userLevel={userLevel}
               userXp={userXp}
               progress={progress}
+              userName={userName}
             />
           </div>
         }
