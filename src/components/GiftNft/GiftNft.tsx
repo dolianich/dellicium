@@ -6,14 +6,15 @@ interface Props {
   description?: string;
   points?: number;
   img?: string;
+  title: string;
 }
 
-const GiftNft = ({ description, points, img }: Props) => {
+const GiftNft = ({ description, points, img, title }: Props) => {
   return (
     <div className={styles.container}>
       <img src={img} className={styles.content} />
       <div className={styles.info}>
-        <NftAuthor points={points} />
+        <NftAuthor points={points} title={title}/>
         <Description description={description} />
       </div>
     </div>

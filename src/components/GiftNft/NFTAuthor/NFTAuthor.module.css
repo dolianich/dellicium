@@ -39,3 +39,21 @@
     font-weight: 400;
     margin: 0;
 }
+
+.topLeft{
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    align-items: center;
+}
+
+.title{
+    text-align: left;
+    font-size: 14px;
+    font-family: "Inter";
+    line-height: 20px;
+    color: var(--white);
+    font-weight: 900;
+    margin: 0;
+    text-shadow: 0px 0px 2.5px rgba(17, 17, 17, 0.3);
+}

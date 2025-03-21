@@ -11,21 +11,25 @@ const GiftsGrid = () => {
       img: sun,
       description: 'The gift of light',
       points: 12,
+      title: 'The Sun',
     },
     {
       img: water,
       description: 'The gift of emotion',
       points: 80,
+      title: 'Water',
     },
     {
       img: fire,
       description: 'The gift of passion',
       points: 43,
+      title: 'Fire',
     },
     {
       img: earth,
       description: 'The gift of stability',
       points: 14,
+      title: 'Earth',
     },
   ];
 
@@ -36,6 +40,7 @@ const GiftsGrid = () => {
           description={nft.description}
           points={nft.points}
           img={nft.img}
+          title={nft.title}
         />
       ))}
     </div>
