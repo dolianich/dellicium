@@ -211,6 +211,7 @@ const CreatorPage = () => {
             userLevel={userLevel}
             userXp={points}
             progress={progress}
+            wishlistLink={`/creators/${creator!.username}/wishlist`}
           />
         }
         ref={donateDialogRef}

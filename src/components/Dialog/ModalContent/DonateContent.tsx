@@ -18,6 +18,7 @@ interface Props {
   toggleDialog?: () => void;
   userXp: number;
   progress: number;
+  wishlistLink: string;
 }
 
 const DonateContent = ({
@@ -31,6 +32,7 @@ const DonateContent = ({
   userLevel,
   userXp,
   progress,
+  wishlistLink,
 }: Props) => {
   return (
     <div className={styles.content}>
@@ -64,7 +66,12 @@ const DonateContent = ({
             <div className={styles.actionBtns}>
               <DonateActBtn text="Send Tips" type="tips" onClick={tips} />
               <DonateActBtn text="NFT Gift" type="gift" onClick={gift} />
-              <DonateActBtn text="Wishlist" type="wishlist" />
+              <DonateActBtn
+                text="Wishlist"
+                type="wishlist"
+                wishlistLink={wishlistLink}
+                link={true}
+              />
             </div>
           </>
         ) : (
