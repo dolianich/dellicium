@@ -1,7 +1,11 @@
 import creators from '../data/creators';
 import CreatorCard from '../components/CreatorCard/CreatorCard';
 import styles from './styles/Page.module.css';
+import useScrollToTop from '../utils/useScrollToTop';
+
+
 const CreatorsPage = () => {
+  useScrollToTop();
   return (
     <div className={styles.cardsGrid}>
       {creators.map((creator) => (

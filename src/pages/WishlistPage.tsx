@@ -4,8 +4,10 @@ import { useParams, useNavigate } from 'react-router-dom';
 import WishesGrid from '../components/WishesGrid/WishesGrid';
 import Avatar from '../components/Avatar/Avatar';
 import BackBtn from '../components/BackBtn/BackBtn';
+import useScrollToTop from '../utils/useScrollToTop';
 
 const WishlistPage = () => {
+  useScrollToTop();
   const navigate = useNavigate();
   const handleNavigate = () => {
     navigate(-1);
