@@ -10,6 +10,7 @@ import PostsGrid from '../components/PostsGrid/PostsGrid';
 import Dialog from '../components/Dialog/Dialog';
 import DonateContent from '../components/Dialog/ModalContent/DonateContent';
 import GiftsGrid from '../components/GiftsGrid/GiftsGrid';
+import Leaders from '../components/Leaders/Leaders';
 
 type Socials = {
   website?: string;
@@ -140,7 +141,7 @@ const CreatorPage = () => {
       case 'gifts':
         return <GiftsGrid />;
       case 'leaderboard':
-        return <div>Leaderboard</div>;
+        return <Leaders />;
       default:
         return (
           <PostsGrid
