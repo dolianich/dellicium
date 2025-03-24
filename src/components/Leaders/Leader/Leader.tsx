@@ -18,12 +18,14 @@ const Leader = ({ name, avatar, points, place, position }: Props) => {
         <div className={styles.imgWrapper}>
           <img src={avatar} alt="img" className={styles.img} />
         </div>
-        <h3 className={styles.name}>{name}</h3>
+        <div className={styles.leftData}>
+          <h3 className={styles.name}>{name}</h3>
+          <h4 className={styles.xp}>{formatPoints(points!)} xp</h4>
+        </div>
       </div>
       <div className={styles.right}>
         <div className={styles.data}>
           <p className={styles.place}>{getOrdinalSuffix(place!)}</p>
-          <h4 className={styles.xp}>{formatPoints(points!)} xp</h4>
         </div>
         <div className={styles.indicator}>
           {position === 'up' ? (
