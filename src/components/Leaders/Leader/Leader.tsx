@@ -1,23 +1,36 @@
 import styles from './Leader.module.css';
-import photo from '../../../storage/bellavibes.jpg';
-import { CaretUp } from '@phosphor-icons/react';
+import { CaretUp, CaretDown } from '@phosphor-icons/react';
 
-const Leader = () => {
+interface Props {
+  name?: string;
+  avatar?: string;
+  points?: number;
+  place?: number;
+  position?: string;
+}
+
+const Leader = ({ name, avatar, points, place, position }: Props) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.left}>
         <div className={styles.imgWrapper}>
-          <img src={photo} alt="img" className={styles.img} />
+          <img src={avatar} alt="img" className={styles.img} />
         </div>
-        <h3 className={styles.name}>Name</h3>
+        <h3 className={styles.name}>{name}</h3>
       </div>
       <div className={styles.right}>
         <div className={styles.data}>
-          <p className={styles.place}>1st</p>
-          <h4 className={styles.xp}>100xp</h4>
+          <p className={styles.place}>{place}</p>
+          <h4 className={styles.xp}>{points}xp</h4>
         </div>
         <div className={styles.indicator}>
-          <CaretUp size={20} color="#BBFCDC" weight="fill" />
+          {position === 'up' ? (
+            <CaretUp size={20} color="#BBFCDC" weight="fill" />
+          ) : position === 'down' ? (
+            <CaretDown size={20} color="#FF6F61" weight="fill" />
+          ) : (
+            ''
+          )}
         </div>
       </div>
     </div>
