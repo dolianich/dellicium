@@ -1,5 +1,7 @@
 import styles from './Leader.module.css';
 import { CaretUp, CaretDown } from '@phosphor-icons/react';
+import { formatPoints } from '../../../utils/formatPoints';
+import { getOrdinalSuffix } from '../../../utils/ordinalSuffix';
 
 interface Props {
   name?: string;
@@ -20,8 +22,8 @@ const Leader = ({ name, avatar, points, place, position }: Props) => {
       </div>
       <div className={styles.right}>
         <div className={styles.data}>
-          <p className={styles.place}>{place}</p>
-          <h4 className={styles.xp}>{points}xp</h4>
+          <p className={styles.place}>{getOrdinalSuffix(place!)}</p>
+          <h4 className={styles.xp}>{formatPoints(points!)} xp</h4>
         </div>
         <div className={styles.indicator}>
           {position === 'up' ? (
