@@ -1,9 +1,10 @@
-
+import styles from './styles/Page.module.css';
+import Development from '../components/Development/Development';
 
 const MarketPage = () => {
   return (
-    <div>
-      Market
+    <div className={styles.page}>
+      <Development></Development>
     </div>
   )
 }

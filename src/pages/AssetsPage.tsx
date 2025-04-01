@@ -1,8 +1,10 @@
+import styles from './styles/Page.module.css';
+import Development from '../components/Development/Development';
 
 const AssetsPage = () => {
   return (
-    <div>
-      Assets
+    <div className={styles.page}>
+      <Development></Development>
     </div>
   )
 }

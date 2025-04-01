@@ -6,6 +6,10 @@ const Development = () => {
   return (
     <div className={styles.container}>
       <Lottie animationData={devAnim} />
+      <p className={styles.text}>
+        This page <br />
+        is under development
+      </p>
     </div>
   );
 };
