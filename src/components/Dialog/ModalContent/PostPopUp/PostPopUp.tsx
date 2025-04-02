@@ -5,7 +5,6 @@ import Author from '../../../Post/Author/Author';
 import Description from '../../../Post/Description/Description';
 import Stat from '../../../Post/Stat/Stat';
 import {
-  Heart,
   ChatCircle,
   UserCirclePlus,
   HandCoins,
@@ -15,6 +14,7 @@ import {
 import Button from '../../../Button/Button';
 import { useState } from 'react';
 import Donate from './Donate/Donate';
+import Like from '../../../Like/Like';
 
 interface Props {
   src?: string;
@@ -90,7 +90,7 @@ const PostPopUp = ({
             <div className={styles.right}>
               <Description type="third" descriptionText={descriptionText} />
               <div className={styles.stats}>
-                <Stat icon={Heart} type="secondary" value={likes} />
+                <Like value={likes} />
                 <Stat icon={ChatCircle} type="secondary" value={comments} />
               </div>
             </div>
