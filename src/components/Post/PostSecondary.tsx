@@ -6,6 +6,7 @@ import PostLock from './PostLock/PostLock';
 import Description from './Description/Description';
 import Stat from './Stat/Stat';
 import DonateBtn from './DonateBtn/DonateBtn';
+import Like from '../Like/Like';
 
 interface Props {
   avatar?: string;
@@ -56,7 +57,7 @@ const PostSecondary = ({
       <Description type="secondary" descriptionText={descriptionText} />
       <div className={styles.bottom}>
         <div className={styles.stats}>
-          <Stat icon={Heart} type="secondary" value={likes} />
+          <Like />
           <Stat icon={ChatCircle} type="secondary" value={comments} />
         </div>
         <DonateBtn donate={donate} />
