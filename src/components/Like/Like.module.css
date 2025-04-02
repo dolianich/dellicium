@@ -11,3 +11,22 @@
 .hidden{
     display: none;
 }
+
+.section{
+    display: flex;
+    flex-direction: row;
+    background-color: var(--dark-tr);
+    color: var(--white);
+    gap: 8px;
+    align-items: center;
+}
+
+.number{
+    text-align: left;
+    font-size: 12px;
+    font-family: "Inter";
+    line-height: 14px;
+    color: var(--white);
+    font-weight: 400;
+    margin: 0;
+}

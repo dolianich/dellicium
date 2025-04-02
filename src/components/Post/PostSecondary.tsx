@@ -1,5 +1,5 @@
 import styles from './PostSecondary.module.css';
-import { Heart, ChatCircle } from '@phosphor-icons/react';
+import { ChatCircle } from '@phosphor-icons/react';
 import Author from './Author/Author';
 import Media from './Media/Media';
 import PostLock from './PostLock/PostLock';
@@ -57,7 +57,7 @@ const PostSecondary = ({
       <Description type="secondary" descriptionText={descriptionText} />
       <div className={styles.bottom}>
         <div className={styles.stats}>
-          <Like />
+          <Like value={likes} />
           <Stat icon={ChatCircle} type="secondary" value={comments} />
         </div>
         <DonateBtn donate={donate} />
