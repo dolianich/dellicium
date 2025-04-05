@@ -20,7 +20,7 @@ interface Props {
   userXp: number;
   progress: number;
   wishlistLink: string;
-  tipping: boolean;
+  tipping: string;
   inputValue: string;
   handleInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   sendTips: (inputValue: string) => void;
@@ -72,7 +72,7 @@ const DonateContent = ({
               userXp={userXp}
               userLevel={userLevel}
             />
-            {!tipping ? (
+            {tipping === 'default' ? (
               <div className={styles.actionBtns}>
                 <DonateActBtn text="Send Tips" type="tips" onClick={tips} />
                 <DonateActBtn text="NFT Gift" type="gift" onClick={gift} />
@@ -83,12 +83,14 @@ const DonateContent = ({
                   link={true}
                 />
               </div>
-            ) : (
+            ) : tipping === 'tipping' ? (
               <SendTips
                 inputValue={inputValue}
                 handleInputChange={handleInputChange}
                 sendTips={sendTips}
               />
+            ) : (
+              <div>pending</div>
             )}
           </>
         ) : (

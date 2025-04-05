@@ -35,7 +35,7 @@ const CreatorPage = () => {
   const [userLevel, setUserLevel] = useState(0);
   const [adopted, setAdopted] = useState(false);
   const [selectedFilter, setSelectedFilter] = useState<string>('all');
-  const [tipping, setTipping] = useState<boolean>(false);
+  const [tipping, setTipping] = useState<string>('default');
   const [inputValue, setInputValue] = useState<string>('');
 
   const pointsRequiredForNextLevel = userLevel === 1 ? 50 : userLevel * 100;
@@ -62,9 +62,15 @@ const CreatorPage = () => {
 
   const sendTips = (inputValue: string) => {
     const number = parseInt(inputValue, 10);
-    const moneyToPints = number * 10;
-    addPoints(moneyToPints);
+    setTipping('pending');
+    setTimeout(() => {
+      setTipping('default');
+      const moneyToPints = number * 5;
+      addPoints(moneyToPints);
+    }, 1500);
+    setInputValue('');
   };
+
   const params = useParams<{ creatorId: string }>();
   const creator = creators.find(
     (creator) => creator.username === params.creatorId
@@ -218,7 +224,7 @@ const CreatorPage = () => {
         children={
           <DonateContent
             tips={() => {
-              setTipping(true);
+              setTipping('tipping');
             }}
             gift={() => addPoints(20)}
             adopted={adopted}
