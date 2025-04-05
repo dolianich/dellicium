@@ -36,6 +36,7 @@ const CreatorPage = () => {
   const [adopted, setAdopted] = useState(false);
   const [selectedFilter, setSelectedFilter] = useState<string>('all');
   const [tipping, setTipping] = useState<boolean>(false);
+  const [inputValue, setInputValue] = useState<string>('');
 
   const pointsRequiredForNextLevel = userLevel === 1 ? 50 : userLevel * 100;
   const progress = (points / pointsRequiredForNextLevel) * 100;
@@ -52,6 +53,12 @@ const CreatorPage = () => {
     }
   };
 
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    if (value === '' || /^[0-9\b]+$/.test(value)) {
+      setInputValue(value);
+    }
+  };
   const sendTips = (amount: number) => {
     setTipping(true);
   };
@@ -226,6 +233,8 @@ const CreatorPage = () => {
             progress={progress}
             wishlistLink={`/creators/${creator!.username}/wishlist`}
             tipping={tipping}
+            inputValue={inputValue}
+            handleInputChange={handleInputChange}
           />
         }
         ref={donateDialogRef}
