@@ -59,10 +59,10 @@ const CreatorPage = () => {
       setInputValue(value);
     }
   };
-  const sendTips = (amount: number) => {
-    setTipping(true);
-  };
 
+  const sendTips = (inputValue: string) => {
+    console.log(inputValue);
+  };
   const params = useParams<{ creatorId: string }>();
   const creator = creators.find(
     (creator) => creator.username === params.creatorId
@@ -216,8 +216,7 @@ const CreatorPage = () => {
         children={
           <DonateContent
             tips={() => {
-              sendTips(10);
-              addPoints(10);
+              setTipping(true);
             }}
             gift={() => addPoints(20)}
             adopted={adopted}
@@ -235,6 +234,7 @@ const CreatorPage = () => {
             tipping={tipping}
             inputValue={inputValue}
             handleInputChange={handleInputChange}
+            sendTips={sendTips}
           />
         }
         ref={donateDialogRef}

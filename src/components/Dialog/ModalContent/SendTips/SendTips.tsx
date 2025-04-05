@@ -3,9 +3,10 @@ import styles from './SendTips.module.css';
 interface Props {
   inputValue: string;
   handleInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  sendTips: (inputValue: string) => void;
 }
 
-const SendTips = ({ inputValue, handleInputChange }: Props) => {
+const SendTips = ({ inputValue, handleInputChange, sendTips }: Props) => {
   return (
     <div className={styles.container}>
       <input
@@ -14,7 +15,9 @@ const SendTips = ({ inputValue, handleInputChange }: Props) => {
         value={inputValue}
         onChange={handleInputChange}
       />
-      <button onClick={() => console.log(inputValue)}>Donate</button>
+      <button type="submit" onClick={() => sendTips(inputValue)}>
+        Donate
+      </button>
     </div>
   );
 };

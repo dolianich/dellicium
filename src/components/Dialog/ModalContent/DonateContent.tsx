@@ -23,6 +23,7 @@ interface Props {
   tipping: boolean;
   inputValue: string;
   handleInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  sendTips: (inputValue: string) => void;
 }
 
 const DonateContent = ({
@@ -40,6 +41,7 @@ const DonateContent = ({
   tipping,
   inputValue,
   handleInputChange,
+  sendTips,
 }: Props) => {
   return (
     <div className={styles.content}>
@@ -85,6 +87,7 @@ const DonateContent = ({
               <SendTips
                 inputValue={inputValue}
                 handleInputChange={handleInputChange}
+                sendTips={sendTips}
               />
             )}
           </>
