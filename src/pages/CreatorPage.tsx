@@ -35,6 +35,7 @@ const CreatorPage = () => {
   const [userLevel, setUserLevel] = useState(0);
   const [adopted, setAdopted] = useState(false);
   const [selectedFilter, setSelectedFilter] = useState<string>('all');
+  const [tipping, setTipping] = useState<boolean>(false);
 
   const pointsRequiredForNextLevel = userLevel === 1 ? 50 : userLevel * 100;
   const progress = (points / pointsRequiredForNextLevel) * 100;
@@ -49,6 +50,10 @@ const CreatorPage = () => {
     } else {
       setPoints(newPoints);
     }
+  };
+
+  const sendTips = (amount: number) => {
+    setTipping(true);
   };
 
   const params = useParams<{ creatorId: string }>();
@@ -203,7 +208,10 @@ const CreatorPage = () => {
         toggleDialog={donateToggleDialog}
         children={
           <DonateContent
-            tips={() => addPoints(10)}
+            tips={() => {
+              sendTips(10);
+              addPoints(10);
+            }}
             gift={() => addPoints(20)}
             adopted={adopted}
             name={creator?.name}
@@ -217,6 +225,7 @@ const CreatorPage = () => {
             userXp={points}
             progress={progress}
             wishlistLink={`/creators/${creator!.username}/wishlist`}
+            tipping={tipping}
           />
         }
         ref={donateDialogRef}

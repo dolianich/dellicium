@@ -19,6 +19,7 @@ interface Props {
   userXp: number;
   progress: number;
   wishlistLink: string;
+  tipping: boolean;
 }
 
 const DonateContent = ({
@@ -33,6 +34,7 @@ const DonateContent = ({
   userXp,
   progress,
   wishlistLink,
+  tipping,
 }: Props) => {
   return (
     <div className={styles.content}>
@@ -63,16 +65,20 @@ const DonateContent = ({
               userXp={userXp}
               userLevel={userLevel}
             />
-            <div className={styles.actionBtns}>
-              <DonateActBtn text="Send Tips" type="tips" onClick={tips} />
-              <DonateActBtn text="NFT Gift" type="gift" onClick={gift} />
-              <DonateActBtn
-                text="Wishlist"
-                type="wishlist"
-                wishlistLink={wishlistLink}
-                link={true}
-              />
-            </div>
+            {!tipping ? (
+              <div className={styles.actionBtns}>
+                <DonateActBtn text="Send Tips" type="tips" onClick={tips} />
+                <DonateActBtn text="NFT Gift" type="gift" onClick={gift} />
+                <DonateActBtn
+                  text="Wishlist"
+                  type="wishlist"
+                  wishlistLink={wishlistLink}
+                  link={true}
+                />
+              </div>
+            ) : (
+              <div>tips</div>
+            )}
           </>
         ) : (
           <Button
