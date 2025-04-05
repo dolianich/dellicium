@@ -61,7 +61,9 @@ const CreatorPage = () => {
   };
 
   const sendTips = (inputValue: string) => {
-    console.log(inputValue);
+    const number = parseInt(inputValue, 10);
+    const moneyToPints = number * 10;
+    addPoints(moneyToPints);
   };
   const params = useParams<{ creatorId: string }>();
   const creator = creators.find(
