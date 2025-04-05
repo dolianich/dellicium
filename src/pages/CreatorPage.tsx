@@ -243,6 +243,7 @@ const CreatorPage = () => {
             inputValue={inputValue}
             handleInputChange={handleInputChange}
             sendTips={sendTips}
+            back={() => setTipping('default')}
           />
         }
         ref={donateDialogRef}

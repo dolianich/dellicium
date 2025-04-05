@@ -4,3 +4,90 @@
     gap: 4px;
     margin-top: 8px;
 }
+
+.donateBtn{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 28px;
+    padding-right: 28px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 14px;
+    font-family: "Inter";
+    line-height: 20px;
+    color: var(--primary);
+    font-weight: 900;
+    margin: 0;
+    background-color: var(--dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all ease-in-out 0.2s;
+    flex: 1;
+}
+
+.backBtn{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 28px;
+    padding-right: 28px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 14px;
+    font-family: "Inter";
+    line-height: 20px;
+    color: var(--light-grey);
+    font-weight: 900;
+    margin: 0;
+    background-color: var(--dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all ease-in-out 0.2s;
+    flex: 1;
+}
+
+.input{
+    display: flex;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    padding-left: 11px;
+    padding-right: 11px;
+    text-align: left;
+    font-size: 14px;
+    font-family: "Inter";
+    line-height: 20px;
+    color: var(--light-grey);
+    font-weight: 900;
+    margin: 0;
+    background-color: var(--dark);
+    border: 1px solid var(--dark);
+    border-radius: 8px;
+    color: white;
+    outline: none;
+    flex: 1;
+}
+
+input:focus{
+    border-color: var(--primary);
+}
+
+.inputArea{
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+}
+
+.sol{
+    display: flex;
+    width: 80px;
+    height: 44px;
+    background-color: var(--dark);
+    border-radius: 8px;
+}
