@@ -6,6 +6,7 @@ import DonateCloseBtn from './DonateCloseBtn/DonateCloseBtn';
 import Indicator from '../../ProfileCard/ProgressBar/Indicator/Indicator';
 import ProgressBar from '../../ProfileCard/ProgressBar/ProgressBar';
 import DonateActBtn from './DonateActBtn/DonateActBtn';
+import SendTips from './SendTips/SendTips';
 
 interface Props {
   tips: () => void;
@@ -77,7 +78,7 @@ const DonateContent = ({
                 />
               </div>
             ) : (
-              <div>tips</div>
+              <SendTips />
             )}
           </>
         ) : (
