@@ -1,5 +1,6 @@
 import styles from './SendTips.module.css';
 import { CaretLeft, HandCoins } from '@phosphor-icons/react';
+import solLogo from '../../../../assets/solLogo.svg';
 
 interface Props {
   inputValue: string;
@@ -19,8 +20,12 @@ const SendTips = ({ inputValue, handleInputChange, sendTips, back }: Props) => {
           onChange={handleInputChange}
           className={styles.input}
           placeholder="Enter amount"
+          inputMode='decimal'
         />
-        <div className={styles.sol}></div>
+        <div className={styles.sol}>
+          <img src={solLogo} alt="sol" className={styles.logo} />
+          <p className={styles.solText}>SOL</p>
+        </div>
       </div>
       <button
         type="submit"

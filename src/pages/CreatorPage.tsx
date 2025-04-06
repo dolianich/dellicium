@@ -55,7 +55,7 @@ const CreatorPage = () => {
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
-    if (value === '' || /^[0-9\b]+$/.test(value)) {
+    if (value === '' || /^[0-9]*\.?[0-9]*$/.test(value)) {
       setInputValue(value);
     }
   };
