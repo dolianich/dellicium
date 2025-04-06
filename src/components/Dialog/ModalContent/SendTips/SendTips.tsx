@@ -17,6 +17,7 @@ const SendTips = ({
   back,
   tipError,
 }: Props) => {
+  
   return (
     <form className={styles.container} onSubmit={() => sendTips(inputValue)}>
       <div className={styles.inputArea}>
