@@ -74,6 +74,27 @@
     flex: 1;
 }
 
+.inputError{
+    display: flex;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    padding-left: 11px;
+    padding-right: 11px;
+    text-align: left;
+    font-size: 14px;
+    font-family: "Inter";
+    line-height: 20px;
+    color: var(--light-grey);
+    font-weight: 900;
+    margin: 0;
+    background-color: var(--dark);
+    border: 1px solid var(--red);
+    border-radius: 8px;
+    color: white;
+    outline: none;
+    flex: 1;
+}
+
 input:focus{
     border-color: var(--primary);
 }

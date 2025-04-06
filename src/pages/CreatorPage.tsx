@@ -37,6 +37,7 @@ const CreatorPage = () => {
   const [selectedFilter, setSelectedFilter] = useState<string>('all');
   const [tipping, setTipping] = useState<string>('default');
   const [inputValue, setInputValue] = useState<string>('');
+  const [tipError, setTipError] = useState<boolean>(false);
 
   const pointsRequiredForNextLevel = userLevel === 1 ? 50 : userLevel * 100;
   const progress = (points / pointsRequiredForNextLevel) * 100;
@@ -60,7 +61,12 @@ const CreatorPage = () => {
     }
   };
 
+
   const sendTips = (inputValue: string) => {
+    if (!inputValue) {
+      setTipError(true);
+      return;
+    }
     const number = parseFloat(inputValue);
     setTipping('pending');
     setTimeout(() => {
@@ -244,6 +250,7 @@ const CreatorPage = () => {
             handleInputChange={handleInputChange}
             sendTips={sendTips}
             back={() => setTipping('default')}
+            tipError={tipError}
           />
         }
         ref={donateDialogRef}

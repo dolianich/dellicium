@@ -25,6 +25,7 @@ interface Props {
   handleInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   sendTips: (inputValue: string) => void;
   back: () => void;
+  tipError: boolean;
 }
 
 const DonateContent = ({
@@ -43,7 +44,8 @@ const DonateContent = ({
   inputValue,
   handleInputChange,
   sendTips,
-  back
+  back,
+  tipError,
 }: Props) => {
   return (
     <div className={styles.content}>
@@ -91,6 +93,7 @@ const DonateContent = ({
                 handleInputChange={handleInputChange}
                 sendTips={sendTips}
                 back={back}
+                tipError={tipError}
               />
             ) : (
               <div>pending</div>

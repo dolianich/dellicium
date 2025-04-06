@@ -7,20 +7,27 @@ interface Props {
   handleInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   sendTips: (inputValue: string) => void;
   back: () => void;
+  tipError: boolean;
 }
 
-const SendTips = ({ inputValue, handleInputChange, sendTips, back }: Props) => {
+const SendTips = ({
+  inputValue,
+  handleInputChange,
+  sendTips,
+  back,
+  tipError,
+}: Props) => {
   return (
-    <div className={styles.container}>
+    <form className={styles.container} onSubmit={() => sendTips(inputValue)}>
       <div className={styles.inputArea}>
         <input
           id="number-input"
           type="text"
           value={inputValue}
           onChange={handleInputChange}
-          className={styles.input}
+          className={!tipError ? styles.input : styles.inputError}
           placeholder="Enter amount"
-          inputMode='decimal'
+          inputMode="decimal"
         />
         <div className={styles.sol}>
           <img src={solLogo} alt="sol" className={styles.logo} />
@@ -28,8 +35,7 @@ const SendTips = ({ inputValue, handleInputChange, sendTips, back }: Props) => {
         </div>
       </div>
       <button
-        type="submit"
-        onClick={() => sendTips(inputValue)}
+        type={inputValue ? 'submit' : 'button'}
         className={styles.donateBtn}
       >
         <HandCoins weight="fill" size={20} />
@@ -38,7 +44,7 @@ const SendTips = ({ inputValue, handleInputChange, sendTips, back }: Props) => {
       <button onClick={back} className={styles.backBtn}>
         <CaretLeft weight="regular" size={20} />
       </button>
-    </div>
+    </form>
   );
 };
 
