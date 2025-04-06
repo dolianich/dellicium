@@ -7,6 +7,7 @@ import Indicator from '../../ProfileCard/ProgressBar/Indicator/Indicator';
 import ProgressBar from '../../ProfileCard/ProgressBar/ProgressBar';
 import DonateActBtn from './DonateActBtn/DonateActBtn';
 import SendTips from './SendTips/SendTips';
+import Pending from './Pending/Pending';
 
 interface Props {
   tips: () => void;
@@ -96,7 +97,7 @@ const DonateContent = ({
                 tipError={tipError}
               />
             ) : (
-              <div>pending</div>
+              <Pending />
             )}
           </>
         ) : (
