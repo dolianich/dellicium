@@ -61,11 +61,11 @@ const CreatorPage = () => {
   };
 
   const sendTips = (inputValue: string) => {
-    const number = parseInt(inputValue, 10);
+    const number = parseFloat(inputValue);
     setTipping('pending');
     setTimeout(() => {
       setTipping('default');
-      const moneyToPints = number * 5;
+      const moneyToPints = Math.round(number * 5);
       addPoints(moneyToPints);
     }, 1500);
     setInputValue('');
