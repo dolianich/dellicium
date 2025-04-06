@@ -38,6 +38,7 @@ const CreatorPage = () => {
   const [tipping, setTipping] = useState<string>('default');
   const [inputValue, setInputValue] = useState<string>('');
   const [tipError, setTipError] = useState<boolean>(false);
+  const scrollPositionRef = useRef(0);
 
   const pointsRequiredForNextLevel = userLevel === 1 ? 50 : userLevel * 100;
   const progress = (points / pointsRequiredForNextLevel) * 100;
@@ -85,6 +86,12 @@ const CreatorPage = () => {
     setSelectedFilter(filter);
   };
 
+  const handleTouchMove = (e: TouchEvent) => {
+    if (donateDialogRef.current?.hasAttribute('open')) {
+      e.preventDefault();
+    }
+  };
+
   const donateDialogRef = useRef<HTMLDialogElement>(null);
   const donateToggleDialog = () => {
     if (!donateDialogRef.current) {
@@ -94,15 +101,35 @@ const CreatorPage = () => {
     if (donateDialogRef.current.hasAttribute('open')) {
       donateDialogRef.current.close();
       document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
+      window.scrollTo(0, scrollPositionRef.current);
+      document.removeEventListener('touchmove', handleTouchMove, {
+        passive: false,
+      } as EventListenerOptions);
     } else {
+      scrollPositionRef.current = window.scrollY;
       donateDialogRef.current.showModal();
       document.body.style.overflow = 'hidden';
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${scrollPositionRef.current}px`;
+      document.body.style.width = '100%';
+      document.addEventListener('touchmove', handleTouchMove, {
+        passive: false,
+      } as EventListenerOptions);
     }
   };
 
   useEffect(() => {
     return () => {
       document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
+      document.removeEventListener('touchmove', handleTouchMove, {
+        passive: false,
+      } as EventListenerOptions);
     };
   }, []);
 
