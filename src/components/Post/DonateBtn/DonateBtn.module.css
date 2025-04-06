@@ -10,4 +10,9 @@
     background-color: var(--primary);
     border-radius: 8px;
     padding: 0;
+    transition: all ease-in-out 0.2s;
+}
+
+.btn:active{
+    opacity: 0.8;
 }

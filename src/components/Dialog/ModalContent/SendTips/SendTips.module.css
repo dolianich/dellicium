@@ -29,6 +29,10 @@
     flex: 1;
 }
 
+.donateBtn:active{
+    opacity: 0.8;
+}
+
 .backBtn{
     padding-top: 12px;
     padding-bottom: 12px;
