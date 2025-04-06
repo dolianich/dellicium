@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRef } from 'react';
 import styles from './styles/Page.module.css';
 import creators from '../data/creators';
@@ -61,7 +61,6 @@ const CreatorPage = () => {
     }
   };
 
-
   const sendTips = (inputValue: string) => {
     if (!inputValue) {
       setTipError(true);
@@ -94,10 +93,18 @@ const CreatorPage = () => {
 
     if (donateDialogRef.current.hasAttribute('open')) {
       donateDialogRef.current.close();
+      document.body.style.overflow = '';
     } else {
       donateDialogRef.current.showModal();
+      document.body.style.overflow = 'hidden';
     }
   };
+
+  useEffect(() => {
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, []);
 
   const renderSection = () => {
     switch (selectedFilter) {
