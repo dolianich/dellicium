@@ -1,5 +1,5 @@
 import bellavibes from '../storage/bellavibes.jpg';
-import elenathestar from '../storage/elenathestar.jpg';
+import brainRot from '../storage/brainRot.jpg';
 import ethanedge from '../storage/ethanedge.jpg';
 import liamthebold from '../storage/liamthebold.jpg';
 import lucaslights from '../storage/lucaslights.jpg';
@@ -8,10 +8,10 @@ import noahontheego from '../storage/noahonthego.jpg';
 import sophiaspark from '../storage/sophiaspark.jpg';
 import tosha_avatar from '../storage/tosha/tosha_avatar.jpg'
 
-import testVideo from '../storage/posts/testVideo.MOV';
-import second from '../storage/posts/101.png';
-import third from '../storage/posts/102.png';
-import fourth from '../storage/posts/103.png';
+import trallalita from '../storage/posts/brainrot/trallalita.MOV';
+import dj from '../storage/posts/brainrot/dj.mp4';
+import br from '../storage/posts/brainrot/br.mp4';
+import banana from '../storage/posts/brainrot/banana.mp4';
 import fifth from '../storage/posts/104.png';
 import sixth from '../storage/posts/105.png';
 import seventh from '../storage/posts/106.png'
@@ -139,11 +139,11 @@ const creators = [
   },
     {
       id: 1,
-      username: '@elenathestar',
-      name: 'Elena Martinez',
-      bio: 'Description text Description text Description text Description text',
-      tags: ['nsfw', 'music', 'design'],
-      avatar: elenathestar,
+      username: '@brainrot',
+      name: 'Italian BrainRot',
+      bio: 'BrainRot Animations',
+      tags: ['ai', 'design'],
+      avatar: brainRot,
       level: 1,
       xp: 10,
       socials: {
@@ -155,43 +155,43 @@ const creators = [
         {
           id: 100,
           date: '25.05.2025',
-          createdAt: '2025-02-26T09:00:00Z',
-          description: 'description text description text description text description text description text',
-          mediaLink: testVideo,
+          createdAt: '2025-04-08T09:00:00Z',
+          description: 'Trallalita Tralalalita',
+          mediaLink: trallalita,
           likes: 10000,
-          comments: 2000,
-          levelRequired: 1,
+          comments: 420,
+          levelRequired: 2,
           contentType: 'video'
         },
         {
           id: 101,
-          createdAt: '2023-10-02T14:30:00Z',
-          description: 'description text',
-          mediaLink: second,
-          likes: 123,
-          comments: 123,
-          levelRequired: 0,
-          contentType: 'image'
+          createdAt: '2025-04-07T14:30:00Z',
+          description: 'Dj battle',
+          mediaLink: dj,
+          likes: 9000,
+          comments: 158,
+          levelRequired: 3,
+          contentType: 'video'
         },
         {
           id: 102,
-          createdAt: '2023-10-02T14:30:00Z',
-          description: 'description text',
-          mediaLink: third,
-          likes: 123,
-          comments: 123,
+          createdAt: '2025-04-05T14:30:00Z',
+          description: 'Puttana La Banana',
+          mediaLink: banana,
+          likes: 12000,
+          comments: 420,
           levelRequired: 3,
-          contentType: 'image'
+          contentType: 'video'
         },
         {
           id: 103,
-          createdAt: '2023-10-02T14:30:00Z',
-          description: 'description text',
-          mediaLink: fourth,
-          likes: 123,
-          comments: 123,
-          levelRequired: 0,
-          contentType: 'image'
+          createdAt: '2024-04-07T14:30:00Z',
+          description: 'Italian BrainRot',
+          mediaLink: br,
+          likes: 20000,
+          comments: 420,
+          levelRequired: 2,
+          contentType: 'video'
         },
         {
           id: 104,

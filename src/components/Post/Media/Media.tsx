@@ -14,19 +14,14 @@ interface Props {
 const Media = ({ src, isLocked, type, contentType }: Props) => {
   const [videoControls, setVideoControls] = useState({
     playing: false,
-    mute: true,
+    mute: false,
     fullScreen: false,
     loadedSeconds: 1,
     playedSeconds: 0,
   });
 
-  const {
-    playing,
-    mute,
-    fullScreen,
-    loadedSeconds,
-    playedSeconds,
-  } = videoControls;
+  const { playing, mute, fullScreen, loadedSeconds, playedSeconds } =
+    videoControls;
 
   const refPlayer = useRef<ReactPlayer | null>(null);
   const refPlayerContainer = useRef<HTMLDivElement>(null);
@@ -98,7 +93,7 @@ const Media = ({ src, isLocked, type, contentType }: Props) => {
               file: {
                 attributes: {
                   playsInline: true,
-                  webkitplaysinline: "true",
+                  webkitplaysinline: 'true',
                 },
               },
             }}
