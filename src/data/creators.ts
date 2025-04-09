@@ -1,7 +1,7 @@
 import bellavibes from '../storage/bellavibes.jpg';
 import brainRot from '../storage/brainRot.jpg';
 import ethanedge from '../storage/ethanedge.jpg';
-import liamthebold from '../storage/liamthebold.jpg';
+import sienna from '../storage/sienna.jpg';
 import lucaslights from '../storage/lucaslights.jpg';
 import miainmotion from '../storage/miainmotion.jpg';
 import noahontheego from '../storage/noahonthego.jpg';
@@ -16,6 +16,8 @@ import fifth from '../storage/posts/104.png';
 import sixth from '../storage/posts/105.png';
 import seventh from '../storage/posts/106.png'
 import eighth from '../storage/posts/107.png';
+
+import post from '../storage/posts/sienna/post.jpg';
 
 import bite from '../storage/tosha/posts/bite.mp4';
 import dreams from '../storage/tosha/posts/dreams.jpg';
@@ -238,18 +240,31 @@ const creators = [
 
     {
       id: 2,
-      username: '@liamthebold',
-      name: 'Liam Connor',
-      bio: 'Description text',
-      tags: ['ai', 'gaming'],
-      avatar: liamthebold,
+      username: '@sienna_lux',
+      name: 'Sienna Lux',
+      bio: 'Your fave  irresistible, inked-up Mistress',
+      tags: ['art', 'nsfw'],
+      avatar: sienna,
       level: 1,
       xp: 10,
       socials: {
         website: 'https://www.google.com/',
         ig: 'https://www.instagram.com/',
         x: 'https://x.com/'
-      }
+      },
+      posts: [
+        {
+          id: 100,
+          date: '25.05.2025',
+          createdAt: '2025-04-08T09:00:00Z',
+          description: 'Think you can handle me?',
+          mediaLink: post,
+          likes: 15000,
+          comments: 420,
+          levelRequired: 2,
+          contentType: 'image'
+        },
+      ]
     },
 
     {
