@@ -20,6 +20,7 @@ import {
   WalletProvider,
 } from '@solana/wallet-adapter-react';
 import { clusterApiUrl } from '@solana/web3.js';
+import { WalletModalProvider } from '@solana/wallet-adapter-react-ui';
 
 function App() {
   const endpoint = clusterApiUrl('devnet');
@@ -28,24 +29,26 @@ function App() {
   return (
     <ConnectionProvider endpoint={endpoint}>
       <WalletProvider wallets={wallets}>
-        <Router>
-          <SideBar />
-          <MobNav />
-          <Routes>
-            <Route path="/" element={<Navigate to="discover" />} />
-            <Route path="/discover" Component={DiscoverPage} />
-            <Route path="*" Component={NotFoundPage} />
-            <Route path="/assets" Component={AssetsPage} />
-            <Route path="/market" Component={MarketPage} />
-            <Route path="/creators" Component={CreatorsPage} />
-            <Route path="/notifications" Component={NotificationsPage} />
-            <Route path="/creators/:creatorId" element={<CreatorPage />} />
-            <Route
-              path="/creators/:creatorId/wishlist"
-              element={<WishlistPage />}
-            />
-          </Routes>
-        </Router>
+        <WalletModalProvider>
+          <Router>
+            <SideBar />
+            <MobNav />
+            <Routes>
+              <Route path="/" element={<Navigate to="discover" />} />
+              <Route path="/discover" Component={DiscoverPage} />
+              <Route path="*" Component={NotFoundPage} />
+              <Route path="/assets" Component={AssetsPage} />
+              <Route path="/market" Component={MarketPage} />
+              <Route path="/creators" Component={CreatorsPage} />
+              <Route path="/notifications" Component={NotificationsPage} />
+              <Route path="/creators/:creatorId" element={<CreatorPage />} />
+              <Route
+                path="/creators/:creatorId/wishlist"
+                element={<WishlistPage />}
+              />
+            </Routes>
+          </Router>
+        </WalletModalProvider>
       </WalletProvider>
     </ConnectionProvider>
   );
