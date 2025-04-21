@@ -7,7 +7,10 @@
     background-color: var(--grey);
     border-radius: 8px;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 }
+
+
 
 .hidden{
     display: none;
