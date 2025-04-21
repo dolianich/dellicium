@@ -12,7 +12,7 @@ import trallalita from '../storage/posts/brainrot/trallalita.MOV';
 import dj from '../storage/posts/brainrot/dj.mp4';
 import br from '../storage/posts/brainrot/br.mp4';
 import banana from '../storage/posts/brainrot/banana.mp4';
-import fifth from '../storage/posts/104.png';
+import police from '../storage/posts/brainrot/police.mp4';
 import sixth from '../storage/posts/105.png';
 import seventh from '../storage/posts/106.png'
 import eighth from '../storage/posts/107.png';
@@ -197,13 +197,13 @@ const creators = [
         },
         {
           id: 104,
-          createdAt: '2023-10-02T14:30:00Z',
-          description: 'description text',
-          mediaLink: fifth,
-          likes: 123,
-          comments: 123,
+          createdAt: '2025-04-20T14:30:00Z',
+          description: 'Arrest',
+          mediaLink: police,
+          likes: 15000,
+          comments: 420,
           levelRequired: 2,
-          contentType: 'image'
+          contentType: 'video'
         },
         {
           id: 105,
