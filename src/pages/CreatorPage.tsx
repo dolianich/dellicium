@@ -253,6 +253,7 @@ const CreatorPage = () => {
         tips={() => addPoints(10)}
         gift={() => addPoints(20)}
         wishlistLink={`/creators/${creator!.username}/wishlist`}
+        address={creator?.address}
       />
       <PostsFilter
         onFilterChange={handleFilterChange}

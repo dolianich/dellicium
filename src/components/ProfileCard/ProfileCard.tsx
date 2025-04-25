@@ -29,6 +29,7 @@ interface Props {
   tips: () => void;
   gift: () => void;
   wishlistLink?: string;
+  address?: string;
 }
 
 const ProfileCard = ({
@@ -51,6 +52,7 @@ const ProfileCard = ({
   tips,
   gift,
   wishlistLink,
+  address
 }: Props) => {
   return (
     <div className={styles.profile}>
@@ -71,6 +73,7 @@ const ProfileCard = ({
         adopted={adopted}
         userXp={userXp}
         userLevel={userLevel}
+        address={address}
       />
       {adopted ? (
         <Actions tips={tips} gift={gift} link={wishlistLink} />

@@ -33,6 +33,7 @@ interface Props {
   adopt: () => void;
   userXp?: number;
   userLevel: number;
+  address?: string
 }
 
 const ProfileInfo = ({
@@ -52,6 +53,7 @@ const ProfileInfo = ({
   adopt,
   userXp,
   userLevel,
+  address
 }: Props) => {
   return (
     <div className={styles.wrapper}>
@@ -61,6 +63,7 @@ const ProfileInfo = ({
             <div className={styles.top}>
               <Avatar size="big" img={avatar} />
               <p className={styles.username2}>{username}</p>
+              <div className={styles.topRightSection}>
               <div className={styles.badgesAndStats}>
                 <div className={styles.badges}>
                   {tags?.map((tag) => (
@@ -76,6 +79,8 @@ const ProfileInfo = ({
                   <div className={styles.divider} />
                   <Stats value={formatPoints(xp)} subtitle="xp" type="left" />
                 </div>
+              </div>
+              <p className={styles.address}>{address}</p>
               </div>
             </div>
             <p className={styles.username}>{username}</p>

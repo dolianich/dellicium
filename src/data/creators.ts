@@ -44,6 +44,7 @@ const creators = [
       ig: 'https://www.instagram.com/',
       x: 'https://x.com/'
     },
+    address: 'JfJbw8CvHyeYkvTwTAQMjVup24LxNazDmvQXsf45fKT',
     posts: [
       {
         id: 99,
