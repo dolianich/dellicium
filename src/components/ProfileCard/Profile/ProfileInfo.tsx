@@ -10,6 +10,7 @@ import { UserCirclePlus } from '@phosphor-icons/react';
 import ProgressBar from '../ProgressBar/ProgressBar';
 import MoreBtn from '../MoreBtn/MoreBtn';
 import Indicator from '../ProgressBar/Indicator/Indicator';
+import { shortenString } from '../../../utils/shortenString';
 
 type Socials = {
   website?: string;
@@ -80,7 +81,7 @@ const ProfileInfo = ({
                   <Stats value={formatPoints(xp)} subtitle="xp" type="left" />
                 </div>
               </div>
-              <p className={styles.address}>{address}</p>
+              <p className={styles.address}>{shortenString(address!)}</p>
               </div>
             </div>
             <p className={styles.username}>{username}</p>
