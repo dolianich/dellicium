@@ -11,6 +11,7 @@ import ProgressBar from '../ProgressBar/ProgressBar';
 import MoreBtn from '../MoreBtn/MoreBtn';
 import Indicator from '../ProgressBar/Indicator/Indicator';
 import { shortenString } from '../../../utils/shortenString';
+import { Link } from 'react-router-dom';
 
 type Socials = {
   website?: string;
@@ -34,7 +35,7 @@ interface Props {
   adopt: () => void;
   userXp?: number;
   userLevel: number;
-  address?: string
+  address?: string;
 }
 
 const ProfileInfo = ({
@@ -54,7 +55,7 @@ const ProfileInfo = ({
   adopt,
   userXp,
   userLevel,
-  address
+  address,
 }: Props) => {
   return (
     <div className={styles.wrapper}>
@@ -65,23 +66,30 @@ const ProfileInfo = ({
               <Avatar size="big" img={avatar} />
               <p className={styles.username2}>{username}</p>
               <div className={styles.topRightSection}>
-              <div className={styles.badgesAndStats}>
-                <div className={styles.badges}>
-                  {tags?.map((tag) => (
-                    <Badge key={tag} type={tag} />
-                  ))}
+                <div className={styles.badgesAndStats}>
+                  <div className={styles.badges}>
+                    {tags?.map((tag) => (
+                      <Badge key={tag} type={tag} />
+                    ))}
+                  </div>
+                  <div className={styles.stats}>
+                    <Stats
+                      value={getOrdinalSuffix(level)}
+                      subtitle="level"
+                      type="left"
+                    />
+                    <div className={styles.divider} />
+                    <Stats value={formatPoints(xp)} subtitle="xp" type="left" />
+                  </div>
                 </div>
-                <div className={styles.stats}>
-                  <Stats
-                    value={getOrdinalSuffix(level)}
-                    subtitle="level"
-                    type="left"
-                  />
-                  <div className={styles.divider} />
-                  <Stats value={formatPoints(xp)} subtitle="xp" type="left" />
-                </div>
-              </div>
-              <p className={styles.address}>{shortenString(address!)}</p>
+                <Link
+                  to={`https://explorer.solana.com/address/${address}`}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  className={styles.address}
+                >
+                  {shortenString(address!)}
+                </Link>
               </div>
             </div>
             <p className={styles.username}>{username}</p>
