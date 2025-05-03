@@ -1,12 +1,12 @@
 [package]
-name = "creator_profiles"
+name = "creator_profile"
 version = "0.1.0"
 description = "Created with Anchor"
 edition = "2021"
 
 [lib]
 crate-type = ["cdylib", "lib"]
-name = "creator_profiles"
+name = "creator_profile"
 
 [features]
 default = []
