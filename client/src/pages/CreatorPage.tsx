@@ -49,7 +49,12 @@ const CreatorPage = () => {
   const [tipError, setTipError] = useState<boolean>(false);
   const scrollPositionRef = useRef(0);
 
-  const RECIPIENT_ADDRESS = '2HV8UnvossV6aSb2yxCa65dAWpiuF8qCZPxPm6s3Mjrj';
+  const params = useParams<{ creatorId: string }>();
+  const creator = creators.find(
+    (creator) => creator.username === params.creatorId
+  );
+
+  const RECIPIENT_ADDRESS = creator!.address;
 
   const pointsRequiredForNextLevel = userLevel === 1 ? 50 : userLevel * 100;
   const progress = (points / pointsRequiredForNextLevel) * 100;
@@ -127,10 +132,7 @@ const CreatorPage = () => {
     }
   };
 
-  const params = useParams<{ creatorId: string }>();
-  const creator = creators.find(
-    (creator) => creator.username === params.creatorId
-  );
+  
 
   const handleFilterChange = (filter: string) => {
     setSelectedFilter(filter);
