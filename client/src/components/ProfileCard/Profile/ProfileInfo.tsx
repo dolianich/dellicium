@@ -83,7 +83,7 @@ const ProfileInfo = ({
                   </div>
                 </div>
                 <Link
-                  to={`https://explorer.solana.com/address/${address}`}
+                  to={`https://explorer.solana.com/address/${address}?cluster=devnet`}
                   rel="noopener noreferrer"
                   target="_blank"
                   className={styles.address}
