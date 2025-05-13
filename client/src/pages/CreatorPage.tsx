@@ -1,6 +1,13 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { useRef } from 'react';
+import { useWallet, useConnection } from '@solana/wallet-adapter-react';
+import {
+  PublicKey,
+  Transaction,
+  SystemProgram,
+  LAMPORTS_PER_SOL,
+} from '@solana/web3.js';
 import styles from './styles/Page.module.css';
 import creators from '../data/creators';
 import ProfileCard from '../components/ProfileCard/ProfileCard';
@@ -31,6 +38,8 @@ type Post = {
 };
 
 const CreatorPage = () => {
+  const { connection } = useConnection();
+  const { connected, publicKey, sendTransaction } = useWallet();
   const [points, setPoints] = useState(0);
   const [userLevel, setUserLevel] = useState(0);
   const [adopted, setAdopted] = useState(false);
@@ -39,6 +48,8 @@ const CreatorPage = () => {
   const [inputValue, setInputValue] = useState<string>('');
   const [tipError, setTipError] = useState<boolean>(false);
   const scrollPositionRef = useRef(0);
+
+  const RECIPIENT_ADDRESS = '2HV8UnvossV6aSb2yxCa65dAWpiuF8qCZPxPm6s3Mjrj';
 
   const pointsRequiredForNextLevel = userLevel === 1 ? 50 : userLevel * 100;
   const progress = (points / pointsRequiredForNextLevel) * 100;
@@ -63,19 +74,57 @@ const CreatorPage = () => {
     }
   };
 
-  const sendTips = (inputValue: string) => {
+  const sendTips = async (inputValue: string) => {
+    if (!connected || !publicKey) {
+      setTipError(true);
+      return;
+    }
+
     if (!inputValue) {
       setTipError(true);
       return;
     }
-    const number = parseFloat(inputValue);
-    setTipping('pending');
-    setTimeout(() => {
+
+    const amount = parseFloat(inputValue);
+    if (isNaN(amount) || amount <= 0) {
+      setTipError(true);
+      return;
+    }
+
+    try {
+      setTipping('pending');
+
+      const recipientPubkey = new PublicKey(RECIPIENT_ADDRESS);
+      const transaction = new Transaction().add(
+        SystemProgram.transfer({
+          fromPubkey: publicKey,
+          toPubkey: recipientPubkey,
+          lamports: amount * LAMPORTS_PER_SOL,
+        })
+      );
+
+      const { blockhash } = await connection.getRecentBlockhash();
+      transaction.recentBlockhash = blockhash;
+      transaction.feePayer = publicKey;
+
+      const signature = await sendTransaction(transaction, connection);
+
+      const confirmation = await connection.confirmTransaction(
+        signature,
+        'processed'
+      );
+      if (confirmation.value.err) {
+        throw new Error('Transaction failed');
+      }
+
+      const moneyToPoints = Math.round(amount * 100);
+      addPoints(moneyToPoints);
+      setInputValue('');
+    } catch (error) {
+      console.error('Transfer failed:', error);
+    } finally {
       setTipping('default');
-      const moneyToPints = Math.round(number * 5);
-      addPoints(moneyToPints);
-    }, 1500);
-    setInputValue('');
+    }
   };
 
   const params = useParams<{ creatorId: string }>();
